@@ -1,46 +1,55 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using System.Runtime.InteropServices;
+using UnityEngine;
 
 public class BoardManager : MonoBehaviour
 {
+
+    public int width = 10;
+    public int height = 10;
+    public GameObject floor;
+    public GameObject wall;
+
+    private Transform boardHolder;
+    private Transform floorTransform;// = floor.GetComponent<Transform>();
+
+    
     public void SetupScene(int level)
     {
-        IntPtr dungeon = ZombieTiles.generate_dungeon(10, 10);
+        floorTransform =  floor.GetComponent<Transform>();
 
-        int w;
-        int h;
-        IntPtr[] matrix_ptr;
-        ZombieTiles.get_dungeon_matrix(dungeon, out w, out h, out matrix_ptr);
+        ZombieTiles zt = new ZombieTiles();
+        zt.GenerateDugeon(width, height);
 
-        int[][] matrix = new int[w][];
-        for (int i = 0; i < w; ++i)
+        int[][] matrix = zt.GetDungeonMatrix();
+
+        boardHolder = new GameObject("Board").transform;
+        for (int y = 0; y < height; ++y)
         {
-            matrix[i] = new int[w];
-            Marshal.Copy(matrix_ptr[i], matrix[i], 0, h);
-        }
-
-        string d = "";
-        for (int y = 0; y < h; ++y)
-        {
-            for (int x = 0; x < w; ++x)
+            for (int x = 0; x < width; ++x)
             {
-                d += matrix[x][y];
+                int tile = matrix[x][y];
+                if (tile != ZombieTiles.EMPTY_TILE)
+                {
+                    Vector3 pos = new Vector3(x, 0f, y);
+                    pos = pos* 10; 
+                    pos.Scale( floorTransform.localScale );
+                    print ( pos );
+                    GameObject tileObject = Instantiate(floor, pos, Quaternion.identity);
+                    tileObject.transform.SetParent( boardHolder );
+                }
             }
-            d += "\n";
         }
-        print(d);
 
-        int size2;
-        Wall[] walls;
-        ZombieTiles.get_wall_array(dungeon, out size2, out walls);
+        Wall[] walls = zt.GetWalls();
 
-        for (int i = 0; i < size2; i++)
+        foreach (Wall pos in walls)
         {
-            print($"({walls[i].a.x}, {walls[i].a.y}) "
-                + $"-> ({walls[i].b.x}, {walls[i].b.y})");
+            GameObject wallObject = Instantiate( wall, new Vector3( pos.a.x, 0f , pos.a.y ), Quaternion.identity  );
+            Stretch2Target stretch2Target = wallObject.GetComponent<Stretch2Target>();
+            stretch2Target.target = new Vector3( pos.b.x, 0f, pos.b.y );
         }
     }
 }

@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82a57b7843b2404e2b5498c9a6501303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boardScript: {fileID: 0}
 --- !u!114 &-7683462538181014499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56,3 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2255c868631b692238fb3bd4626269c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  width: 30
+  height: 30
+  floor: {fileID: 6183486878924002155, guid: c44b467f0aee0c42692834573a560db1, type: 3}
+  wall: {fileID: 6785867387558601932, guid: ead234618f3a295018c7a946dd783ff9, type: 3}

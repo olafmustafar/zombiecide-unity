@@ -25,17 +25,63 @@ public struct Wall
 
 public class ZombieTiles
 {
+
     private const string zombietilesdll = @"/home/rei-arthur/.config/unity3d/DefaultCompany/zombiecide/libzombietiles.so";
-    // private const string zombietilesdll = @"/home/rei-arthur/zteste/libzombietiles.so";
-    // private const string zombietilesdll = @"/home/rei-arthur/zteste/libzombietiles.so";
+    
+    [DllImport(zombietilesdll, CallingConvention = CallingConvention.Cdecl)] 
+    private static extern IntPtr generate_dungeon(Int32 width, Int32 height);
+    
+    [DllImport(zombietilesdll, CallingConvention = CallingConvention.Cdecl)] 
+    private static extern void free_dungeon(IntPtr dungeon);
+    
+    [DllImport(zombietilesdll, CallingConvention = CallingConvention.Cdecl)] 
+    private static extern void generate_wall_array(IntPtr dungeon, out int size, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] out Wall[] array);
+    
+    [DllImport(zombietilesdll, CallingConvention = CallingConvention.Cdecl)] 
+    private static extern void free_wall_array(Wall[] array);
+    
+    [DllImport(zombietilesdll, CallingConvention = CallingConvention.Cdecl)] 
+    private static extern void get_dungeon_matrix(IntPtr dungeon, out int width, out int height, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] out IntPtr[] matrix);
 
-    [DllImport(zombietilesdll,CallingConvention = CallingConvention.Cdecl)]
-    public static extern IntPtr generate_dungeon(Int32 width, Int32 height);
+    public static readonly int EMPTY_TILE = -1;
+    private IntPtr dungeon;
+    private Wall[] walls;
 
-    [DllImport(zombietilesdll,CallingConvention = CallingConvention.Cdecl)]
-    public static extern void get_dungeon_matrix(IntPtr dungeon, out int width, out int height,  [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] out IntPtr[] matrix);
+    ~ZombieTiles()
+    {
+        free_dungeon(dungeon);
+    }
 
-    [DllImport(zombietilesdll,CallingConvention = CallingConvention.Cdecl)]
-    public static extern void get_wall_array(IntPtr dungeon, out int size, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] out Wall[] array);
+    public void GenerateDugeon(Int32 width, Int32 height)
+    {
+        dungeon = generate_dungeon(width, height);
+
+        int size;
+        generate_wall_array(dungeon, out size, out walls);
+    }
+
+    public Wall[] GetWalls()
+    {
+        return walls;
+    }
+
+    public int[][] GetDungeonMatrix()
+    {
+        int w;
+        int h;
+        IntPtr[] matrix_ptr;
+
+        get_dungeon_matrix(dungeon, out w, out h, out matrix_ptr);
+
+        int[][] matrix = new int[w][];
+
+        for (int i = 0; i < w; ++i)
+        {
+            matrix[i] = new int[w];
+            Marshal.Copy(matrix_ptr[i], matrix[i], 0, h);
+        }
+
+        return matrix;
+    }
 
 }
