@@ -19,7 +19,5 @@ public class Stretch2Target : MonoBehaviour
         Vector3 newScale = transform.localScale;
         newScale.z = distance;
         transform.localScale = newScale;
-
-        transform.position = Vector3.MoveTowards( origin, target, distance / 2);
     }
 }

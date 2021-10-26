@@ -15,10 +15,10 @@ public class BoardManager : MonoBehaviour
     private Transform boardHolder;
     private Transform floorTransform;// = floor.GetComponent<Transform>();
 
-    
+
     public void SetupScene(int level)
     {
-        floorTransform =  floor.GetComponent<Transform>();
+        floorTransform = floor.GetComponent<Transform>();
 
         ZombieTiles zt = new ZombieTiles();
         zt.GenerateDugeon(width, height);
@@ -30,26 +30,29 @@ public class BoardManager : MonoBehaviour
         {
             for (int x = 0; x < width; ++x)
             {
+
                 int tile = matrix[x][y];
                 if (tile != ZombieTiles.EMPTY_TILE)
                 {
                     Vector3 pos = new Vector3(x, 0f, y);
-                    pos = pos* 10; 
-                    pos.Scale( floorTransform.localScale );
-                    print ( pos );
+                    pos = pos * 10;
+                    pos.Scale(floorTransform.localScale);
                     GameObject tileObject = Instantiate(floor, pos, Quaternion.identity);
-                    tileObject.transform.SetParent( boardHolder );
+                    tileObject.transform.SetParent(boardHolder);
                 }
             }
         }
 
         Wall[] walls = zt.GetWalls();
+        Vector3 offset = floor.transform.localScale*5;
+        print( offset );
 
         foreach (Wall pos in walls)
         {
-            GameObject wallObject = Instantiate( wall, new Vector3( pos.a.x, 0f , pos.a.y ), Quaternion.identity  );
+            GameObject wallObject = Instantiate(wall, new Vector3(pos.a.x - offset.x, 0f, pos.a.y - offset.z), Quaternion.identity);
             Stretch2Target stretch2Target = wallObject.GetComponent<Stretch2Target>();
-            stretch2Target.target = new Vector3( pos.b.x, 0f, pos.b.y );
+            stretch2Target.target = new Vector3(pos.b.x - offset.x, 0f, pos.b.y - offset.z);
+            wallObject.transform.SetParent(boardHolder);
         }
     }
 }
