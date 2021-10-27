@@ -45,7 +45,6 @@ public class BoardManager : MonoBehaviour
 
         Wall[] walls = zt.GetWalls();
         Vector3 offset = floor.transform.localScale*5;
-        print( offset );
 
         foreach (Wall pos in walls)
         {
