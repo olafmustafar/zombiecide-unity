@@ -9,7 +9,11 @@ public class PlayerMovement : MonoBehaviour
     public Camera cam;
 
     Vector2 movement;
-    // Vector3 mousePos;
+    Plane plane;
+
+    void Start(){
+        plane = new Plane( Vector3.up, -rb.position.y);        
+    }
 
     void FixedUpdate()
     {
@@ -17,21 +21,23 @@ public class PlayerMovement : MonoBehaviour
         RotatePlayer();
     }
 
-    void RotatePlayer(){
-        Plane plane = new Plane(Vector3.up, 0f);
-        Ray ray = cam.ScreenPointToRay( Input.mousePosition );
+    void RotatePlayer()
+    {
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         float distanceToPlane;
 
-        if( plane.Raycast( ray , out distanceToPlane )){
+        if (plane.Raycast(ray, out distanceToPlane))
+        {
             Vector3 lookDir = ray.GetPoint(distanceToPlane);
             lookDir -= rb.position;
 
-            float angle = -Mathf.Atan2( lookDir.z , lookDir.x ) * Mathf.Rad2Deg;
-            rb.rotation = Quaternion.Euler( new Vector3( 0,angle,0 ) );
+            float angle = -Mathf.Atan2(lookDir.z, lookDir.x) * Mathf.Rad2Deg;
+            rb.MoveRotation( Quaternion.Euler(new Vector3(0, angle, 0)));
         }
     }
 
-    void MovePlayer(){
+    void MovePlayer()
+    {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
