@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4082968351674351921}
   - component: {fileID: 4082968351674351884}
   - component: {fileID: 4082968351674351885}
+  - component: {fileID: 6034418541818130922}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -131,6 +132,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &6034418541818130922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4082968351674351926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bddff117d19c6e9cb24751f05f9d147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 4233326094714283320}
+  bulletPrefab: {fileID: 8152608484312807071, guid: 4c7cad1bbfa741e23bd8b29dda0ce088, type: 3}
+  bulletForce: 20
 --- !u!1 &7659319544498687119
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,7 +160,7 @@ GameObject:
   - component: {fileID: 1009262954536932434}
   - component: {fileID: 4855486163538533436}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

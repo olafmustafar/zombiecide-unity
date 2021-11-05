@@ -33,7 +33,5 @@ public class EnemyMovement : MonoBehaviour
         enemyRb.MoveRotation( Quaternion.Euler(new Vector3(0, angle, 0)));
 
         enemyRb.MovePosition( enemyRb.position + (lookDir.normalized * movementSpeed * Time.fixedDeltaTime) );
-
-
     }
 }
