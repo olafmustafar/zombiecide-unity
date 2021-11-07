@@ -6,13 +6,15 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody rb;
     public float movementSpeed;
+    public float health;
     public Camera cam;
 
     Vector2 movement;
     Plane plane;
 
-    void Start(){
-        plane = new Plane( Vector3.up, -rb.position.y);        
+    void Start()
+    {
+        plane = new Plane(Vector3.up, -rb.position.y);
     }
 
     void FixedUpdate()
@@ -32,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
             lookDir -= rb.position;
 
             float angle = -Mathf.Atan2(lookDir.z, lookDir.x) * Mathf.Rad2Deg;
-            rb.MoveRotation( Quaternion.Euler(new Vector3(0, angle, 0)));
+            rb.MoveRotation(Quaternion.Euler(new Vector3(0, angle, 0)));
         }
     }
 
@@ -53,6 +55,18 @@ public class PlayerMovement : MonoBehaviour
         forward *= movement.y;
         right *= movement.x;
 
-        rb.MovePosition(rb.position + (forward + right) * movementSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + (forward + right).normalized * movementSpeed * Time.fixedDeltaTime);
     }
+
+    public void TakeDamage(float damage)
+    {
+        print("damage taken");
+        health -= damage;
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+            print("Player is dead");
+        }
+    }
+
 }
