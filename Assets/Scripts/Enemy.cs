@@ -12,12 +12,6 @@ public class Enemy : MonoBehaviour
     public float attackCooldown;
     public float movementSpeed;
 
-    // public float activeTime;
-    // public float restTime;
-    // public float projectileSpeed;
-    // public int movementType;
-    // public int weaponTipe;
-
     private float cooldown = 0;
 
     void Start()

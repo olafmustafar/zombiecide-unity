@@ -11,9 +11,10 @@ public class BoardManager : MonoBehaviour
     public int height = 10;
     public GameObject floor;
     public GameObject wall;
+    public GameObject enemy;
 
     private Transform boardHolder;
-    private Transform floorTransform;// = floor.GetComponent<Transform>();
+    private Transform floorTransform;
 
 
     public void SetupScene(int level)
@@ -30,7 +31,6 @@ public class BoardManager : MonoBehaviour
         {
             for (int x = 0; x < width; ++x)
             {
-
                 int tile = matrix[x][y];
                 if (tile != ZombieTiles.EMPTY_TILE)
                 {
@@ -44,14 +44,38 @@ public class BoardManager : MonoBehaviour
         }
 
         Wall[] walls = zt.GetWalls();
-        Vector3 offset = floor.transform.localScale*5;
+        Vector3 offset = floorTransform.localScale * 5;
+        offset.y = 0;
+        Vector3 floorScale = floorTransform.localScale * 10;
 
         foreach (Wall pos in walls)
         {
-            GameObject wallObject = Instantiate(wall, new Vector3(pos.a.x - offset.x, 0f, pos.a.y - offset.z), Quaternion.identity);
+            Vector3 origin = new Vector3(pos.a.x, 0f, pos.a.y);
+            origin.Scale(floorScale);
+            origin -= offset;
+            GameObject wallObject = Instantiate(wall, origin, Quaternion.identity);
+
             Stretch2Target stretch2Target = wallObject.GetComponent<Stretch2Target>();
-            stretch2Target.target = new Vector3(pos.b.x - offset.x, 0f, pos.b.y - offset.z);
+
+            Vector3 target = new Vector3(pos.b.x, 0f, pos.b.y);
+            target.Scale(floorScale);
+            target -= offset;
+            stretch2Target.target = target;
+
             wallObject.transform.SetParent(boardHolder);
         }
+
+        InstantiateEnemy(new Vector3(0,0,0), 20, 1, 50, 20);
+    }
+
+    void InstantiateEnemy(Vector3 pos, float health, float damage, float attackCooldown, float movementSpeed )
+    {
+        GameObject instanse = Instantiate(enemy, pos, Quaternion.identity);
+
+        Enemy enemyScript = instanse.GetComponent<Enemy>();
+        enemyScript.health = health;
+        enemyScript.damage = damage;
+        enemyScript.attackCooldown = attackCooldown;
+        enemyScript.movementSpeed = movementSpeed;
     }
 }
