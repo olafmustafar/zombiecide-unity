@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed;
     public float health;
     public Camera cam;
+    // public float hint;
 
     Vector2 movement;
     Plane plane;

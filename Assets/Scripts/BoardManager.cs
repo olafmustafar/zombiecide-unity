@@ -1,8 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
+// using System;
+// using System.Collections;
+// using System.Collections.Generic;
+// using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class BoardManager : MonoBehaviour
 {
@@ -12,10 +13,15 @@ public class BoardManager : MonoBehaviour
     public GameObject floor;
     public GameObject wall;
     public GameObject enemy;
+    public NavMeshSurface surface;
 
     private Transform boardHolder;
     private Transform floorTransform;
 
+    void Start(){
+        surface = GameObject.FindObjectOfType<NavMeshSurface>();
+        surface.BuildNavMesh();
+    }
 
     public void SetupScene(int level)
     {
@@ -64,8 +70,8 @@ public class BoardManager : MonoBehaviour
 
             wallObject.transform.SetParent(boardHolder);
         }
+        // InstantiateEnemy(new Vector3(0,0,0), 20, 1, 50, 20);
 
-        InstantiateEnemy(new Vector3(0,0,0), 20, 1, 50, 20);
     }
 
     void InstantiateEnemy(Vector3 pos, float health, float damage, float attackCooldown, float movementSpeed )
