@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4082968351674351923}
   - component: {fileID: 4082968351674351920}
   - component: {fileID: 4082968351674351921}
-  - component: {fileID: 4082968351674351884}
   - component: {fileID: 4082968351674351885}
+  - component: {fileID: 4082968351674351884}
   - component: {fileID: 6034418541818130922}
   m_Layer: 3
   m_Name: Player
@@ -101,22 +101,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4082968351674351884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4082968351674351926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11d2069abc0aa8bf98c09a0cf385a427, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 4082968351674351885}
-  movementSpeed: 5
-  health: 1000
-  cam: {fileID: 0}
 --- !u!54 &4082968351674351885
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -133,6 +117,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &4082968351674351884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4082968351674351926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11d2069abc0aa8bf98c09a0cf385a427, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 4082968351674351885}
+  movementSpeed: 20
+  health: 1000
+  cam: {fileID: 0}
 --- !u!114 &6034418541818130922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 4233326094714283320}
   bulletPrefab: {fileID: 950884161111569246, guid: d9104d14eff7274f9a04454c34d761fb, type: 3}
-  bulletForce: 20
+  bulletForce: 2000
 --- !u!1 &7659319544498687119
 GameObject:
   m_ObjectHideFlags: 0

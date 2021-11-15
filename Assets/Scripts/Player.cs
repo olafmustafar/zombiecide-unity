@@ -1,14 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public Rigidbody rb;
     public float movementSpeed;
     public float health;
     public Camera cam;
     // public float hint;
+    [HideInInspector] public float soundLevel = 0;
+    [HideInInspector] public Vector2 position = new Vector2(0,0);
 
     Vector2 movement;
     Plane plane;
@@ -20,11 +23,22 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        MovePlayer();
-        RotatePlayer();
+        Move();
+        MakeSound();
+        Rotate();
+        position.Set(rb.position.x, rb.position.z);
     }
 
-    void RotatePlayer()
+    private void MakeSound()
+    {
+        if( rb.velocity.magnitude > 0 ){
+            soundLevel = 5;
+        } else {
+            soundLevel = 0;
+        }
+    }
+
+    void Rotate()
     {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         float distanceToPlane;
@@ -39,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void MovePlayer()
+    void Move()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");

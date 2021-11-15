@@ -74,7 +74,7 @@ public class BoardManager : MonoBehaviour
 
     }
 
-    void InstantiateEnemy(Vector3 pos, float health, float damage, float attackCooldown, float movementSpeed )
+    void InstantiateEnemy(Vector3 pos, float health, float damage, float attackCooldown, float velocity )
     {
         GameObject instanse = Instantiate(enemy, pos, Quaternion.identity);
 
@@ -82,6 +82,6 @@ public class BoardManager : MonoBehaviour
         enemyScript.health = health;
         enemyScript.damage = damage;
         enemyScript.attackCooldown = attackCooldown;
-        enemyScript.movementSpeed = movementSpeed;
+        enemyScript.velocity = velocity;
     }
 }
