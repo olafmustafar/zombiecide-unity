@@ -74,14 +74,14 @@ public class BoardManager : MonoBehaviour
 
     }
 
-    void InstantiateEnemy(Vector3 pos, float health, float damage, float attackCooldown, float velocity )
-    {
-        GameObject instanse = Instantiate(enemy, pos, Quaternion.identity);
+    // void InstantiateEnemy(Vector3 pos, float health, float damage, float attackCooldown, float velocity )
+    // {
+    //     GameObject instanse = Instantiate(enemy, pos, Quaternion.identity);
 
-        Enemy enemyScript = instanse.GetComponent<Enemy>();
-        enemyScript.health = health;
-        enemyScript.damage = damage;
-        enemyScript.attackCooldown = attackCooldown;
-        enemyScript.velocity = velocity;
-    }
+    //     Enemy enemyScript = instanse.GetComponent<Enemy>();
+    //     enemyScript.health = health;
+    //     enemyScript.damage = damage;
+    //     enemyScript.attackCooldown = attackCooldown;
+    //     enemyScript.velocity = velocity;
+    // }
 }

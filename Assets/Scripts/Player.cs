@@ -11,10 +11,15 @@ public class Player : MonoBehaviour
     public Camera cam;
     // public float hint;
     [HideInInspector] public float soundLevel = 0;
-    [HideInInspector] public Vector2 position = new Vector2(0,0);
+    [HideInInspector] public Vector2 position;
 
     Vector2 movement;
     Plane plane;
+
+    void Awake()
+    {
+        position = new Vector2(rb.position.x, rb.position.y);
+    }
 
     void Start()
     {
@@ -23,18 +28,21 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        Move();
-        MakeSound();
-        Rotate();
         position.Set(rb.position.x, rb.position.z);
+        Move();
+        Rotate();
+        MakeSound();
     }
 
     private void MakeSound()
     {
-        if( rb.velocity.magnitude > 0 ){
-            soundLevel = 5;
-        } else {
-            soundLevel = 0;
+        if (Input.GetAxisRaw("Horizontal") > 0 || Input.GetAxisRaw("Vertical") > 0)
+        {
+            soundLevel = 50;
+        }
+        else
+        {
+            soundLevel = 50;
         }
     }
 

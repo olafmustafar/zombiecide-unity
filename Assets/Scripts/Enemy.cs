@@ -2,59 +2,94 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, Agent
 {
     public float health;
     public float damage;
     public float attackCooldown;
-    public float velocity;
 
-    [HideInInspector] public Vector2 targetPosition;
-    [HideInInspector] public Vector2 currentPosition;
-    [HideInInspector] public float pBest = -1;
-    [HideInInspector] public Vector2 pBestPosition;
+    public GameObject target;
 
-    Rigidbody rb;
+    //Agent interface
+    [HideInInspector] public Vector2 targetPosition { get; set; }
+    [HideInInspector] public Vector2 currentPosition { get; set; }
+    [HideInInspector] public float pBest { get; set; }
+    [HideInInspector] public Vector2 pBestPosition { get; set; }
+    [HideInInspector] public Vector2 inertia { get; set; }
+
     Player player;
+    Rigidbody rb;
+    float lastSqrMag;
+    GameObject targetInstance;
 
     private float cooldown = 0;
 
-    public float getSoundLevel()
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+        currentPosition = new Vector2(rb.position.x, rb.position.z);
+        targetPosition = new Vector2(rb.position.x, rb.position.z);
+        lastSqrMag = Mathf.Infinity;
+    }
+
+    void Start()
+    {
+        player = GameObject.Find("Player").GetComponent<Player>();
+    }
+
+    void FixedUpdate()
+    {
+
+        currentPosition = new Vector2(rb.position.x, rb.position.z);
+
+        if ( !targetInstance || !targetInstance.activeInHierarchy)
+        {
+            print("create");
+            targetInstance = Instantiate( target,new Vector3( targetPosition.x, rb.position.y , targetPosition.y ) , Quaternion.identity);
+        }
+
+        Vector2 targetVector = (targetPosition - currentPosition);
+
+        if (targetVector == Vector2.zero || targetVector.magnitude <= 0.1)
+        {
+            rb.position = new Vector3(targetPosition.x, rb.position.y, targetPosition.y);
+            rb.velocity = Vector3.zero;
+            print("destroyed");
+            if( targetInstance ){
+                Destroy(targetInstance);
+            }
+        }
+        else
+        {
+            Vector3 directionalVector = targetVector.normalized * inertia.magnitude;
+            rb.velocity = new Vector3(directionalVector.x, 0, directionalVector.y);
+
+            print( rb.velocity + " | " + inertia );
+        }
+        
+        Rotate();
+        updateCooldown();
+
+    }
+
+    public float getFitness()
     {
         float distance = Vector2.Distance(player.position, currentPosition);
         return Mathf.Max(player.soundLevel - distance, 0);
     }
 
-    void Awake(){
-        Rigidbody rb = GetComponent<Rigidbody>();
-        targetPosition.Set( rb.position.x, rb.position.z );
-        currentPosition.Set( rb.position.x, rb.position.z );
-    }
-    
-    void Start()
-    {
-        GameObject playerObj = GameObject.Find("Player");
-        player = playerObj.GetComponent<Player>();
-    }
-
-    void FixedUpdate()
-    {
-        if (!player)
-        {
-            return;
-        }
-
-        Vector3 lookDir = new Vector3(targetPosition.x, 0, targetPosition.y) - rb.position;
-        float angle = -Mathf.Atan2(lookDir.z, lookDir.x) * Mathf.Rad2Deg;
+    void Rotate(){
+        Vector2 lookDir = targetPosition - currentPosition;
+        float angle = -Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
         rb.MoveRotation(Quaternion.Euler(new Vector3(0, angle, 0)));
-        rb.MovePosition(rb.position + (lookDir.normalized * velocity * Time.fixedDeltaTime));
+    }
 
+    void updateCooldown()
+    {
         if (cooldown > 0)
         {
             cooldown -= Time.fixedDeltaTime;
         }
-
-        currentPosition.Set(-rb.position.x, -rb.position.z);
     }
 
     void OnTriggerEnter(Collider collider)

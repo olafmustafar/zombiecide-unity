@@ -1,6 +1,16 @@
 using System.Linq;
 using UnityEngine;
 
+public interface Agent
+{
+    Vector2 targetPosition { get; set; }
+    Vector2 currentPosition { get; set; }
+    float pBest { get; set; }
+    Vector2 pBestPosition { get; set; }
+    Vector2 inertia { get; set; }
+    float getFitness();
+};
+
 public class EnemyAIManager : MonoBehaviour
 {
     [Range(0.0f, 1.0f)] public float inertiaWeight = 0.9f;
@@ -10,7 +20,7 @@ public class EnemyAIManager : MonoBehaviour
     public float socialConstant = 2f;
 
     public Player player;
-    public Enemy[] enemies;
+    public Agent[] enemies;
 
     float gBest = -1;
     Vector2 gBestPosition = new Vector2(0, 0);
@@ -23,11 +33,18 @@ public class EnemyAIManager : MonoBehaviour
         enemies = enemiesObjects.Select(e => e.GetComponent<Enemy>()).ToArray();
     }
 
-    void Update()
+    int lastFrameCount = 0;
+
+    void FixedUpdate()
     {
-        foreach (Enemy e in enemies)
+        foreach (Agent e in enemies)
         {
-            float fitness = e.getSoundLevel();
+            if (e.currentPosition != e.targetPosition)
+            {
+                continue;
+            }
+
+            float fitness = e.getFitness();
             if (fitness > e.pBest)
             {
                 e.pBest = fitness;
@@ -40,16 +57,23 @@ public class EnemyAIManager : MonoBehaviour
                 gBestPosition = e.currentPosition;
             }
 
-            print( e.currentPosition );
-            e.targetPosition = e.currentPosition + gBestPosition + e.pBestPosition;
+            // if( e.inertia == Vector2.zero ){
+            e.inertia = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
+            // }
 
+            Vector2 inertia = inertiaWeight * e.inertia;
 
-            Vector2 inertia = inertiaWeight * (e.currentPosition - e.targetPosition);
-            Vector2 cognitiveComponent = (cognitiveConstant * Random.Range(0, 1) * (e.currentPosition - e.pBestPosition));
-            Vector2 socialComponent = (socialConstant * Random.Range(0, 1) * (e.currentPosition - e.pBestPosition));
-            e.velocity = (inertia + cognitiveComponent + socialComponent).magnitude;
+            Vector2 cognitiveComponent = cognitiveConstant * Random.Range(0f, 1f) * (e.pBestPosition - e.currentPosition);
+            Vector2 socialComponent = socialConstant * Random.Range(0f, 1f) * (e.pBestPosition - e.currentPosition);
 
-            inertiaWeight -= inertiaWeightDecay;
+            e.targetPosition = e.currentPosition + e.inertia;
+
+            e.inertia = (inertia + cognitiveComponent + socialComponent);
+            
+            int frames = Time.frameCount;
+            // print( "TEST > " + ((frames - lastFrameCount) / e.targetPosition.magnitude) );
+            lastFrameCount = frames;
+            // inertiaWeight -= inertiaWeightDecay;
         }
     }
 }
