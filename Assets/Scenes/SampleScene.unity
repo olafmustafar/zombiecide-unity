@@ -801,6 +801,14 @@ PrefabInstance:
       propertyPath: velocity
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 717991211031730137, guid: fee4595addd83b2fd9417916297301bc, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292967582970849689, guid: fee4595addd83b2fd9417916297301bc, type: 3}
+      propertyPath: m_Constraints
+      value: 84
+      objectReference: {fileID: 0}
     - target: {fileID: 4292967582970849689, guid: fee4595addd83b2fd9417916297301bc, type: 3}
       propertyPath: m_IsKinematic
       value: 0
@@ -811,7 +819,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5869825199071399425, guid: fee4595addd83b2fd9417916297301bc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.03
+      value: 3.77
       objectReference: {fileID: 0}
     - target: {fileID: 5869825199071399425, guid: fee4595addd83b2fd9417916297301bc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -819,7 +827,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5869825199071399425, guid: fee4595addd83b2fd9417916297301bc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 5869825199071399425, guid: fee4595addd83b2fd9417916297301bc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -847,6 +855,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5869825199071399425, guid: fee4595addd83b2fd9417916297301bc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5869825199071399436, guid: fee4595addd83b2fd9417916297301bc, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5869825199071399437, guid: fee4595addd83b2fd9417916297301bc, type: 3}

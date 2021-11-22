@@ -57,23 +57,23 @@ public class EnemyAIManager : MonoBehaviour
                 gBestPosition = e.currentPosition;
             }
 
-            // if( e.inertia == Vector2.zero ){
-            e.inertia = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
-            // }
+            if( e.inertia == Vector2.zero ){
+                e.inertia = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+            }
 
-            Vector2 inertia = inertiaWeight * e.inertia;
+            e.pBestPosition = new Vector2(0, 0);
+            gBestPosition = new Vector2(0, 0);
 
+            Vector2 inertia = e.inertia * inertiaWeight;
             Vector2 cognitiveComponent = cognitiveConstant * Random.Range(0f, 1f) * (e.pBestPosition - e.currentPosition);
-            Vector2 socialComponent = socialConstant * Random.Range(0f, 1f) * (e.pBestPosition - e.currentPosition);
+            Vector2 socialComponent = socialConstant * Random.Range(0f, 1f) * (gBestPosition - e.currentPosition);
 
+            print("inertia " + e.inertia + "\t| cognitive " + cognitiveComponent + "\t| social " + socialComponent);
+
+            e.inertia = inertia + cognitiveComponent + socialComponent;
             e.targetPosition = e.currentPosition + e.inertia;
 
-            e.inertia = (inertia + cognitiveComponent + socialComponent);
-            
-            int frames = Time.frameCount;
-            // print( "TEST > " + ((frames - lastFrameCount) / e.targetPosition.magnitude) );
-            lastFrameCount = frames;
-            // inertiaWeight -= inertiaWeightDecay;
+            inertiaWeight = Mathf.Max(inertiaWeight - inertiaWeightDecay, minimalInertiaWeight);
         }
     }
 }

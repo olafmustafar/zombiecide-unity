@@ -40,36 +40,54 @@ public class Enemy : MonoBehaviour, Agent
     void FixedUpdate()
     {
 
-        currentPosition = new Vector2(rb.position.x, rb.position.z);
+        currentPosition = VectorConverter.Convert(rb.position);
 
-        if ( !targetInstance || !targetInstance.activeInHierarchy)
+        if (!targetInstance || !targetInstance.activeInHierarchy)
         {
-            print("create");
-            targetInstance = Instantiate( target,new Vector3( targetPosition.x, rb.position.y , targetPosition.y ) , Quaternion.identity);
+            targetInstance = Instantiate(target, new Vector3(targetPosition.x, rb.position.y, targetPosition.y), Quaternion.identity);
         }
 
         Vector2 targetVector = (targetPosition - currentPosition);
 
-        if (targetVector == Vector2.zero || targetVector.magnitude <= 0.1)
+        Vector2 newPos = (targetVector.normalized * inertia.magnitude * Time.fixedDeltaTime);
+
+
+        if (newPos.sqrMagnitude >= targetVector.sqrMagnitude)
         {
-            rb.position = new Vector3(targetPosition.x, rb.position.y, targetPosition.y);
+            // print( newPos) + "|" + targetVector +"\t norm"+ targetVector.normalized );
+            print("2 | np: " + newPos + " | tv: " + targetVector + "\ncp: " + currentPosition + " | tp: " + targetPosition);
+            rb.position = (VectorConverter.Convert(targetPosition));
             rb.velocity = Vector3.zero;
-            print("destroyed");
-            if( targetInstance ){
+            if (targetInstance)
+            {
                 Destroy(targetInstance);
             }
         }
         else
         {
-            Vector3 directionalVector = targetVector.normalized * inertia.magnitude;
-            rb.velocity = new Vector3(directionalVector.x, 0, directionalVector.y);
-
-            print( rb.velocity + " | " + inertia );
+            print("1 | np: " + newPos + " | tv: " + targetVector + "\ncp: " + currentPosition + " | tp: " + targetPosition);
+            rb.MovePosition(VectorConverter.Convert(currentPosition + newPos, rb.position.y));
         }
-        
+
+
+
+        // if (targetVector == Vector2.zero || targetVector.magnitude <= 0.1)
+        // {
+        //     rb.position = new Vector3(targetPosition.x, rb.position.y, targetPosition.y);
+        //     rb.velocity = Vector3.zero;
+        //     if (targetInstance)
+        //     {
+        //         Destroy(targetInstance);
+        //     }
+        // }
+        // else
+        // {
+        //     Vector2 newPos = currentPosition + (targetVector.normalized * inertia.magnitude * Time.fixedDeltaTime);
+        //     rb.MovePosition( VectorConverter.Convert( newPos, rb.position.y ));            
+        // }
+
         Rotate();
         updateCooldown();
-
     }
 
     public float getFitness()
@@ -78,7 +96,8 @@ public class Enemy : MonoBehaviour, Agent
         return Mathf.Max(player.soundLevel - distance, 0);
     }
 
-    void Rotate(){
+    void Rotate()
+    {
         Vector2 lookDir = targetPosition - currentPosition;
         float angle = -Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
         rb.MoveRotation(Quaternion.Euler(new Vector3(0, angle, 0)));
@@ -96,7 +115,6 @@ public class Enemy : MonoBehaviour, Agent
     {
         if (collider.gameObject.tag == "Bullet")
         {
-            Destroy(collider.gameObject);
             health -= 10;
             if (health <= 0)
             {
@@ -104,9 +122,10 @@ public class Enemy : MonoBehaviour, Agent
             }
 
         }
+
     }
 
-    void OnTriggerStay(Collider collider)
+    void OnCollisionStay(Collision collider)
     {
         if (collider.gameObject.tag == "Player")
         {
