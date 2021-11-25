@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour, Agent
     public float health;
     public float damage;
     public float attackCooldown;
+    public float velocity;
 
     public GameObject target;
 
@@ -19,7 +20,6 @@ public class Enemy : MonoBehaviour, Agent
 
     Player player;
     Rigidbody rb;
-    float lastSqrMag;
     GameObject targetInstance;
 
     private float cooldown = 0;
@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour, Agent
         rb = GetComponent<Rigidbody>();
         currentPosition = new Vector2(rb.position.x, rb.position.z);
         targetPosition = new Vector2(rb.position.x, rb.position.z);
-        lastSqrMag = Mathf.Infinity;
+        pBest = -1;
     }
 
     void Start()
@@ -39,53 +39,9 @@ public class Enemy : MonoBehaviour, Agent
 
     void FixedUpdate()
     {
-
         currentPosition = VectorConverter.Convert(rb.position);
-
-        if (!targetInstance || !targetInstance.activeInHierarchy)
-        {
-            targetInstance = Instantiate(target, new Vector3(targetPosition.x, rb.position.y, targetPosition.y), Quaternion.identity);
-        }
-
-        Vector2 targetVector = (targetPosition - currentPosition);
-
-        Vector2 newPos = (targetVector.normalized * inertia.magnitude * Time.fixedDeltaTime);
-
-
-        if (newPos.sqrMagnitude >= targetVector.sqrMagnitude)
-        {
-            // print( newPos) + "|" + targetVector +"\t norm"+ targetVector.normalized );
-            print("2 | np: " + newPos + " | tv: " + targetVector + "\ncp: " + currentPosition + " | tp: " + targetPosition);
-            rb.position = (VectorConverter.Convert(targetPosition));
-            rb.velocity = Vector3.zero;
-            if (targetInstance)
-            {
-                Destroy(targetInstance);
-            }
-        }
-        else
-        {
-            print("1 | np: " + newPos + " | tv: " + targetVector + "\ncp: " + currentPosition + " | tp: " + targetPosition);
-            rb.MovePosition(VectorConverter.Convert(currentPosition + newPos, rb.position.y));
-        }
-
-
-
-        // if (targetVector == Vector2.zero || targetVector.magnitude <= 0.1)
-        // {
-        //     rb.position = new Vector3(targetPosition.x, rb.position.y, targetPosition.y);
-        //     rb.velocity = Vector3.zero;
-        //     if (targetInstance)
-        //     {
-        //         Destroy(targetInstance);
-        //     }
-        // }
-        // else
-        // {
-        //     Vector2 newPos = currentPosition + (targetVector.normalized * inertia.magnitude * Time.fixedDeltaTime);
-        //     rb.MovePosition( VectorConverter.Convert( newPos, rb.position.y ));            
-        // }
-
+        MarkTargePosition();
+        Move();
         Rotate();
         updateCooldown();
     }
@@ -94,6 +50,38 @@ public class Enemy : MonoBehaviour, Agent
     {
         float distance = Vector2.Distance(player.position, currentPosition);
         return Mathf.Max(player.soundLevel - distance, 0);
+    }
+
+    void MarkTargePosition()
+    {
+        if (!targetInstance || !targetInstance.activeInHierarchy)
+        {
+            targetInstance = Instantiate(target, VectorConverter.Convert(targetPosition, rb.position.y), Quaternion.identity);
+        }
+        else if (currentPosition == targetPosition)
+        {
+            Destroy(targetInstance);
+        }
+    }
+
+    void Move()
+    {
+        Vector2 targetVector = (targetPosition - currentPosition);
+        Vector2 newPos = (targetVector.normalized * Mathf.Min(inertia.magnitude, velocity) * Time.fixedDeltaTime);
+
+
+        if (Mathf.Approximately(newPos.sqrMagnitude, targetVector.sqrMagnitude) || newPos.sqrMagnitude > targetVector.sqrMagnitude)
+        {
+            print("2");
+            rb.MovePosition(VectorConverter.Convert(currentPosition + targetVector, rb.position.y));
+        }
+        else
+        {
+            rb.MovePosition(VectorConverter.Convert(currentPosition + newPos, rb.position.y));
+            Vector2 nnPos = currentPosition + newPos;
+            newPos = currentPosition - targetPosition;
+            print($"1 {newPos.sqrMagnitude} < {targetVector.sqrMagnitude}\n np:{newPos.x} - {newPos.y} \n tp:{targetPosition.x} - {targetPosition.y}\n cp:{currentPosition.x} - {currentPosition.y} \nnnps:{nnPos.x} - {nnPos.y}");
+        }
     }
 
     void Rotate()

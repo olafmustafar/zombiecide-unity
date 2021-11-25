@@ -48,8 +48,8 @@ MonoBehaviour:
   minimalInertiaWeight: 0.4
   cognitiveConstant: 2
   socialConstant: 2
+  gBestPositionTarget: {fileID: 3911184168984712841, guid: f05b796896fcb58d9a587d246acf9dda, type: 3}
   player: {fileID: 0}
-  enemies: []
 --- !u!1 &6964935815413390286
 GameObject:
   m_ObjectHideFlags: 0
