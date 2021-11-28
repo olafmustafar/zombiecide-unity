@@ -40,7 +40,6 @@ public class Enemy : MonoBehaviour, Agent
     void FixedUpdate()
     {
         currentPosition = VectorConverter.Convert(rb.position);
-        MarkTargePosition();
         Move();
         Rotate();
         updateCooldown();
@@ -50,18 +49,6 @@ public class Enemy : MonoBehaviour, Agent
     {
         float distance = Vector2.Distance(player.position, currentPosition);
         return Mathf.Max(player.soundLevel - distance, 0);
-    }
-
-    void MarkTargePosition()
-    {
-        if (!targetInstance || !targetInstance.activeInHierarchy)
-        {
-            targetInstance = Instantiate(target, VectorConverter.Convert(targetPosition, rb.position.y), Quaternion.identity);
-        }
-        else if (currentPosition == targetPosition)
-        {
-            Destroy(targetInstance);
-        }
     }
 
     void Move()

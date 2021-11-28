@@ -48,7 +48,9 @@ MonoBehaviour:
   minimalInertiaWeight: 0.4
   cognitiveConstant: 2
   socialConstant: 2
+  fitnessDecay: 0.01
   gBestPositionTarget: {fileID: 3911184168984712841, guid: f05b796896fcb58d9a587d246acf9dda, type: 3}
+  pBestPositionTarget: {fileID: 2872567311602255507, guid: 0ceb873f6d00da1e1b442f1baf7c2235, type: 3}
   player: {fileID: 0}
 --- !u!1 &6964935815413390286
 GameObject:
