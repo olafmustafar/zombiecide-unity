@@ -23,6 +23,13 @@ public struct Wall
     public Point b;
 }
 
+[StructLayout(LayoutKind.Sequential)]
+public struct ZtEnemy
+{
+    public Point position;
+}
+
+
 public class ZombieTiles
 {
 
@@ -33,7 +40,10 @@ public class ZombieTiles
     
     [DllImport(zombietilesdll, CallingConvention = CallingConvention.Cdecl)] 
     private static extern void free_dungeon(IntPtr dungeon);
-    
+
+    [DllImport(zombietilesdll, CallingConvention = CallingConvention.Cdecl)] 
+    private static extern void generate_dungeon_enemies(IntPtr dungeon, out int size, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] out ZtEnemy[] array);
+
     [DllImport(zombietilesdll, CallingConvention = CallingConvention.Cdecl)] 
     private static extern void generate_wall_array(IntPtr dungeon, out int size, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] out Wall[] array);
     
@@ -46,6 +56,7 @@ public class ZombieTiles
     public static readonly int EMPTY_TILE = -1;
     private IntPtr dungeon;
     private Wall[] walls;
+    private ZtEnemy[] enemies;
 
     ~ZombieTiles()
     {
@@ -58,11 +69,19 @@ public class ZombieTiles
 
         int size;
         generate_wall_array(dungeon, out size, out walls);
+
+        int size2;
+        generate_dungeon_enemies( dungeon, out size2, out enemies);
     }
 
     public Wall[] GetWalls()
     {
         return walls;
+    }
+
+    public ZtEnemy[] GetEnemies()
+    {
+        return enemies;
     }
 
     public int[][] GetDungeonMatrix()

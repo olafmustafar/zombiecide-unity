@@ -78,7 +78,7 @@ public class Player : MonoBehaviour
         forward *= movement.y;
         right *= movement.x;
 
-        rb.MovePosition(rb.position + (forward + right).normalized * movementSpeed * Time.fixedDeltaTime);
+        rb.velocity = (forward + right).normalized * movementSpeed;
     }
 
     public void TakeDamage(float damage)

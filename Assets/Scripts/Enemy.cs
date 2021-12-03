@@ -9,8 +9,6 @@ public class Enemy : MonoBehaviour, Agent
     public float attackCooldown;
     public float velocity;
 
-    public GameObject target;
-
     //Agent interface
     [HideInInspector] public Vector2 targetPosition { get; set; }
     [HideInInspector] public Vector2 currentPosition { get; set; }
@@ -54,21 +52,10 @@ public class Enemy : MonoBehaviour, Agent
     void Move()
     {
         Vector2 targetVector = (targetPosition - currentPosition);
-        Vector2 newPos = (targetVector.normalized * Mathf.Min(inertia.magnitude, velocity) * Time.fixedDeltaTime);
-
-
-        if (Mathf.Approximately(newPos.sqrMagnitude, targetVector.sqrMagnitude) || newPos.sqrMagnitude > targetVector.sqrMagnitude)
-        {
-            print("2");
-            rb.MovePosition(VectorConverter.Convert(currentPosition + targetVector, rb.position.y));
-        }
-        else
-        {
-            rb.MovePosition(VectorConverter.Convert(currentPosition + newPos, rb.position.y));
-            Vector2 nnPos = currentPosition + newPos;
-            newPos = currentPosition - targetPosition;
-            print($"1 {newPos.sqrMagnitude} < {targetVector.sqrMagnitude}\n np:{newPos.x} - {newPos.y} \n tp:{targetPosition.x} - {targetPosition.y}\n cp:{currentPosition.x} - {currentPosition.y} \nnnps:{nnPos.x} - {nnPos.y}");
-        }
+        rb.velocity = VectorConverter.Convert(
+            targetVector.sqrMagnitude < (velocity * velocity)
+            ? targetVector
+            : targetVector.normalized * velocity);
     }
 
     void Rotate()

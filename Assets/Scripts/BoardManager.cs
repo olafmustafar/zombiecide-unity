@@ -15,24 +15,31 @@ public class BoardManager : MonoBehaviour
     public GameObject enemy;
     public NavMeshSurface surface;
 
-    private Transform boardHolder;
-    private Transform floorTransform;
+    Transform boardHolder;
+    Transform floorTransform;
 
-    void Start(){
+    void Start()
+    {
         surface = GameObject.FindObjectOfType<NavMeshSurface>();
         surface.BuildNavMesh();
     }
 
     public void SetupScene(int level)
     {
-        floorTransform = floor.GetComponent<Transform>();
 
+        floorTransform = floor.GetComponent<Transform>();
+        boardHolder = new GameObject("Board").transform;
+        
         ZombieTiles zt = new ZombieTiles();
         zt.GenerateDugeon(width, height);
 
-        int[][] matrix = zt.GetDungeonMatrix();
+        PlaceTiles(zt.GetDungeonMatrix());
+        PlaceWalls(zt.GetWalls());
+        PlaceEnemies(zt.GetEnemies());
+    }
 
-        boardHolder = new GameObject("Board").transform;
+    void PlaceTiles(int[][] matrix)
+    {
         for (int y = 0; y < height; ++y)
         {
             for (int x = 0; x < width; ++x)
@@ -41,18 +48,19 @@ public class BoardManager : MonoBehaviour
                 if (tile != ZombieTiles.EMPTY_TILE)
                 {
                     Vector3 pos = new Vector3(x, 0f, y);
-                    pos = pos * 10;
-                    pos.Scale(floorTransform.localScale);
-                    GameObject tileObject = Instantiate(floor, pos, Quaternion.identity);
+                    pos.Scale( floorTransform.localScale );
+                    GameObject tileObject = Instantiate(floor, pos, Quaternion.Euler(90,0,0));
                     tileObject.transform.SetParent(boardHolder);
                 }
             }
         }
+    }
 
-        Wall[] walls = zt.GetWalls();
-        Vector3 offset = floorTransform.localScale * 5;
+    void PlaceWalls(Wall[] walls)
+    {
+        Vector3 offset = floorTransform.localScale * 0.5f;
         offset.y = 0;
-        Vector3 floorScale = floorTransform.localScale * 10;
+        Vector3 floorScale = floorTransform.localScale;
 
         foreach (Wall pos in walls)
         {
@@ -70,18 +78,23 @@ public class BoardManager : MonoBehaviour
 
             wallObject.transform.SetParent(boardHolder);
         }
-        // InstantiateEnemy(new Vector3(0,0,0), 20, 1, 50, 20);
-
     }
 
-    // void InstantiateEnemy(Vector3 pos, float health, float damage, float attackCooldown, float velocity )
-    // {
-    //     GameObject instanse = Instantiate(enemy, pos, Quaternion.identity);
+    void PlaceEnemies(ZtEnemy[] enemies)
+    {
+        foreach (ZtEnemy e in enemies)
+        {
+            Vector3 pos = new Vector3(e.position.x, 1f, e.position.y);
+            pos.Scale( floorTransform.localScale );
+            GameObject instance = Instantiate(enemy, pos, Quaternion.identity);
 
-    //     Enemy enemyScript = instanse.GetComponent<Enemy>();
-    //     enemyScript.health = health;
-    //     enemyScript.damage = damage;
-    //     enemyScript.attackCooldown = attackCooldown;
-    //     enemyScript.velocity = velocity;
-    // }
+            Enemy enemyScript = instance.GetComponent<Enemy>();
+            enemyScript.health = 100;
+            enemyScript.damage = 100;
+            enemyScript.attackCooldown = 5;
+            enemyScript.velocity = 0;
+
+            instance.transform.SetParent(boardHolder);
+        }
+    }
 }

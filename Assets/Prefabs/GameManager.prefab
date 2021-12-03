@@ -43,12 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c8f21c6dc82e0bea8cfcd8a5a32a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inertiaWeight: 0.9
+  inertiaW: 1
   inertiaWeightDecay: 0.01
   minimalInertiaWeight: 0.4
-  cognitiveConstant: 2
-  socialConstant: 2
-  fitnessDecay: 0.01
+  cognitiveC: 2
+  socialC: 1
+  fitnessDecay: 1
   gBestPositionTarget: {fileID: 3911184168984712841, guid: f05b796896fcb58d9a587d246acf9dda, type: 3}
   pBestPositionTarget: {fileID: 2872567311602255507, guid: 0ceb873f6d00da1e1b442f1baf7c2235, type: 3}
   player: {fileID: 0}
