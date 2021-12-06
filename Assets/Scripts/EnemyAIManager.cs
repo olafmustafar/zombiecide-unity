@@ -48,10 +48,6 @@ public class EnemyAIManager : MonoBehaviour
         foreach (Agent e in enemies)
         {
             ++i;
-            // if (e.currentPosition != e.targetPosition)
-            // {
-            //     continue;
-            // }
 
             float fitness = e.getFitness();
             if (fitness > e.pBest)
@@ -83,11 +79,11 @@ public class EnemyAIManager : MonoBehaviour
             e.inertia = inertia + cognitiveComponent + socialComponent;
             e.targetPosition = e.currentPosition + e.inertia;
 
-            e.pBest -= fitnessDecay;
+            e.pBest = Mathf.Max(e.pBest - fitnessDecay, 0);
         }
 
         inertiaW = Mathf.Max(inertiaW - (inertiaWeightDecay * Time.fixedDeltaTime), minimalInertiaWeight);
-        gBest -= fitnessDecay;
+        gBest = Mathf.Max(gBest - fitnessDecay, 0);
         print($"{i}: inertiaW = {inertiaW} | inertiaWeightDecay = {(inertiaWeightDecay * Time.fixedDeltaTime)}");
     }
 }

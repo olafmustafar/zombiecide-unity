@@ -84,7 +84,7 @@ public class BoardManager : MonoBehaviour
     {
         foreach (ZtEnemy e in enemies)
         {
-            Vector3 pos = new Vector3(e.position.x, 1f, e.position.y);
+            Vector3 pos = new Vector3(e.position.x, 0.5f, e.position.y);
             pos.Scale( floorTransform.localScale );
             GameObject instance = Instantiate(enemy, pos, Quaternion.identity);
 

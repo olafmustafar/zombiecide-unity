@@ -35,15 +35,10 @@ public class Player : MonoBehaviour
     }
 
     private void MakeSound()
-    {
-        if (Input.GetAxisRaw("Horizontal") > 0 || Input.GetAxisRaw("Vertical") > 0)
-        {
-            soundLevel = 50;
-        }
-        else
-        {
-            soundLevel = 50;
-        }
+    {   
+        soundLevel = (Input.GetAxisRaw("Horizontal") > 0 || Input.GetAxisRaw("Vertical") > 0)
+            ? 50
+            : 0;
     }
 
     void Rotate()

@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour, Agent
 {
@@ -8,6 +7,7 @@ public class Enemy : MonoBehaviour, Agent
     public float damage;
     public float attackCooldown;
     public float velocity;
+    public NavMeshPath path;
 
     //Agent interface
     [HideInInspector] public Vector2 targetPosition { get; set; }
@@ -51,7 +51,12 @@ public class Enemy : MonoBehaviour, Agent
 
     void Move()
     {
-        Vector2 targetVector = (targetPosition - currentPosition);
+        NavMesh.CalculatePath(currentPosition, targetPosition, NavMesh.AllAreas, path);
+        for (int i = 0; i < path.corners.Length - 1; i++){
+            Debug.DrawLine(path.corners[i], path.corners[i + 1], Color.red);
+        }
+            
+        Vector2 targetVector = ( targetPosition - currentPosition);
         rb.velocity = VectorConverter.Convert(
             targetVector.sqrMagnitude < (velocity * velocity)
             ? targetVector
