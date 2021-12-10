@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
     {   
         soundLevel = (Input.GetAxisRaw("Horizontal") > 0 || Input.GetAxisRaw("Vertical") > 0)
             ? 50
-            : 0;
+            : 50;
     }
 
     void Rotate()

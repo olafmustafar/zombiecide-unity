@@ -84,6 +84,6 @@ public class EnemyAIManager : MonoBehaviour
 
         inertiaW = Mathf.Max(inertiaW - (inertiaWeightDecay * Time.fixedDeltaTime), minimalInertiaWeight);
         gBest = Mathf.Max(gBest - fitnessDecay, 0);
-        print($"{i}: inertiaW = {inertiaW} | inertiaWeightDecay = {(inertiaWeightDecay * Time.fixedDeltaTime)}");
+        // print($"{i}: inertiaW = {inertiaW} | inertiaWeightDecay = {(inertiaWeightDecay * Time.fixedDeltaTime)}");
     }
 }
