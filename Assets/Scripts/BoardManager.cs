@@ -16,6 +16,7 @@ public class BoardManager : MonoBehaviour
     public NavMeshSurface surface;
 
     Transform boardHolder;
+    Transform enemiesHolder;
     Vector3 scale;
 
     void Start()
@@ -29,7 +30,6 @@ public class BoardManager : MonoBehaviour
 
         Transform floorTransform = floor.GetComponent<Transform>();
         scale = new Vector3(floorTransform.localScale.x, 1.0f, floorTransform.localScale.y);
-        print(scale);
         boardHolder = new GameObject("Board").transform;
 
         ZombieTiles zt = new ZombieTiles();
@@ -83,7 +83,8 @@ public class BoardManager : MonoBehaviour
 
     void PlaceEnemies(ZtEnemy[] enemies)
     {
-        int i = 0;
+        enemiesHolder = new GameObject("Enemies").transform;
+        
         foreach (ZtEnemy e in enemies)
         {
             Vector3 pos = new Vector3(e.position.x, 1f, e.position.y);
@@ -94,13 +95,8 @@ public class BoardManager : MonoBehaviour
             enemyScript.health = 100;
             enemyScript.damage = 100;
             enemyScript.attackCooldown = 5;
-            enemyScript.velocity = 0;
-            instance.transform.SetParent(boardHolder);
-            if (i == 2)
-            {
-                break;
-            }
-            i++;
+            enemyScript.velocity = 10;
+            instance.transform.SetParent(enemiesHolder);
         }
     }
 }

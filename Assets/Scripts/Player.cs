@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
 
     private void MakeSound()
     {   
-        soundLevel = (Input.GetAxisRaw("Horizontal") > 0 || Input.GetAxisRaw("Vertical") > 0)
+        soundLevel = (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
             ? 50
             : 50;
     }

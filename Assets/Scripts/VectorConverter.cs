@@ -23,10 +23,10 @@ public class VectorConverter
     {
         bool result = NavMesh.CalculatePath(VectorConverter.Convert(aPos, 0), VectorConverter.Convert(bPos, 0), NavMesh.AllAreas, path);
         
-        for (int i = 0; i < path.corners.Length - 1; i++)
-        {
-            Debug.DrawLine(path.corners[i], path.corners[i + 1], Color.red);
-        }
+        // for (int i = 0; i < path.corners.Length - 1; i++)
+        // {
+        //     Debug.DrawLine(path.corners[i], path.corners[i + 1], Color.red);
+        // }
 
         return result;
     }

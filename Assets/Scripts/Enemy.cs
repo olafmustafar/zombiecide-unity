@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour, Agent
     public float damage;
     public float attackCooldown;
     public float velocity;
+
     //Agent interface
     [HideInInspector] public Vector2 targetPosition { get; set; }
     [HideInInspector] public Vector2 currentPosition { get; set; }
@@ -24,8 +25,8 @@ public class Enemy : MonoBehaviour, Agent
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        currentPosition = new Vector2(rb.position.x, rb.position.z);
-        targetPosition = new Vector2(rb.position.x, rb.position.z);
+        currentPosition = VectorConverter.Convert(rb.position);
+        targetPosition = VectorConverter.Convert(rb.position);
         pBest = -1;
         path = new NavMeshPath();
     }
@@ -46,33 +47,24 @@ public class Enemy : MonoBehaviour, Agent
     public float getFitness()
     {
         float distance = Vector2.Distance(player.position, currentPosition);
-        return Mathf.Max(player.soundLevel - distance, 0);
+
+        float soundScore = Mathf.Max(player.soundLevel - distance, 0);
+
+        RaycastHit hit;
+        float visionScore = 0;
+        if ( Physics.Raycast(rb.position, player.rb.position - rb.position, out hit ) && hit.collider.CompareTag("Player") ) {
+            visionScore = Mathf.Max(50 - distance , 0);
+        }
+
+        print( $"{GetInstanceID()}: visionScore {visionScore} + soundScore {soundScore}" );
+
+        return visionScore + soundScore;
     }
 
     void Move()
     {
         Vector2 targetVector;
-
-        // NavMesh.CalculatePath(VectorConverter.Convert(currentPosition,0), VectorConverter.Convert(targetPosition,0), NavMesh.AllAreas, path);
-       
-        // print( $"{GetInstanceID().ToString()}: NavMesh.CalculatePath({VectorConverter.Convert(currentPosition,0)}, {VectorConverter.Convert(targetPosition,0)}, NavMesh.AllAreas, path);" );
-        // print( $"{GetInstanceID().ToString()}: path.corners.Length == {path.corners.Length} " );
-        // Color line;
-        
-        Debug.DrawLine(VectorConverter.Convert(currentPosition,2.1f), VectorConverter.Convert(targetPosition,2.1f), Color.green );
         targetVector = (targetPosition - currentPosition);
-        
-        // if (path.corners.Length > 0)
-        // {
-            // targetVector = (VectorConverter.Convert(path.corners[1]) - currentPosition);
-        //     line = Color.blue;
-        // }
-        // else
-        // {
-            // targetVector = (targetPosition - currentPosition);
-        //     line = Color.red;
-        // }
-
         rb.velocity = VectorConverter.Convert(targetVector.normalized * Mathf.Min(velocity, targetVector.magnitude));
     }
 

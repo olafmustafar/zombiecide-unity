@@ -23,21 +23,17 @@ public class EnemyAIManager : MonoBehaviour
 
     public GameObject gBestPositionTarget;
     public GameObject pBestPositionTarget;
-
     public Player player;
-    public Agent[] enemies;
-
     float gBest = -1;
     Vector2 gBestPosition = new Vector2(0, 0);
     GameObject gBestPositionTargetInstance;
     GameObject pBestPositionTargetInstance;
-
+    GameObject[] enemies;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 
-        GameObject[] enemiesObjects = GameObject.FindGameObjectsWithTag("Enemy");
-        enemies = enemiesObjects.Select(e => e.GetComponent<Enemy>()).ToArray();
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
         gBestPositionTargetInstance = Instantiate(gBestPositionTarget);
         pBestPositionTargetInstance = Instantiate(pBestPositionTarget);
     }
@@ -45,7 +41,12 @@ public class EnemyAIManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        foreach (Agent e in enemies)
+        Agent[] agents = enemies
+                           .Where(e => e != null)
+                           .Select(e => e.GetComponent<Enemy>())
+                           .ToArray();
+
+        foreach (Agent e in agents)
         {
             float fitness = e.getFitness();
             if (fitness > e.pBest)
@@ -67,9 +68,6 @@ public class EnemyAIManager : MonoBehaviour
                 e.inertia = new Vector2(Random.Range(-100f, 100f), Random.Range(-100f, 100f));
             }
 
-            // e.pBestPosition = new Vector2(5, 0);
-            // gBestPosition = new Vector2(5, 0);
-
             Vector2 inertia = e.inertia * inertiaW;
 
             NavMeshPath path = new NavMeshPath();
@@ -78,10 +76,9 @@ public class EnemyAIManager : MonoBehaviour
             if (e.currentPosition != e.pBestPosition)
             {
                 VectorConverter.CalculateNavmeshPath(e.currentPosition, e.pBestPosition, path);
-                print($"currPos: {e.currentPosition} | pbestPos: {e.pBestPosition}");
                 float pathSqrMagnitude = path.corners.Select(x => x.sqrMagnitude).Sum();
                 float distance = Mathf.Sqrt(pathSqrMagnitude);
-                cognitiveComponent = cognitiveC * Random.Range(0f, 1f) * distance * VectorConverter.Convert(path.corners[1]).normalized;
+                cognitiveComponent = cognitiveC * Random.Range(0f, 1f) * distance * (VectorConverter.Convert(path.corners[1]) - e.currentPosition).normalized;
             }
 
             Vector2 socialComponent = Vector2.zero;
@@ -90,11 +87,8 @@ public class EnemyAIManager : MonoBehaviour
                 VectorConverter.CalculateNavmeshPath(e.currentPosition, gBestPosition, path);
                 float pathSqrMagnitude = path.corners.Select(x => x.sqrMagnitude).Sum();
                 float distance = Mathf.Sqrt(pathSqrMagnitude);
-                socialComponent = socialC * Random.Range(0f, 1f) * distance * VectorConverter.Convert(path.corners[1]).normalized;
+                socialComponent = socialC * Random.Range(0f, 1f) * distance * (VectorConverter.Convert(path.corners[1]) - e.currentPosition).normalized;
             }
-
-            // Vector2 cognitiveComponent = cognitiveC * Random.Range(0f, 1f) * (e.pBestPosition - e.currentPosition);
-            // Vector2 socialComponent = socialC * Random.Range(0f, 1f) * (gBestPosition - e.currentPosition);
 
             e.inertia = inertia + cognitiveComponent + socialComponent;
             e.targetPosition = e.currentPosition + e.inertia;
@@ -104,6 +98,5 @@ public class EnemyAIManager : MonoBehaviour
 
         inertiaW = Mathf.Max(inertiaW - (inertiaWeightDecay * Time.fixedDeltaTime), minimalInertiaWeight);
         gBest = Mathf.Max(gBest - fitnessDecay, 0);
-        // print($"{i}: inertiaW = {inertiaW} | inertiaWeightDecay = {(inertiaWeightDecay * Time.fixedDeltaTime)}");
     }
 }
