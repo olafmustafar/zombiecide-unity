@@ -7,7 +7,6 @@ public class Enemy : MonoBehaviour, Agent
     public float damage;
     public float attackCooldown;
     public float velocity;
-
     //Agent interface
     [HideInInspector] public Vector2 targetPosition { get; set; }
     [HideInInspector] public Vector2 currentPosition { get; set; }
@@ -52,33 +51,29 @@ public class Enemy : MonoBehaviour, Agent
 
     void Move()
     {
-        NavMesh.CalculatePath(VectorConverter.Convert(currentPosition), VectorConverter.Convert(targetPosition), NavMesh.AllAreas, path);
-        // NavMesh.CalculatePath(currentPosition, targetPosition, NavMesh.AllAreas, path);
-
-        // print(VectorConverter.Convert(targetPosition));      
-
         Vector2 targetVector;
-        if (path.corners.Length > 0)
-        {
-            print( $"path.corners.Length > {path.corners.Length}" );
-            targetVector = (VectorConverter.Convert(path.corners[1]) - currentPosition);
-            Debug.DrawLine(VectorConverter.Convert(currentPosition, 2), VectorConverter.Convert((targetVector + currentPosition), 2), Color.blue );
-        }
-        else
-        {
-            targetVector = (targetPosition - currentPosition);
-            Debug.DrawLine(VectorConverter.Convert(currentPosition, 2), VectorConverter.Convert((targetVector + currentPosition), 2), Color.red );
-        }
 
+        // NavMesh.CalculatePath(VectorConverter.Convert(currentPosition,0), VectorConverter.Convert(targetPosition,0), NavMesh.AllAreas, path);
+       
+        // print( $"{GetInstanceID().ToString()}: NavMesh.CalculatePath({VectorConverter.Convert(currentPosition,0)}, {VectorConverter.Convert(targetPosition,0)}, NavMesh.AllAreas, path);" );
+        // print( $"{GetInstanceID().ToString()}: path.corners.Length == {path.corners.Length} " );
+        // Color line;
+        
+        Debug.DrawLine(VectorConverter.Convert(currentPosition,2.1f), VectorConverter.Convert(targetPosition,2.1f), Color.green );
+        targetVector = (targetPosition - currentPosition);
+        
+        // if (path.corners.Length > 0)
+        // {
+            // targetVector = (VectorConverter.Convert(path.corners[1]) - currentPosition);
+        //     line = Color.blue;
+        // }
+        // else
+        // {
+            // targetVector = (targetPosition - currentPosition);
+        //     line = Color.red;
+        // }
 
-        if (path.corners.Length <= 2 && targetVector.sqrMagnitude < (velocity * velocity))
-        {
-            rb.velocity = VectorConverter.Convert(targetVector);
-        }
-        else
-        {
-            rb.velocity = VectorConverter.Convert(targetVector.normalized * velocity);
-        }
+        rb.velocity = VectorConverter.Convert(targetVector.normalized * Mathf.Min(velocity, targetVector.magnitude));
     }
 
     void Rotate()

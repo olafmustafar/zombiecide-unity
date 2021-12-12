@@ -1,5 +1,6 @@
 using System.Linq;
 using UnityEngine;
+using UnityEngine.AI;
 
 public interface Agent
 {
@@ -44,11 +45,8 @@ public class EnemyAIManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        int i = 0;
         foreach (Agent e in enemies)
         {
-            ++i;
-
             float fitness = e.getFitness();
             if (fitness > e.pBest)
             {
@@ -73,8 +71,30 @@ public class EnemyAIManager : MonoBehaviour
             // gBestPosition = new Vector2(5, 0);
 
             Vector2 inertia = e.inertia * inertiaW;
-            Vector2 cognitiveComponent = cognitiveC * Random.Range(0f, 1f) * (e.pBestPosition - e.currentPosition);
-            Vector2 socialComponent = socialC * Random.Range(0f, 1f) * (gBestPosition - e.currentPosition);
+
+            NavMeshPath path = new NavMeshPath();
+
+            Vector2 cognitiveComponent = Vector2.zero;
+            if (e.currentPosition != e.pBestPosition)
+            {
+                VectorConverter.CalculateNavmeshPath(e.currentPosition, e.pBestPosition, path);
+                print($"currPos: {e.currentPosition} | pbestPos: {e.pBestPosition}");
+                float pathSqrMagnitude = path.corners.Select(x => x.sqrMagnitude).Sum();
+                float distance = Mathf.Sqrt(pathSqrMagnitude);
+                cognitiveComponent = cognitiveC * Random.Range(0f, 1f) * distance * VectorConverter.Convert(path.corners[1]).normalized;
+            }
+
+            Vector2 socialComponent = Vector2.zero;
+            if (e.currentPosition != gBestPosition)
+            {
+                VectorConverter.CalculateNavmeshPath(e.currentPosition, gBestPosition, path);
+                float pathSqrMagnitude = path.corners.Select(x => x.sqrMagnitude).Sum();
+                float distance = Mathf.Sqrt(pathSqrMagnitude);
+                socialComponent = socialC * Random.Range(0f, 1f) * distance * VectorConverter.Convert(path.corners[1]).normalized;
+            }
+
+            // Vector2 cognitiveComponent = cognitiveC * Random.Range(0f, 1f) * (e.pBestPosition - e.currentPosition);
+            // Vector2 socialComponent = socialC * Random.Range(0f, 1f) * (gBestPosition - e.currentPosition);
 
             e.inertia = inertia + cognitiveComponent + socialComponent;
             e.targetPosition = e.currentPosition + e.inertia;

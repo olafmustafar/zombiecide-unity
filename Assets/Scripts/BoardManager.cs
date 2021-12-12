@@ -28,10 +28,10 @@ public class BoardManager : MonoBehaviour
     {
 
         Transform floorTransform = floor.GetComponent<Transform>();
-        scale = new Vector3( floorTransform.localScale.x, 0, floorTransform.localScale.y );
-        print( scale );
+        scale = new Vector3(floorTransform.localScale.x, 1.0f, floorTransform.localScale.y);
+        print(scale);
         boardHolder = new GameObject("Board").transform;
-        
+
         ZombieTiles zt = new ZombieTiles();
         zt.GenerateDugeon(width, height);
 
@@ -50,8 +50,8 @@ public class BoardManager : MonoBehaviour
                 if (tile != ZombieTiles.EMPTY_TILE)
                 {
                     Vector3 pos = new Vector3(x, 0f, y);
-                    pos.Scale( scale );
-                    GameObject tileObject = Instantiate(floor, pos, Quaternion.Euler(90,0,0));
+                    pos.Scale(scale);
+                    GameObject tileObject = Instantiate(floor, pos, Quaternion.Euler(90, 0, 0));
                     tileObject.transform.SetParent(boardHolder);
                 }
             }
@@ -86,8 +86,8 @@ public class BoardManager : MonoBehaviour
         int i = 0;
         foreach (ZtEnemy e in enemies)
         {
-            Vector3 pos = new Vector3(e.position.x, 0.5f, e.position.y);
-            pos.Scale( scale );
+            Vector3 pos = new Vector3(e.position.x, 1f, e.position.y);
+            pos.Scale(scale);
             GameObject instance = Instantiate(enemy, pos, Quaternion.identity);
 
             Enemy enemyScript = instance.GetComponent<Enemy>();
@@ -95,12 +95,12 @@ public class BoardManager : MonoBehaviour
             enemyScript.damage = 100;
             enemyScript.attackCooldown = 5;
             enemyScript.velocity = 0;
-
             instance.transform.SetParent(boardHolder);
-            if( i == 2 ){
+            if (i == 2)
+            {
                 break;
             }
-            i ++;
+            i++;
         }
     }
 }
