@@ -52,11 +52,12 @@ public class Enemy : MonoBehaviour, Agent
 
         RaycastHit hit;
         float visionScore = 0;
-        if ( Physics.Raycast(rb.position, player.rb.position - rb.position, out hit ) && hit.collider.CompareTag("Player") ) {
-            visionScore = Mathf.Max(50 - distance , 0);
+        if (Physics.Raycast(rb.position, player.rb.position - rb.position, out hit) && hit.collider.CompareTag("Player"))
+        {
+            visionScore = Mathf.Max(50 - distance, 0);
         }
 
-        print( $"{GetInstanceID()}: visionScore {visionScore} + soundScore {soundScore}" );
+        print($"{GetInstanceID()}: visionScore {visionScore} + soundScore {soundScore}");
 
         return visionScore + soundScore;
     }

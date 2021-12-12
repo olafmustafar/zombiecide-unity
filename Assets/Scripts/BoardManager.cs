@@ -84,7 +84,7 @@ public class BoardManager : MonoBehaviour
     void PlaceEnemies(ZtEnemy[] enemies)
     {
         enemiesHolder = new GameObject("Enemies").transform;
-        
+
         foreach (ZtEnemy e in enemies)
         {
             Vector3 pos = new Vector3(e.position.x, 1f, e.position.y);

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine;
 using UnityEngine.AI;
 
 public class VectorConverter
@@ -21,13 +20,6 @@ public class VectorConverter
 
     public static bool CalculateNavmeshPath(Vector2 aPos, Vector2 bPos, NavMeshPath path)
     {
-        bool result = NavMesh.CalculatePath(VectorConverter.Convert(aPos, 0), VectorConverter.Convert(bPos, 0), NavMesh.AllAreas, path);
-        
-        // for (int i = 0; i < path.corners.Length - 1; i++)
-        // {
-        //     Debug.DrawLine(path.corners[i], path.corners[i + 1], Color.red);
-        // }
-
-        return result;
+        return NavMesh.CalculatePath(VectorConverter.Convert(aPos, 0), VectorConverter.Convert(bPos, 0), NavMesh.AllAreas, path);
     }
 }
