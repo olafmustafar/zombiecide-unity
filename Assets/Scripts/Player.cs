@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         plane = new Plane(Vector3.up, -rb.position.y);
     }
 

@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour, Agent
 
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<Player>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     void FixedUpdate()
@@ -56,8 +56,6 @@ public class Enemy : MonoBehaviour, Agent
         {
             visionScore = Mathf.Max(50 - distance, 0);
         }
-
-        print($"{GetInstanceID()}: visionScore {visionScore} + soundScore {soundScore}");
 
         return visionScore + soundScore;
     }

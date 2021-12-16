@@ -116,6 +116,7 @@ MonoBehaviour:
   floor: {fileID: 6183486878924002155, guid: c44b467f0aee0c42692834573a560db1, type: 3}
   wall: {fileID: 8496988641798131125, guid: 4f25aac5f61a4c2319f7fb16791abeca, type: 3}
   enemy: {fileID: 5869825199071399437, guid: fee4595addd83b2fd9417916297301bc, type: 3}
+  player: {fileID: 4082968351674351926, guid: 5c1522e864159c887b183b90753d9690, type: 3}
   surface: {fileID: 6785326290582035953}
 --- !u!1001 &1537707806284777140
 PrefabInstance:

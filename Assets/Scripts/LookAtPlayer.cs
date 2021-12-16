@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LookAtPlayer : MonoBehaviour
@@ -12,7 +10,8 @@ public class LookAtPlayer : MonoBehaviour
 
     void Start()
     {
-        cameraOffset = transform.position - playerTransform.position;
+        playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        cameraOffset = new Vector3(-18, 20, -18);
     }
 
     void LateUpdate()

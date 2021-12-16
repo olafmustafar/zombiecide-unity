@@ -13,6 +13,7 @@ public class BoardManager : MonoBehaviour
     public GameObject floor;
     public GameObject wall;
     public GameObject enemy;
+    public GameObject player;
     public NavMeshSurface surface;
 
     Transform boardHolder;
@@ -37,7 +38,7 @@ public class BoardManager : MonoBehaviour
 
         PlaceTiles(zt.GetDungeonMatrix());
         PlaceWalls(zt.GetWalls());
-        PlaceEnemies(zt.GetEnemies());
+        PlaceEntities(zt.GetEntities());
     }
 
     void PlaceTiles(int[][] matrix)
@@ -81,14 +82,21 @@ public class BoardManager : MonoBehaviour
         }
     }
 
-    void PlaceEnemies(ZtEnemy[] enemies)
+    void PlaceEntities(ZtEntity[] entities)
     {
         enemiesHolder = new GameObject("Enemies").transform;
 
-        foreach (ZtEnemy e in enemies)
+        foreach (ZtEntity e in entities)
         {
             Vector3 pos = new Vector3(e.position.x, 1f, e.position.y);
             pos.Scale(scale);
+            
+            if (e.type == EntityType.PLAYER)
+            {
+                Instantiate(player,pos, Quaternion.identity);
+                continue;
+            }
+
             GameObject instance = Instantiate(enemy, pos, Quaternion.identity);
 
             Enemy enemyScript = instance.GetComponent<Enemy>();

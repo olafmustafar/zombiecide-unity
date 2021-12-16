@@ -29,10 +29,10 @@ public class EnemyAIManager : MonoBehaviour
     GameObject gBestPositionTargetInstance;
     GameObject pBestPositionTargetInstance;
     GameObject[] enemies;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         gBestPositionTargetInstance = Instantiate(gBestPositionTarget);
         pBestPositionTargetInstance = Instantiate(pBestPositionTarget);
@@ -85,6 +85,7 @@ public class EnemyAIManager : MonoBehaviour
             if (e.currentPosition != gBestPosition)
             {
                 VectorConverter.CalculateNavmeshPath(e.currentPosition, gBestPosition, path);
+                Debug.DrawLine(VectorConverter.Convert(e.currentPosition,2f), VectorConverter.Convert(gBestPosition,2f));
                 float pathSqrMagnitude = path.corners.Select(x => x.sqrMagnitude).Sum();
                 float distance = Mathf.Sqrt(pathSqrMagnitude);
                 socialComponent = socialC * Random.Range(0f, 1f) * distance * (VectorConverter.Convert(path.corners[1]) - e.currentPosition).normalized;
