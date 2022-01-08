@@ -46,28 +46,31 @@ public class EnemyAIManager : MonoBehaviour
                            .Select(e => e.GetComponent<Enemy>())
                            .ToArray();
 
+        int i = 0;
+
         foreach (Agent e in agents)
         {
+            i++;
+
             float fitness = e.getFitness();
-            if (fitness > e.pBest)
+            if (fitness >= e.pBest)
             {
                 e.pBest = fitness;
                 e.pBestPosition = e.currentPosition;
                 pBestPositionTargetInstance.transform.position = VectorConverter.Convert(e.pBestPosition, 5);
             }
 
-            if (fitness > gBest)
+            if (fitness >= gBest)
             {
                 gBest = fitness;
                 gBestPosition = e.currentPosition;
                 gBestPositionTargetInstance.transform.position = VectorConverter.Convert(gBestPosition, 5);
             }
 
-            if (e.inertia == Vector2.zero)
-            {
-                e.inertia = new Vector2(Random.Range(-100f, 100f), Random.Range(-100f, 100f));
-            }
-
+            // if (e.inertia == Vector2.zero)
+            // {
+            //     e.inertia = new Vector2(Random.Range(-100f, 100f), Random.Range(-100f, 100f));
+            // }
             Vector2 inertia = e.inertia * inertiaW;
 
             NavMeshPath path = new NavMeshPath();
@@ -85,7 +88,7 @@ public class EnemyAIManager : MonoBehaviour
             if (e.currentPosition != gBestPosition)
             {
                 VectorConverter.CalculateNavmeshPath(e.currentPosition, gBestPosition, path);
-                Debug.DrawLine(VectorConverter.Convert(e.currentPosition,2f), VectorConverter.Convert(gBestPosition,2f));
+                Debug.DrawLine(VectorConverter.Convert(e.currentPosition, 2f), VectorConverter.Convert(gBestPosition, 2f));
                 float pathSqrMagnitude = path.corners.Select(x => x.sqrMagnitude).Sum();
                 float distance = Mathf.Sqrt(pathSqrMagnitude);
                 socialComponent = socialC * Random.Range(0f, 1f) * distance * (VectorConverter.Convert(path.corners[1]) - e.currentPosition).normalized;

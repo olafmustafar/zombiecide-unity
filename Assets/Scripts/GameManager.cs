@@ -1,11 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
     public BoardManager boardScript;
+    public TextMeshProUGUI lifeText;
+    public Player player;
+
     private int level = 0;
 
     void Awake()
@@ -29,5 +31,15 @@ public class GameManager : MonoBehaviour
         boardScript.SetupScene(level);
     }
 
+    void Start()
+    {
+        lifeText = GameObject.Find("LifeText").GetComponent<TextMeshProUGUI>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+    }
+
+    void Update()
+    {
+        lifeText.SetText($"Life: {player.health}");
+    }
 
 }
