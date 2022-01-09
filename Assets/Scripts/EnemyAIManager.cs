@@ -24,7 +24,8 @@ public class EnemyAIManager : MonoBehaviour
     public GameObject gBestPositionTarget;
     public GameObject pBestPositionTarget;
     public Player player;
-    float gBest = -1;
+
+    [HideInInspector] public float gBest = -1;
     Vector2 gBestPosition = new Vector2(0, 0);
     GameObject gBestPositionTargetInstance;
     GameObject pBestPositionTargetInstance;
@@ -45,13 +46,15 @@ public class EnemyAIManager : MonoBehaviour
                            .Where(e => e != null)
                            .Select(e => e.GetComponent<Enemy>())
                            .ToArray();
+        Enemy[] agents_ = enemies
+                           .Where(e => e != null)
+                           .Select(e => e.GetComponent<Enemy>())
+                           .ToArray();
 
         int i = 0;
 
         foreach (Agent e in agents)
         {
-            i++;
-
             float fitness = e.getFitness();
             if (fitness >= e.pBest)
             {
@@ -81,23 +84,32 @@ public class EnemyAIManager : MonoBehaviour
                 VectorConverter.CalculateNavmeshPath(e.currentPosition, e.pBestPosition, path);
                 float pathSqrMagnitude = path.corners.Select(x => x.sqrMagnitude).Sum();
                 float distance = Mathf.Sqrt(pathSqrMagnitude);
-                cognitiveComponent = cognitiveC * Random.Range(0f, 1f) * distance * (VectorConverter.Convert(path.corners[1]) - e.currentPosition).normalized;
+
+                if (path.corners.Length > 0)
+                {
+                    cognitiveComponent = cognitiveC * Random.Range(0f, 1f) * distance * (VectorConverter.Convert(path.corners[1]) - e.currentPosition).normalized;
+                }
+
             }
 
             Vector2 socialComponent = Vector2.zero;
             if (e.currentPosition != gBestPosition)
             {
                 VectorConverter.CalculateNavmeshPath(e.currentPosition, gBestPosition, path);
-                Debug.DrawLine(VectorConverter.Convert(e.currentPosition, 2f), VectorConverter.Convert(gBestPosition, 2f));
                 float pathSqrMagnitude = path.corners.Select(x => x.sqrMagnitude).Sum();
                 float distance = Mathf.Sqrt(pathSqrMagnitude);
-                socialComponent = socialC * Random.Range(0f, 1f) * distance * (VectorConverter.Convert(path.corners[1]) - e.currentPosition).normalized;
+                if (path.corners.Length > 0)
+                {
+                    socialComponent = socialC * Random.Range(0f, 1f) * distance * (VectorConverter.Convert(path.corners[1]) - e.currentPosition).normalized;
+                }
             }
 
             e.inertia = inertia + cognitiveComponent + socialComponent;
             e.targetPosition = e.currentPosition + e.inertia;
 
             e.pBest = Mathf.Max(e.pBest - fitnessDecay, 0);
+            i++;
+
         }
 
         inertiaW = Mathf.Max(inertiaW - (inertiaWeightDecay * Time.fixedDeltaTime), minimalInertiaWeight);
