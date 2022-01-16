@@ -39,6 +39,7 @@ public class BoardManager : MonoBehaviour
         PlaceTiles(zt.GetDungeonMatrix());
         PlaceWalls(zt.GetWalls());
         PlaceEntities(zt.GetEntities());
+        print ( zt.GetDescription() );
     }
 
     void PlaceTiles(int[][] matrix)

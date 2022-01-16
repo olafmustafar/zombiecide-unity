@@ -70,10 +70,6 @@ public class EnemyAIManager : MonoBehaviour
                 gBestPositionTargetInstance.transform.position = VectorConverter.Convert(gBestPosition, 5);
             }
 
-            // if (e.inertia == Vector2.zero)
-            // {
-            //     e.inertia = new Vector2(Random.Range(-100f, 100f), Random.Range(-100f, 100f));
-            // }
             Vector2 inertia = e.inertia * inertiaW;
 
             NavMeshPath path = new NavMeshPath();
@@ -105,6 +101,13 @@ public class EnemyAIManager : MonoBehaviour
             }
 
             e.inertia = inertia + cognitiveComponent + socialComponent;
+
+            // if (e.inertia == Vector2.zero)
+            if (e.inertia.magnitude <= 20 )
+            {
+                e.inertia = new Vector2(Random.Range(-100f, 100f), Random.Range(-100f, 100f));
+            }
+            
             e.targetPosition = e.currentPosition + e.inertia;
 
             e.pBest = Mathf.Max(e.pBest - fitnessDecay, 0);
