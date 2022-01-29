@@ -43,15 +43,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c8f21c6dc82e0bea8cfcd8a5a32a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inertiaW: 1
-  inertiaWeightDecay: 0.01
+  inertiaW: 0.8
+  inertiaWeightDecay: 0
   minimalInertiaWeight: 0.4
-  cognitiveC: 2
-  socialC: 1
-  fitnessDecay: 1
+  cognitiveConst: 2
+  socialConst: 1
+  pFitnessDecay: 1
+  gFitnessDecay: 1
   gBestPositionTarget: {fileID: 3911184168984712841, guid: f05b796896fcb58d9a587d246acf9dda, type: 3}
   pBestPositionTarget: {fileID: 2872567311602255507, guid: 0ceb873f6d00da1e1b442f1baf7c2235, type: 3}
   player: {fileID: 0}
+  gBest: -1
 --- !u!1 &6964935815413390286
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,6 +101,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boardScript: {fileID: 0}
+  enemyAIManager: {fileID: 0}
+  GUIText: {fileID: 0}
+  player: {fileID: 0}
 --- !u!114 &-7683462538181014499
 MonoBehaviour:
   m_ObjectHideFlags: 0

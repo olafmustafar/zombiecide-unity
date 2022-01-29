@@ -17,9 +17,18 @@ public class EnemyAIManager : MonoBehaviour
     [Range(0.0f, 1.0f)] public float inertiaW = 1f;
     public float inertiaWeightDecay = 0.00f;
     [Range(0.01f, 1.0f)] public float minimalInertiaWeight = 0.4f;
-    public float cognitiveC = 2f;
-    public float socialC = 2f;
-    public float fitnessDecay = 0.01f;
+    public float cognitiveConst = 2f;
+    public float socialConst = 2f;
+
+    ///<summary>  FitnessDecay (decaimento do fitness)
+    ///Utilizado para fazer os agentes "esquecerem" de maximos locais
+    ///Valores muito baixos fazem os agentes se apegarem a maximos locais
+    ///Valores muito altos fazem os agentes a esquecerem muito rapido da posicao do player.
+    ///</summary>
+    public float pFitnessDecay = 0.01f;
+    public float gFitnessDecay = 0.01f;
+
+    public bool randomMovmentGeneration = true;
 
     public GameObject gBestPositionTarget;
     public GameObject pBestPositionTarget;
@@ -39,19 +48,12 @@ public class EnemyAIManager : MonoBehaviour
         pBestPositionTargetInstance = Instantiate(pBestPositionTarget);
     }
 
-
     void FixedUpdate()
     {
         Agent[] agents = enemies
                            .Where(e => e != null)
                            .Select(e => e.GetComponent<Enemy>())
                            .ToArray();
-        Enemy[] agents_ = enemies
-                           .Where(e => e != null)
-                           .Select(e => e.GetComponent<Enemy>())
-                           .ToArray();
-
-        int i = 0;
 
         foreach (Agent e in agents)
         {
@@ -83,7 +85,7 @@ public class EnemyAIManager : MonoBehaviour
 
                 if (path.corners.Length > 0)
                 {
-                    cognitiveComponent = cognitiveC * Random.Range(0f, 1f) * distance * (VectorConverter.Convert(path.corners[1]) - e.currentPosition).normalized;
+                    cognitiveComponent = cognitiveConst * Random.Range(0f, 1f) * distance * (VectorConverter.Convert(path.corners[1]) - e.currentPosition).normalized;
                 }
 
             }
@@ -96,26 +98,24 @@ public class EnemyAIManager : MonoBehaviour
                 float distance = Mathf.Sqrt(pathSqrMagnitude);
                 if (path.corners.Length > 0)
                 {
-                    socialComponent = socialC * Random.Range(0f, 1f) * distance * (VectorConverter.Convert(path.corners[1]) - e.currentPosition).normalized;
+                    socialComponent = socialConst * Random.Range(0f, 1f) * distance * (VectorConverter.Convert(path.corners[1]) - e.currentPosition).normalized;
                 }
             }
 
             e.inertia = inertia + cognitiveComponent + socialComponent;
 
             // if (e.inertia == Vector2.zero)
-            if (e.inertia.magnitude <= 20 )
+            if (randomMovmentGeneration && e.inertia.magnitude <= 20)
             {
                 e.inertia = new Vector2(Random.Range(-100f, 100f), Random.Range(-100f, 100f));
             }
-            
+
             e.targetPosition = e.currentPosition + e.inertia;
 
-            e.pBest = Mathf.Max(e.pBest - fitnessDecay, 0);
-            i++;
-
+            e.pBest = Mathf.Max(e.pBest - pFitnessDecay, 0);
         }
 
         inertiaW = Mathf.Max(inertiaW - (inertiaWeightDecay * Time.fixedDeltaTime), minimalInertiaWeight);
-        gBest = Mathf.Max(gBest - fitnessDecay, 0);
+        gBest = Mathf.Max(gBest - gFitnessDecay, 0);
     }
 }
