@@ -50,6 +50,7 @@ MonoBehaviour:
   socialConst: 1
   pFitnessDecay: 1
   gFitnessDecay: 1
+  randomMovmentGeneration: 1
   gBestPositionTarget: {fileID: 3911184168984712841, guid: f05b796896fcb58d9a587d246acf9dda, type: 3}
   pBestPositionTarget: {fileID: 2872567311602255507, guid: 0ceb873f6d00da1e1b442f1baf7c2235, type: 3}
   player: {fileID: 0}
@@ -113,16 +114,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 6964935815413390286}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2255c868631b692238fb3bd4626269c9, type: 3}
+  m_Script: {fileID: 11500000, guid: 86e6df9c48eee2024870f34c486117ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   width: 30
   height: 30
-  floor: {fileID: 6183486878924002155, guid: c44b467f0aee0c42692834573a560db1, type: 3}
+  floorList:
+  - {fileID: 6183486878924002155, guid: c44b467f0aee0c42692834573a560db1, type: 3}
+  - {fileID: 7629993273280765965, guid: a2bea08e04a748cf292e9caaf1877420, type: 3}
+  - {fileID: 7629993273280765965, guid: 5184760475d33f6959888e38d0b2e889, type: 3}
+  - {fileID: 7629993273280765965, guid: 59baeffe87063125a831dcf9bed741a1, type: 3}
+  - {fileID: 7629993273280765965, guid: 81ca9f81ea71733238fca97639fb571f, type: 3}
+  - {fileID: 7629993273280765965, guid: 708388de5e6a0185ba2d4b62bb8b3708, type: 3}
+  - {fileID: 7629993273280765965, guid: c24a7cd98c31371198ea9cdf92427f6f, type: 3}
+  - {fileID: 7629993273280765965, guid: 414012d80b4ab22018e50bd9b09d667a, type: 3}
+  - {fileID: 7629993273280765965, guid: 78727dfa859187915b2fd0196e8d4452, type: 3}
+  - {fileID: 7629993273280765965, guid: c365ed9c664541a79b54e1ea5ab730e1, type: 3}
+  - {fileID: 7629993273280765965, guid: b21396a3dff62a69c9819af61d78ec2c, type: 3}
+  - {fileID: 7629993273280765965, guid: 949899804af6622809007e26d824dca3, type: 3}
+  - {fileID: 7629993273280765965, guid: 0c5663dfbfd22e7d1a8ae1635ad79362, type: 3}
+  - {fileID: 7629993273280765965, guid: f6f54b60f1267fa6584a14d10ae7b145, type: 3}
+  - {fileID: 7629993273280765965, guid: c741fb2a123fa8130b2ea701b8d42b52, type: 3}
   wall: {fileID: 8496988641798131125, guid: 4f25aac5f61a4c2319f7fb16791abeca, type: 3}
   enemy: {fileID: 5869825199071399437, guid: fee4595addd83b2fd9417916297301bc, type: 3}
   player: {fileID: 4082968351674351926, guid: 5c1522e864159c887b183b90753d9690, type: 3}
-  surface: {fileID: 6785326290582035953}
+  surface: {fileID: 0}
 --- !u!1001 &1537707806284777140
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -189,14 +205,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5439604349501299524, guid: 76a26355eb5707efab13ca6642e03083, type: 3}
   m_PrefabInstance: {fileID: 1537707806284777140}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6785326290582035953 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5439604349501299525, guid: 76a26355eb5707efab13ca6642e03083, type: 3}
-  m_PrefabInstance: {fileID: 1537707806284777140}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

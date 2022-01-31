@@ -3,6 +3,18 @@ using System.Text;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
+public enum EntityType
+{
+    PLAYER,
+    ENEMY
+}
+
+public enum ZtPlacementType
+{
+    T, // Top
+    U // Under
+}
+
 [StructLayout(LayoutKind.Sequential)]
 public struct Point
 {
@@ -18,16 +30,20 @@ public struct Line
 }
 
 [StructLayout(LayoutKind.Sequential)]
+public struct ZtRoom
+{
+    public uint x;
+    public uint y;
+    public uint width;
+    public uint height;
+    public ZtPlacementType placement_type;
+}
+
+[StructLayout(LayoutKind.Sequential)]
 public struct Wall
 {
     public Point a;
     public Point b;
-}
-
-public enum EntityType
-{
-    PLAYER,
-    ENEMY
 }
 
 [StructLayout(LayoutKind.Sequential)]
@@ -64,11 +80,17 @@ public class ZombieTiles
     [DllImport(zombietilesdll, CallingConvention = CallingConvention.Cdecl)]
     private static extern void generate_dungeon_description(IntPtr dungeon, out int size, out IntPtr str);
 
+    [DllImport(zombietilesdll, CallingConvention = CallingConvention.Cdecl)]
+    private static extern void generate_dungeon_rooms(IntPtr dungeon, out int size, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] out ZtRoom[] array);
+
     public static readonly int EMPTY_TILE = -1;
     private IntPtr dungeon;
     private Wall[] walls;
     private ZtEntity[] entities;
     private String description;
+    private ZtRoom[] rooms;
+
+    public ZtRoom[] Rooms { get => rooms; set => rooms = value; }
 
     ~ZombieTiles()
     {
@@ -89,6 +111,9 @@ public class ZombieTiles
         IntPtr str;
         generate_dungeon_description(dungeon, out size3, out str);
         description = Marshal.PtrToStringAnsi(str, size3);
+
+        int size4;
+        generate_dungeon_rooms(dungeon, out size4, out rooms);
     }
 
     public Wall[] GetWalls()
