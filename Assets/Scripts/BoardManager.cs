@@ -39,7 +39,9 @@ public class BoardManager : MonoBehaviour
         PlaceTiles2(zt.Rooms);
         // PlaceTiles(zt.GetDungeonMatrix());
         PlaceWalls(zt.GetWalls());
-        PlaceEntities(zt.GetEntities());
+        // PlaceEntities(zt.GetEntities());
+        PlacePlayer(zt.Player);
+        PlaceEnemies(zt.Enemies);
         print(zt.GetDescription());
     }
 
@@ -54,7 +56,7 @@ public class BoardManager : MonoBehaviour
                 {
                     Vector3 pos = new Vector3(x, 0f, y);
                     pos.Scale(scale);
-                    GameObject tileObject = Instantiate(floorList[Random.Range(0,floorList.Length)], pos, Quaternion.Euler(90, 0, 0));
+                    GameObject tileObject = Instantiate(floorList[Random.Range(0, floorList.Length)], pos, Quaternion.Euler(90, 0, 0));
                     tileObject.transform.SetParent(boardHolder);
                 }
             }
@@ -72,11 +74,10 @@ public class BoardManager : MonoBehaviour
             Vector3 pos = new Vector3(room.x + (room.width * 0.5f), 0.5f + renderOffset, room.y + (room.height * 0.5f));
             pos.Scale(scale);
             pos -= offset;
-            print( $"{i} : {pos.y}" );
 
             Vector3 newLocalScale = new Vector3(room.width * scale.x, room.height * scale.z, 1f);
 
-            GameObject tileObject = Instantiate(floorList[Random.Range(0,floorList.Length)], pos, Quaternion.Euler(90, 0, 0));
+            GameObject tileObject = Instantiate(floorList[Random.Range(0, floorList.Length)], pos, Quaternion.Euler(90, 0, 0));
             tileObject.transform.localScale = newLocalScale;
             tileObject.transform.SetParent(boardHolder);
             i++;
@@ -130,5 +131,32 @@ public class BoardManager : MonoBehaviour
             enemyScript.velocity = 10;
             instance.transform.SetParent(enemiesHolder);
         }
+    }
+
+    void PlaceEnemies(ZtEnemy[] enemies)
+    {
+        enemiesHolder = new GameObject("Enemies").transform;
+
+        foreach (ZtEnemy e in enemies)
+        {
+            Vector3 pos = new Vector3(e.position.x, 1f, e.position.y);
+            pos.Scale(scale);
+
+            GameObject instance = Instantiate(enemy, pos, Quaternion.identity);
+
+            Enemy enemyScript = instance.GetComponent<Enemy>();
+            enemyScript.health = e.health;
+            enemyScript.damage = e.damage;
+            enemyScript.attackCooldown = 6 - (5 * (e.attackCooldown / 100));
+            enemyScript.velocity = 5 + (15 * e.velocity / 100);
+            instance.transform.SetParent(enemiesHolder);
+        }
+    }
+
+    void PlacePlayer(ZtEntity p)
+    {
+        Vector3 pos = new Vector3(p.position.x, 1f, p.position.y);
+        pos.Scale(scale);
+        Instantiate(player, pos, Quaternion.identity);
     }
 }

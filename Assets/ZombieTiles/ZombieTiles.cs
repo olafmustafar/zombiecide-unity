@@ -2,6 +2,7 @@ using System;
 using System.Text;
 using System.Runtime.InteropServices;
 using UnityEngine;
+using System.Collections.Generic;
 
 public enum EntityType
 {
@@ -46,18 +47,36 @@ public struct Wall
     public Point b;
 }
 
-[StructLayout(LayoutKind.Sequential)]
-public struct ZtEntity
+public interface ZtEntity
 {
-    public EntityType type;
-    public Point position;
+    EntityType type { get; set; }
+    Point position { get; set; }
+}
+
+[StructLayout(LayoutKind.Sequential)]
+public struct ZtPlayer : ZtEntity{
+    public EntityType type { get; set; }
+    public Point position { get; set; }
+}
+
+
+[StructLayout(LayoutKind.Sequential)]
+public struct ZtEnemy : ZtEntity
+{
+    public EntityType type { get; set; }
+    public Point position { get; set; }
+    public uint health { get; set; }
+    public uint damage { get; set; }
+    public uint attackCooldown { get; set; }
+    public uint velocity { get; set; }
 }
 
 
 public class ZombieTiles
 {
 
-    private const string zombietilesdll = @"/home/rei-arthur/.config/unity3d/DefaultCompany/zombiecide/libzombietiles.so";
+    // private const string zombietilesdll = @"/home/rei-arthur/.config/unity3d/DefaultCompany/zombiecide/libzombietiles.so";
+    private const string zombietilesdll = @"/home/rei-arthur/.config/unity3d/ArthurTcc/zombiecide/libzombietiles.so";
 
     [DllImport(zombietilesdll, CallingConvention = CallingConvention.Cdecl)]
     private static extern IntPtr generate_dungeon(Int32 width, Int32 height);
@@ -66,7 +85,10 @@ public class ZombieTiles
     private static extern void free_dungeon(IntPtr dungeon);
 
     [DllImport(zombietilesdll, CallingConvention = CallingConvention.Cdecl)]
-    private static extern void generate_dungeon_entities(IntPtr dungeon, out int size, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] out ZtEntity[] array);
+    private static extern void generate_dungeon_enemies(  IntPtr dungeon, out int size, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] out ZtEnemy[] array);
+
+    [DllImport(zombietilesdll, CallingConvention = CallingConvention.Cdecl)]
+    private static extern void generate_dungeon_player(IntPtr dungeon, out IntPtr player);
 
     [DllImport(zombietilesdll, CallingConvention = CallingConvention.Cdecl)]
     private static extern void generate_dungeon_walls(IntPtr dungeon, out int size, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] out Wall[] array);
@@ -86,11 +108,14 @@ public class ZombieTiles
     public static readonly int EMPTY_TILE = -1;
     private IntPtr dungeon;
     private Wall[] walls;
-    private ZtEntity[] entities;
     private String description;
     private ZtRoom[] rooms;
+    private ZtEnemy[] enemies;
+    private ZtEntity player;
 
     public ZtRoom[] Rooms { get => rooms; set => rooms = value; }
+    public ZtEntity Player { get => player; set => player = value; }
+    public ZtEnemy[] Enemies { get => enemies; set => enemies = value; }
 
     ~ZombieTiles()
     {
@@ -105,8 +130,12 @@ public class ZombieTiles
         generate_dungeon_walls(dungeon, out size, out walls);
 
         int size2;
-        generate_dungeon_entities(dungeon, out size2, out entities);
+        generate_dungeon_enemies(dungeon, out size2, out enemies);
 
+        IntPtr playerPtr;
+        generate_dungeon_player(dungeon, out playerPtr);
+        player = Marshal.PtrToStructure<ZtPlayer>(playerPtr);
+        
         int size3;
         IntPtr str;
         generate_dungeon_description(dungeon, out size3, out str);
@@ -119,11 +148,6 @@ public class ZombieTiles
     public Wall[] GetWalls()
     {
         return walls;
-    }
-
-    public ZtEntity[] GetEntities()
-    {
-        return entities;
     }
 
     public string GetDescription()
