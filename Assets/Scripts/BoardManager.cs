@@ -1,7 +1,3 @@
-// using System;
-// using System.Collections;
-// using System.Collections.Generic;
-// using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -11,6 +7,8 @@ public class BoardManager : MonoBehaviour
     public int width = 10;
     public int height = 10;
     public GameObject[] floorList;
+    public GameObject[] enemySprites;
+
     public GameObject wall;
     public GameObject enemy;
     public GameObject player;
@@ -37,9 +35,7 @@ public class BoardManager : MonoBehaviour
         zt.GenerateDugeon(width, height);
 
         PlaceTiles2(zt.Rooms);
-        // PlaceTiles(zt.GetDungeonMatrix());
         PlaceWalls(zt.GetWalls());
-        // PlaceEntities(zt.GetEntities());
         PlacePlayer(zt.Player);
         PlaceEnemies(zt.Enemies);
         print(zt.GetDescription());
@@ -107,32 +103,6 @@ public class BoardManager : MonoBehaviour
         }
     }
 
-    void PlaceEntities(ZtEntity[] entities)
-    {
-        enemiesHolder = new GameObject("Enemies").transform;
-
-        foreach (ZtEntity e in entities)
-        {
-            Vector3 pos = new Vector3(e.position.x, 1f, e.position.y);
-            pos.Scale(scale);
-
-            if (e.type == EntityType.PLAYER)
-            {
-                Instantiate(player, pos, Quaternion.identity);
-                continue;
-            }
-
-            GameObject instance = Instantiate(enemy, pos, Quaternion.identity);
-
-            Enemy enemyScript = instance.GetComponent<Enemy>();
-            enemyScript.health = 100;
-            enemyScript.damage = 100;
-            enemyScript.attackCooldown = 5;
-            enemyScript.velocity = 10;
-            instance.transform.SetParent(enemiesHolder);
-        }
-    }
-
     void PlaceEnemies(ZtEnemy[] enemies)
     {
         enemiesHolder = new GameObject("Enemies").transform;
@@ -147,9 +117,18 @@ public class BoardManager : MonoBehaviour
             Enemy enemyScript = instance.GetComponent<Enemy>();
             enemyScript.health = e.health;
             enemyScript.damage = e.damage;
-            enemyScript.attackCooldown = 6 - (5 * (e.attackCooldown / 100));
-            enemyScript.velocity = 5 + (15 * e.velocity / 100);
+            enemyScript.attackCooldown = 6f - (5f * (e.attackCooldown / 100f));
+            enemyScript.velocity = 5f + (15f * (e.velocity / 100f));
             instance.transform.SetParent(enemiesHolder);
+
+
+            GameObject sprite = Instantiate(
+                enemySprites[Random.Range(0, enemySprites.Length)],
+                instance.transform.position,
+                Quaternion.identity,
+                instance.transform);
+
+            sprite.transform.localScale = new Vector3(11, 11, 0);
         }
     }
 

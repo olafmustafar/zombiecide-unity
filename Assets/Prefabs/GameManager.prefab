@@ -62,8 +62,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86e6df9c48eee2024870f34c486117ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 30
-  height: 30
+  width: 20
+  height: 20
   floorList:
   - {fileID: 6183486878924002155, guid: c44b467f0aee0c42692834573a560db1, type: 3}
   - {fileID: 7629993273280765965, guid: a2bea08e04a748cf292e9caaf1877420, type: 3}
@@ -80,6 +80,22 @@ MonoBehaviour:
   - {fileID: 7629993273280765965, guid: 0c5663dfbfd22e7d1a8ae1635ad79362, type: 3}
   - {fileID: 7629993273280765965, guid: f6f54b60f1267fa6584a14d10ae7b145, type: 3}
   - {fileID: 7629993273280765965, guid: c741fb2a123fa8130b2ea701b8d42b52, type: 3}
+  enemySprites:
+  - {fileID: 7843706574589711782, guid: 25ffc1e4e1cf355369c5bee09c4f6e69, type: 3}
+  - {fileID: 6085789928468214302, guid: 84ed6048a9dca4696a98e89ef7d4179d, type: 3}
+  - {fileID: 2729008825623378167, guid: d83f5fa3217fcf11db37faa6cebe05d4, type: 3}
+  - {fileID: 5422454628145557332, guid: e88fa006cfb773fffa9e68d4c71e5d8f, type: 3}
+  - {fileID: 8619716328770761205, guid: ee901ebc9e86045bfa84be422a7fc063, type: 3}
+  - {fileID: 8936727864555959421, guid: 23b38bb835c58fc5885d13dd8b1e2f86, type: 3}
+  - {fileID: 4461269729085500650, guid: 5ed3b95afaca4c6d99981e53936b8b20, type: 3}
+  - {fileID: 7549623551091466055, guid: 2e3c743f987cb34abab5f706b156167f, type: 3}
+  - {fileID: 7750720487147039583, guid: be7c637f18ec20e92a33b202c696b435, type: 3}
+  - {fileID: 7526523752921533316, guid: 945c27c19a2c14dfd99d2d5b87b0d2bd, type: 3}
+  - {fileID: 6131480373628293937, guid: dfaba05bd3182fe5eac095fb86642960, type: 3}
+  - {fileID: 8866570263144345024, guid: 6aee170028c01a87c86ff79ee8eff2d0, type: 3}
+  - {fileID: 1077817988700146165, guid: c0deb82ebbfdeb0f7b563c3e72d1a97f, type: 3}
+  - {fileID: 1178281104541747621, guid: cb2e3db8a0882a2b5bd486779a046773, type: 3}
+  - {fileID: 1206640700944449145, guid: a83955a7aac6bad3793fbda0469d47bc, type: 3}
   wall: {fileID: 8496988641798131125, guid: 4f25aac5f61a4c2319f7fb16791abeca, type: 3}
   enemy: {fileID: 5869825199071399437, guid: fee4595addd83b2fd9417916297301bc, type: 3}
   player: {fileID: 4082968351674351926, guid: 5c1522e864159c887b183b90753d9690, type: 3}
@@ -157,6 +173,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 376703035920519992}
     m_Modifications:
+    - target: {fileID: 4315039370603485863, guid: 84785c6484ac8987fa91eaeaab40a459, type: 3}
+      propertyPath: gFitnessDecay
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 4315039370603485863, guid: 84785c6484ac8987fa91eaeaab40a459, type: 3}
+      propertyPath: pFitnessDecay
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 6887352948160861314, guid: 84785c6484ac8987fa91eaeaab40a459, type: 3}
       propertyPath: m_RootOrder
       value: 1

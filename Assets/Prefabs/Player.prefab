@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4082968351674351885}
-  movementSpeed: 15
+  maxVelocity: 15
   health: 1000
   cam: {fileID: 0}
   soundLevel: 0

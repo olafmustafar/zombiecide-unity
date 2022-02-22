@@ -13,17 +13,17 @@ AssetImportWorker0
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-43919
+46325
 Successfully changed project path to: /home/rei-arthur/projects/zombiecide-unity
 /home/rei-arthur/projects/zombiecide-unity
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 74,42 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 92,62 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0,00 ms.
 Initialize engine version: 2021.1.7f1 (d91830b65d9b)
 [Subsystems] Discovering subsystems at path /home/rei-arthur/2021.1.7f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path /home/rei-arthur/projects/zombiecide-unity/Assets
 GLX Extensions: GLX_ARB_create_context GLX_ARB_create_context_no_error GLX_ARB_create_context_profile GLX_ARB_create_context_robustness GLX_ARB_fbconfig_float GLX_ARB_framebuffer_sRGB GLX_ARB_get_proc_address GLX_ARB_multisample GLX_EXT_buffer_age GLX_EXT_create_context_es2_profile GLX_EXT_create_context_es_profile GLX_EXT_fbconfig_packed_float GLX_EXT_framebuffer_sRGB GLX_EXT_import_context GLX_EXT_no_config_context GLX_EXT_swap_control GLX_EXT_swap_control_tear GLX_EXT_texture_from_pixmap GLX_EXT_visual_info GLX_EXT_visual_rating GLX_INTEL_swap_event GLX_MESA_copy_sub_buffer GLX_MESA_query_renderer GLX_MESA_swap_control GLX_OML_swap_method GLX_OML_sync_control GLX_SGIS_multisample GLX_SGIX_fbconfig GLX_SGIX_pbuffer GLX_SGIX_visual_select_group GLX_SGI_make_current_read GLX_SGI_swap_control GLX_SGI_video_sync 
-Renderer: AMD RENOIR (DRM 3.41.0, 5.13.0-28-generic, LLVM 12.0.0)
+Renderer: AMD RENOIR (DRM 3.41.0, 5.13.0-30-generic, LLVM 12.0.0)
 Vendor:   AMD
 Version:  4.6 (Core Profile) Mesa 21.2.6
 GLES:     0
@@ -33,132 +33,1882 @@ _buffer_object GL_ARB_point_sprite GL_ARB_polygon_offset_clamp GL_ARB_program_in
 _texture_barrier GL_ARB_texture_buffer_object GL_ARB_texture_buffer_object_rgb32 GL_ARB_texture_buffer_range GL_ARB_texture_compression_bptc GL_ARB_texture_compression_rgtc GL_ARB_texture_cube_map_array GL_ARB_texture_filter_anisotropic GL_ARB_texture_float GL_ARB_texture_gather GL_ARB_texture_mirror_clamp_to_edge GL_ARB_texture_multisample GL_ARB_texture_non_power_of_two GL_ARB_texture_query_levels GL_ARB_texture_query_lod GL_ARB_texture_rectangle GL_ARB_texture_rg GL_ARB_texture_rgb10_a2ui GL_ARB_texture_stencil8 GL_ARB_texture_storage GL_ARB_texture_storage_multisample GL_ARB_texture_swizzle GL_ARB_texture_view GL_ARB_timer_query GL_ARB_transform_feedback2 GL_ARB_transform_feedback3 GL_ARB_transform_feedback_instanced GL_ARB_transform_feedback_overflow_query GL_ARB_uniform_buffer_object GL_ARB_vertex_array_bgra GL_ARB_vertex_array_object GL_ARB_vertex_attrib_64bit GL_ARB_vertex_attrib_binding GL_ARB_vertex_buffer_object GL_ARB_vertex_shader GL_ARB_vertex_type_10f_11f_11f_rev GL_ARB_vertex_type_2_10_10_10_
 rev GL_ARB_viewport_array GL_ATI_blend_equation_separate GL_ATI_meminfo GL_ATI_texture_float GL_ATI_texture_mirror_once GL_EXT_EGL_image_storage GL_EXT_EGL_sync GL_EXT_abgr GL_EXT_blend_equation_separate GL_EXT_demote_to_helper_invocation GL_EXT_depth_bounds_test GL_EXT_draw_buffers2 GL_EXT_draw_instanced GL_EXT_framebuffer_blit GL_EXT_framebuffer_multisample GL_EXT_framebuffer_multisample_blit_scaled GL_EXT_framebuffer_object GL_EXT_framebuffer_sRGB GL_EXT_memory_object GL_EXT_memory_object_fd GL_EXT_packed_depth_stencil GL_EXT_packed_float GL_EXT_pixel_buffer_object GL_EXT_polygon_offset_clamp GL_EXT_provoking_vertex GL_EXT_semaphore GL_EXT_semaphore_fd GL_EXT_shader_image_load_formatted GL_EXT_shader_image_load_store GL_EXT_shader_integer_mix GL_EXT_shader_samples_identical GL_EXT_texture_array GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_rgtc GL_EXT_texture_compression_s3tc GL_EXT_texture_filter_anisotropic GL_EXT_texture_integer GL_EXT_texture_mirror_clamp GL_EXT_texture_sRGB GL_EXT_textur
 e_sRGB_R8 GL_EXT_texture_sRGB_decode GL_EXT_texture_shadow_lod GL_EXT_texture_shared_exponent GL_EXT_texture_snorm GL_EXT_texture_swizzle GL_EXT_timer_query GL_EXT_transform_feedback GL_EXT_vertex_array_bgra GL_EXT_vertex_attrib_64bit GL_EXT_window_rectangles GL_IBM_multimode_draw_arrays GL_INTEL_blackhole_render GL_KHR_blend_equation_advanced GL_KHR_context_flush_control GL_KHR_debug GL_KHR_no_error GL_KHR_parallel_shader_compile GL_KHR_robust_buffer_access_behavior GL_KHR_robustness GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_sliced_3d GL_MESA_framebuffer_flip_y GL_MESA_pack_invert GL_MESA_shader_integer_functions GL_MESA_texture_signed_rgba GL_NVX_gpu_memory_info GL_NV_alpha_to_coverage_dither_control GL_NV_compute_shader_derivatives GL_NV_conditional_render GL_NV_copy_image GL_NV_depth_clamp GL_NV_packed_depth_stencil GL_NV_shader_atomic_int64 GL_NV_texture_barrier GL_NV_vdpau_interop GL_OES_EGL_image GL_S3_s3tc
-OPENGL LOG: Creating OpenGL 4.6 graphics device ; Context level  <OpenGL 4.5> ; Context handle 385227008
+OPENGL LOG: Creating OpenGL 4.6 graphics device ; Context level  <OpenGL 4.5> ; Context handle -1637959408
 Initialize mono
 Mono path[0] = '/home/rei-arthur/2021.1.7f1/Editor/Data/Managed'
 Mono path[1] = '/home/rei-arthur/2021.1.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = '/home/rei-arthur/2021.1.7f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56528
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56608
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: /home/rei-arthur/2021.1.7f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
 Register platform support module: /home/rei-arthur/2021.1.7f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
-Registered in 0,000982 seconds.
+Registered in 0,000938 seconds.
 Native extension for LinuxStandalone target not found
 Native extension for OSXStandalone target not found
-Refreshing native plugins compatible for Editor in 85,06 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 95,04 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0,00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1,181 seconds
+- Completed reload, in  1,192 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0,001390 seconds.
+Registered in 0,001651 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image /home/rei-arthur/projects/zombiecide-unity/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image /home/rei-arthur/projects/zombiecide-unity/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
 Native extension for LinuxStandalone target not found
 Native extension for OSXStandalone target not found
-Refreshing native plugins compatible for Editor in 0,56 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 92,71 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0,00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0,884 seconds
+- Completed reload, in  0,936 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler after 0.01 seconds
-Refreshing native plugins compatible for Editor in 0,51 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0,73 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0,00 ms.
-Unloading 2710 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 117,2 MB.
-System memory in use after: 117,5 MB.
+Unloading 3219 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 141,3 MB.
+System memory in use after: 141,6 MB.
 
-Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3196.
-Total: 4,868028 ms (FindLiveObjects: 0,280676 ms CreateObjectMapping: 0,092304 ms MarkObjects: 4,379171 ms  DeleteObjects: 0,110167 ms)
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 3705.
+Total: 4,300816 ms (FindLiveObjects: 0,338866 ms CreateObjectMapping: 0,322725 ms MarkObjects: 3,571058 ms  DeleteObjects: 0,063819 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Prefabs/Player.prefab
-  artifactKey: Guid(5c1522e864159c887b183b90753d9690) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Player.prefab using Guid(5c1522e864159c887b183b90753d9690) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5fc54ef5550834caf1bd38f88b404a02') in 0,092737 seconds 
+  path: Assets/Prefabs/GameManager.prefab
+  artifactKey: Guid(e1711a886be46bf27ba71a0fe1508e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/GameManager.prefab using Guid(e1711a886be46bf27ba71a0fe1508e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38a2e24e79660caafdd657b551db93e0') in 0,035308 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0,001365 seconds.
+Registered in 0,001576 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image /home/rei-arthur/projects/zombiecide-unity/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image /home/rei-arthur/projects/zombiecide-unity/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
 Native extension for LinuxStandalone target not found
 Native extension for OSXStandalone target not found
-Refreshing native plugins compatible for Editor in 0,56 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0,92 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0,00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0,905 seconds
+- Completed reload, in  0,963 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0,73 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0,82 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0,00 ms.
-Unloading 2690 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 117,4 MB.
-System memory in use after: 117,6 MB.
+Unloading 3195 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 139,5 MB.
+System memory in use after: 139,8 MB.
 
-Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 3209.
-Total: 3,794245 ms (FindLiveObjects: 0,267261 ms CreateObjectMapping: 0,062708 ms MarkObjects: 3,419272 ms  DeleteObjects: 0,043592 ms)
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 3712.
+Total: 4,910911 ms (FindLiveObjects: 0,481563 ms CreateObjectMapping: 0,222137 ms MarkObjects: 4,172776 ms  DeleteObjects: 0,032150 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 130,090648 seconds.
-  path: Assets/Prefabs/EnemyAIManager.prefab
-  artifactKey: Guid(84785c6484ac8987fa91eaeaab40a459) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/EnemyAIManager.prefab using Guid(84785c6484ac8987fa91eaeaab40a459) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd13ac9901194750f7238de2a75f80e06') in 0,028379 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0,000265 seconds.
+  Time since last request: 36,157121 seconds.
   path: Assets/Prefabs/GameManager.prefab
   artifactKey: Guid(e1711a886be46bf27ba71a0fe1508e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/GameManager.prefab using Guid(e1711a886be46bf27ba71a0fe1508e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2819f9385ce876dbe7763311fcf59001') in 0,011312 seconds 
+Start importing Assets/Prefabs/GameManager.prefab using Guid(e1711a886be46bf27ba71a0fe1508e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2613859c563abdfb30efea63079f512e') in 0,040506 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 12,779376 seconds.
-  path: Assets/Prefabs/EnemyAIManager.prefab
-  artifactKey: Guid(84785c6484ac8987fa91eaeaab40a459) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/EnemyAIManager.prefab using Guid(84785c6484ac8987fa91eaeaab40a459) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5523c7e500eebb059416fe0e6114245') in 0,004145 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0,000215 seconds.
+  Time since last request: 8,354897 seconds.
   path: Assets/Prefabs/GameManager.prefab
   artifactKey: Guid(e1711a886be46bf27ba71a0fe1508e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/GameManager.prefab using Guid(e1711a886be46bf27ba71a0fe1508e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7809e9a7e42e2072c09d4162a2487fee') in 0,005470 seconds 
+Start importing Assets/Prefabs/GameManager.prefab using Guid(e1711a886be46bf27ba71a0fe1508e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e8b0d6a876834629d5c2d80c7deb711') in 0,011402 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 1,179923 seconds.
-  path: Assets/Prefabs/EnemyAIManager.prefab
-  artifactKey: Guid(84785c6484ac8987fa91eaeaab40a459) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/EnemyAIManager.prefab using Guid(84785c6484ac8987fa91eaeaab40a459) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48e03f9e492cb25e06ac28575e9648b9') in 0,004364 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0,000208 seconds.
+  Time since last request: 11,913453 seconds.
   path: Assets/Prefabs/GameManager.prefab
   artifactKey: Guid(e1711a886be46bf27ba71a0fe1508e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/GameManager.prefab using Guid(e1711a886be46bf27ba71a0fe1508e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa569b2c4425ba237308d0feda6b1720') in 0,006018 seconds 
+Start importing Assets/Prefabs/GameManager.prefab using Guid(e1711a886be46bf27ba71a0fe1508e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14798b454965d9a03c37ca1a75a06c9b') in 0,009066 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,624988 seconds.
+  path: Assets/Prefabs/GameManager.prefab
+  artifactKey: Guid(e1711a886be46bf27ba71a0fe1508e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/GameManager.prefab using Guid(e1711a886be46bf27ba71a0fe1508e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e0d8752c48769c17a654f9cdde9f441') in 0,008761 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6,166399 seconds.
+  path: Assets/Prefabs/GameManager.prefab
+  artifactKey: Guid(e1711a886be46bf27ba71a0fe1508e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/GameManager.prefab using Guid(e1711a886be46bf27ba71a0fe1508e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ce9cf010ddee64fc5f4fbee1fbd83e7') in 0,008705 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10,863471 seconds.
+  path: Assets/Prefabs/GameManager.prefab
+  artifactKey: Guid(e1711a886be46bf27ba71a0fe1508e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/GameManager.prefab using Guid(e1711a886be46bf27ba71a0fe1508e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26f2c6d89638642880673c34085d303b') in 0,009202 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1,217532 seconds.
+  path: Assets/Prefabs/GameManager.prefab
+  artifactKey: Guid(e1711a886be46bf27ba71a0fe1508e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/GameManager.prefab using Guid(e1711a886be46bf27ba71a0fe1508e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f17cabe8826b36a0ff50b49488cdd512') in 0,009228 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8,546141 seconds.
+  path: Assets/Prefabs/GameManager.prefab
+  artifactKey: Guid(e1711a886be46bf27ba71a0fe1508e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/GameManager.prefab using Guid(e1711a886be46bf27ba71a0fe1508e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af7de96d576a5c4fabc6441826a2d043') in 0,011658 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12,264897 seconds.
+  path: Assets/Prefabs/GameManager.prefab
+  artifactKey: Guid(e1711a886be46bf27ba71a0fe1508e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/GameManager.prefab using Guid(e1711a886be46bf27ba71a0fe1508e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36336b22d8dcc5693c3c8f54a3254392') in 0,010349 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0,001386 seconds.
+Registered in 0,001669 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image /home/rei-arthur/projects/zombiecide-unity/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image /home/rei-arthur/projects/zombiecide-unity/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
 Native extension for LinuxStandalone target not found
 Native extension for OSXStandalone target not found
-Refreshing native plugins compatible for Editor in 0,50 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0,66 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0,00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0,883 seconds
+- Completed reload, in  0,876 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0,55 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0,76 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0,00 ms.
-Unloading 2690 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 117,5 MB.
-System memory in use after: 117,7 MB.
+Unloading 3195 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 139,6 MB.
+System memory in use after: 139,8 MB.
 
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 3213.
-Total: 3,894142 ms (FindLiveObjects: 0,562244 ms CreateObjectMapping: 0,056657 ms MarkObjects: 3,244213 ms  DeleteObjects: 0,029084 ms)
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 3715.
+Total: 3,386882 ms (FindLiveObjects: 0,249989 ms CreateObjectMapping: 0,064771 ms MarkObjects: 3,016698 ms  DeleteObjects: 0,052378 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0,001522 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /home/rei-arthur/projects/zombiecide-unity/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /home/rei-arthur/projects/zombiecide-unity/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for LinuxStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0,67 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0,887 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0,72 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Unloading 3195 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 139,6 MB.
+System memory in use after: 139,9 MB.
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 3718.
+Total: 3,499934 ms (FindLiveObjects: 0,309450 ms CreateObjectMapping: 0,203572 ms MarkObjects: 2,968478 ms  DeleteObjects: 0,017393 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0,001736 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /home/rei-arthur/projects/zombiecide-unity/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /home/rei-arthur/projects/zombiecide-unity/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for LinuxStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0,62 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0,807 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0,62 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Unloading 3195 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 139,7 MB.
+System memory in use after: 139,9 MB.
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 3721.
+Total: 4,739609 ms (FindLiveObjects: 0,558778 ms CreateObjectMapping: 0,248135 ms MarkObjects: 3,906777 ms  DeleteObjects: 0,023554 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0,001586 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /home/rei-arthur/projects/zombiecide-unity/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /home/rei-arthur/projects/zombiecide-unity/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for LinuxStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0,72 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0,879 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0,72 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Unloading 3195 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 139,7 MB.
+System memory in use after: 139,9 MB.
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 3724.
+Total: 8,173660 ms (FindLiveObjects: 0,272831 ms CreateObjectMapping: 0,079629 ms MarkObjects: 7,763591 ms  DeleteObjects: 0,054081 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0,001954 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /home/rei-arthur/projects/zombiecide-unity/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /home/rei-arthur/projects/zombiecide-unity/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for LinuxStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0,68 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0,894 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0,64 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Unloading 3195 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 139,7 MB.
+System memory in use after: 139,9 MB.
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 3727.
+Total: 5,294069 ms (FindLiveObjects: 0,285806 ms CreateObjectMapping: 0,082876 ms MarkObjects: 4,876496 ms  DeleteObjects: 0,045956 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0,001792 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /home/rei-arthur/projects/zombiecide-unity/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /home/rei-arthur/projects/zombiecide-unity/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for LinuxStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0,73 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0,893 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0,63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Unloading 3195 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 139,7 MB.
+System memory in use after: 139,9 MB.
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 3730.
+Total: 5,074427 ms (FindLiveObjects: 0,308228 ms CreateObjectMapping: 0,078858 ms MarkObjects: 4,620125 ms  DeleteObjects: 0,066144 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0,001597 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /home/rei-arthur/projects/zombiecide-unity/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /home/rei-arthur/projects/zombiecide-unity/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for LinuxStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0,94 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0,851 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0,67 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Unloading 3195 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 139,7 MB.
+System memory in use after: 139,9 MB.
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 3733.
+Total: 3,004154 ms (FindLiveObjects: 0,243417 ms CreateObjectMapping: 0,066284 ms MarkObjects: 2,670950 ms  DeleteObjects: 0,021991 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1235,833054 seconds.
+  path: Assets/Prefabs/GameManager.prefab
+  artifactKey: Guid(e1711a886be46bf27ba71a0fe1508e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/GameManager.prefab using Guid(e1711a886be46bf27ba71a0fe1508e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f9be2a5e52c94b8cd8833f85adbc646') in 0,036977 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0,001565 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /home/rei-arthur/projects/zombiecide-unity/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /home/rei-arthur/projects/zombiecide-unity/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for LinuxStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0,75 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0,864 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0,63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Unloading 3195 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 139,7 MB.
+System memory in use after: 139,9 MB.
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 3736.
+Total: 3,856162 ms (FindLiveObjects: 0,521549 ms CreateObjectMapping: 0,239860 ms MarkObjects: 3,067132 ms  DeleteObjects: 0,024626 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0,001524 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /home/rei-arthur/projects/zombiecide-unity/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /home/rei-arthur/projects/zombiecide-unity/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for LinuxStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0,73 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0,842 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0,65 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Unloading 3195 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 139,7 MB.
+System memory in use after: 139,9 MB.
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 3739.
+Total: 3,230559 ms (FindLiveObjects: 0,261451 ms CreateObjectMapping: 0,065683 ms MarkObjects: 2,879490 ms  DeleteObjects: 0,021540 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 102,820114 seconds.
+  path: Assets/Animation/New Animator Override Controller.overrideController
+  artifactKey: Guid(e2fc1cbbdbc4706948879ded624c5331) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/New Animator Override Controller.overrideController using Guid(e2fc1cbbdbc4706948879ded624c5331) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69357e947f98d8657d530e4f370e48b6') in 0,016126 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 177,176933 seconds.
+  path: Assets/Animation/New Animation.anim
+  artifactKey: Guid(eefb26066b5b7afa8b072227d3917eff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/New Animation.anim using Guid(eefb26066b5b7afa8b072227d3917eff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0f081a49adba456d46f2aa82e57f6fe') in 0,002592 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8,148390 seconds.
+  path: Assets/Prefabs/GameManager.prefab
+  artifactKey: Guid(e1711a886be46bf27ba71a0fe1508e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/GameManager.prefab using Guid(e1711a886be46bf27ba71a0fe1508e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca4dd2816400b625d48aff3f3965ebea') in 0,026229 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 49,548116 seconds.
+  path: Assets/Sprites/ice_zombie_run_anim_f3.png
+  artifactKey: Guid(644f636b519d86387be95e0efa5de842) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/ice_zombie_run_anim_f3.png using Guid(644f636b519d86387be95e0efa5de842) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efc010902b390f3a89a04c6768a7054c') in 0,060569 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17,464109 seconds.
+  path: Assets/Sprites/ice_zombie_run_anim_f0.png
+  artifactKey: Guid(323d8159d4bd9919eb4ecf955d48ac89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/ice_zombie_run_anim_f0.png using Guid(323d8159d4bd9919eb4ecf955d48ac89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd91ac14a6c9ab845fa560b1eb189922b') in 0,068695 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,015568 seconds.
+  path: Assets/Sprites/ice_zombie_run_anim_f1.png
+  artifactKey: Guid(42dd81bc9b43404939de56a26e82546e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/ice_zombie_run_anim_f1.png using Guid(42dd81bc9b43404939de56a26e82546e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cde014bf71262c49a0de7e9ad531e97f') in 0,007324 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000200 seconds.
+  path: Assets/Sprites/ice_zombie_run_anim_f2.png
+  artifactKey: Guid(7f839bbe5c87dae56b907ab5cb81a649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/ice_zombie_run_anim_f2.png using Guid(7f839bbe5c87dae56b907ab5cb81a649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c505ceb3016b8ebee8e3c0ee74502056') in 0,006288 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14,585654 seconds.
+  path: Assets/Sprites/lizard_f_run_anim_f0.png
+  artifactKey: Guid(ff57f3671f64c62c1a607b9077957ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/lizard_f_run_anim_f0.png using Guid(ff57f3671f64c62c1a607b9077957ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d3e09e1ef80ad4bc7000774ea8fd794') in 0,004531 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,012084 seconds.
+  path: Assets/Sprites/lizard_f_run_anim_f1.png
+  artifactKey: Guid(1b55ab00990c140aeb852711687d9a6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/lizard_f_run_anim_f1.png using Guid(1b55ab00990c140aeb852711687d9a6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2669b3021cc88998c3e818540455f43') in 0,004393 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000255 seconds.
+  path: Assets/Sprites/lizard_f_run_anim_f3.png
+  artifactKey: Guid(5517b75ab81ed4545ab6e46adfb8d724) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/lizard_f_run_anim_f3.png using Guid(5517b75ab81ed4545ab6e46adfb8d724) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b50d0c634d8db2dbe3266711014bfd6') in 0,004379 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000191 seconds.
+  path: Assets/Sprites/lizard_f_run_anim_f2.png
+  artifactKey: Guid(f390c64732a478ad5aa47b952b3ba41b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/lizard_f_run_anim_f2.png using Guid(f390c64732a478ad5aa47b952b3ba41b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eead205ec8239438bd9df1d09f83f722') in 0,005071 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3,879691 seconds.
+  path: Assets/Sprites/lizard_f_run_anim_f0.png
+  artifactKey: Guid(ff57f3671f64c62c1a607b9077957ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/lizard_f_run_anim_f0.png using Guid(ff57f3671f64c62c1a607b9077957ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e40db8d0b17d34e741f45eb6d991d1b2') in 0,076652 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,044916 seconds.
+  path: Assets/Sprites/lizard_f_run_anim_f1.png
+  artifactKey: Guid(1b55ab00990c140aeb852711687d9a6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/lizard_f_run_anim_f1.png using Guid(1b55ab00990c140aeb852711687d9a6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c644f88c2c7c69101ab9ab6ef5064d94') in 0,006091 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000142 seconds.
+  path: Assets/Sprites/lizard_f_run_anim_f3.png
+  artifactKey: Guid(5517b75ab81ed4545ab6e46adfb8d724) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/lizard_f_run_anim_f3.png using Guid(5517b75ab81ed4545ab6e46adfb8d724) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '309fea75542005cfd9962fa9b2a4c001') in 0,005534 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000191 seconds.
+  path: Assets/Sprites/lizard_f_run_anim_f2.png
+  artifactKey: Guid(f390c64732a478ad5aa47b952b3ba41b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/lizard_f_run_anim_f2.png using Guid(f390c64732a478ad5aa47b952b3ba41b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a25845e8d4819d7fd49ea81886d7e393') in 0,006601 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19,952165 seconds.
+  path: Assets/Sprites/lizard_m_run_anim_f0.png
+  artifactKey: Guid(66751d932a308a1b3a07100bafeafd7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/lizard_m_run_anim_f0.png using Guid(66751d932a308a1b3a07100bafeafd7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0229d1b2e3015c856caee91b0b50b22f') in 0,070742 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,030020 seconds.
+  path: Assets/Sprites/lizard_m_run_anim_f1.png
+  artifactKey: Guid(00db60441331245b299ed7e091e3fd40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/lizard_m_run_anim_f1.png using Guid(00db60441331245b299ed7e091e3fd40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6a5da5553e040175145c493684ba4be') in 0,006065 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000330 seconds.
+  path: Assets/Sprites/lizard_m_run_anim_f2.png
+  artifactKey: Guid(f3d60457d332e30d19778e133c8aa3cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/lizard_m_run_anim_f2.png using Guid(f3d60457d332e30d19778e133c8aa3cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f52a19864da63c7e35f757ebfb80eab') in 0,007046 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000170 seconds.
+  path: Assets/Sprites/lizard_m_run_anim_f3.png
+  artifactKey: Guid(eed056ab456f36b969a4149ed8b9420f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/lizard_m_run_anim_f3.png using Guid(eed056ab456f36b969a4149ed8b9420f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07664b169fdd0c3219337ecc79e0c937') in 0,006518 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15,917898 seconds.
+  path: Assets/Sprites/masked_orc_run_anim_f0.png
+  artifactKey: Guid(ec0fa28baa8485fb5a8850f3b3c3c868) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/masked_orc_run_anim_f0.png using Guid(ec0fa28baa8485fb5a8850f3b3c3c868) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a595c1a5b7619ac48569c4d1e727d95') in 0,069283 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,016836 seconds.
+  path: Assets/Sprites/masked_orc_run_anim_f1.png
+  artifactKey: Guid(4a00fc96f280fa41fbaecf70f936670e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/masked_orc_run_anim_f1.png using Guid(4a00fc96f280fa41fbaecf70f936670e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed5ba6f5e7d51bb6bd9c28b8b61a6aa1') in 0,006311 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000161 seconds.
+  path: Assets/Sprites/masked_orc_run_anim_f2.png
+  artifactKey: Guid(5159da1ff751f2d97bdb66d7fd34f5e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/masked_orc_run_anim_f2.png using Guid(5159da1ff751f2d97bdb66d7fd34f5e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5af69385f1efd6e063e4cfb5579f4b19') in 0,007721 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000167 seconds.
+  path: Assets/Sprites/masked_orc_run_anim_f3.png
+  artifactKey: Guid(c3e77c3b6d106a650b3836e18da76fac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/masked_orc_run_anim_f3.png using Guid(c3e77c3b6d106a650b3836e18da76fac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b95709b2c83d482305c1bb99a89174a') in 0,008560 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13,394217 seconds.
+  path: Assets/Sprites/muddy_run_anim_f0.png
+  artifactKey: Guid(e2d8224a39264482ba9756a4d75a5239) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/muddy_run_anim_f0.png using Guid(e2d8224a39264482ba9756a4d75a5239) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '334a33b982de8759ea289b27b5db5234') in 0,007744 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,117416 seconds.
+  path: Assets/Sprites/muddy_run_anim_f1.png
+  artifactKey: Guid(ac10ed328dfa58822812e494b1b6ef7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/muddy_run_anim_f1.png using Guid(ac10ed328dfa58822812e494b1b6ef7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05db906d594292548c653c871c06cc9c') in 0,005818 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000348 seconds.
+  path: Assets/Sprites/muddy_run_anim_f3.png
+  artifactKey: Guid(b005a46d947b15ce0ba576d16c19358f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/muddy_run_anim_f3.png using Guid(b005a46d947b15ce0ba576d16c19358f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76a68960f72349260099a2d2ee2c76ed') in 0,006672 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000172 seconds.
+  path: Assets/Sprites/muddy_run_anim_f2.png
+  artifactKey: Guid(f74fdf42754630124871d7913c10fdd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/muddy_run_anim_f2.png using Guid(f74fdf42754630124871d7913c10fdd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59236cfb45a08fd507a8d6e28218410c') in 0,005451 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14,175317 seconds.
+  path: Assets/Sprites/necromancer_run_anim_f0.png
+  artifactKey: Guid(7e2f3d417aa5727518cbd2f1b5ccd46d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/necromancer_run_anim_f0.png using Guid(7e2f3d417aa5727518cbd2f1b5ccd46d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8cd2bc1fe3726b2bcfd2ba23580fe115') in 0,072675 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,017153 seconds.
+  path: Assets/Sprites/necromancer_run_anim_f1.png
+  artifactKey: Guid(fb8528d5ac3cd103cb8b6a247eb813af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/necromancer_run_anim_f1.png using Guid(fb8528d5ac3cd103cb8b6a247eb813af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '893371f053f13b20016d085ca201436a') in 0,007701 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000150 seconds.
+  path: Assets/Sprites/necromancer_run_anim_f3.png
+  artifactKey: Guid(2353034110c82385e987642db0dfc68e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/necromancer_run_anim_f3.png using Guid(2353034110c82385e987642db0dfc68e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93653a42ed0897200fe3cd96dd9432dd') in 0,007158 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000157 seconds.
+  path: Assets/Sprites/necromancer_run_anim_f2.png
+  artifactKey: Guid(eb37935b045f4eb6891c2fc125f1aea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/necromancer_run_anim_f2.png using Guid(eb37935b045f4eb6891c2fc125f1aea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9dddc41c871ec43fa245289b0c868ffa') in 0,008963 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 25,354756 seconds.
+  path: Assets/Sprites/orc_shaman_run_anim_f0.png
+  artifactKey: Guid(eb1409c703a30d2b5873810fb5d05055) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/orc_shaman_run_anim_f0.png using Guid(eb1409c703a30d2b5873810fb5d05055) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a991c3125d455499525b3d01bb74fa09') in 0,067264 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,018777 seconds.
+  path: Assets/Sprites/orc_shaman_run_anim_f1.png
+  artifactKey: Guid(4fb266ba2158458928925c9a4b687d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/orc_shaman_run_anim_f1.png using Guid(4fb266ba2158458928925c9a4b687d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85bdf7e0a205e34304922d1f971dc556') in 0,006921 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000320 seconds.
+  path: Assets/Sprites/orc_warrior_run_anim_f1.png
+  artifactKey: Guid(8787bf970eccda414b19c02b85af9e0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/orc_warrior_run_anim_f1.png using Guid(8787bf970eccda414b19c02b85af9e0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '998d575d6ae7fdb4bcc57e787809b2ef') in 0,005675 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000196 seconds.
+  path: Assets/Sprites/orc_warrior_run_anim_f0.png
+  artifactKey: Guid(abb5a181728baf8b990938ab73226f3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/orc_warrior_run_anim_f0.png using Guid(abb5a181728baf8b990938ab73226f3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e4e8b227a8af39ce77b31bcf50c6587') in 0,005560 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000119 seconds.
+  path: Assets/Sprites/orc_warrior_run_anim_f3.png
+  artifactKey: Guid(1289ec8cf85593bb7987e13ada1b7946) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/orc_warrior_run_anim_f3.png using Guid(1289ec8cf85593bb7987e13ada1b7946) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8d9b12b606c01c69437cfe1b45725a6') in 0,005105 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000205 seconds.
+  path: Assets/Sprites/orc_shaman_run_anim_f3.png
+  artifactKey: Guid(19d9a557c2d5ac5acab09689f3478ab9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/orc_shaman_run_anim_f3.png using Guid(19d9a557c2d5ac5acab09689f3478ab9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afc7f8db84f5904e5c3642dbd99b2153') in 0,005177 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000188 seconds.
+  path: Assets/Sprites/orc_shaman_run_anim_f2.png
+  artifactKey: Guid(15e247e489e443275a4f932f03e23ba9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/orc_shaman_run_anim_f2.png using Guid(15e247e489e443275a4f932f03e23ba9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '362b7f7bc16dc1702d3ac887d85578ad') in 0,007515 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000195 seconds.
+  path: Assets/Sprites/orc_warrior_run_anim_f2.png
+  artifactKey: Guid(58c637217e863c86ab5d49ebac3c0514) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/orc_warrior_run_anim_f2.png using Guid(58c637217e863c86ab5d49ebac3c0514) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bbd02f96302a4fe928a85d989129823') in 0,006271 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 42,355061 seconds.
+  path: Assets/Sprites/skelet_run_anim_f0.png
+  artifactKey: Guid(6ff598d37214bde7d9f8b19333b2f56d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/skelet_run_anim_f0.png using Guid(6ff598d37214bde7d9f8b19333b2f56d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3052b27789cd4cbf72a9f7bff8572383') in 0,070857 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,017968 seconds.
+  path: Assets/Sprites/wogol_run_anim_f0.png
+  artifactKey: Guid(f904f36f742e9cfb9a2f8380892528cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/wogol_run_anim_f0.png using Guid(f904f36f742e9cfb9a2f8380892528cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ab953dce0bb90b4e8c43991c5f0d915') in 0,005746 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000191 seconds.
+  path: Assets/Sprites/wogol_run_anim_f3.png
+  artifactKey: Guid(9795e3c12c5a11a7784838422fc8d51a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/wogol_run_anim_f3.png using Guid(9795e3c12c5a11a7784838422fc8d51a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8bdda2b2338316b281b9fb7ec15129e') in 0,005399 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000225 seconds.
+  path: Assets/Sprites/wogol_run_anim_f1.png
+  artifactKey: Guid(f2ac5b0d4a1de9024a4caffe19d52212) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/wogol_run_anim_f1.png using Guid(f2ac5b0d4a1de9024a4caffe19d52212) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5228521e05596b83b08884dc643ed1a1') in 0,005371 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000182 seconds.
+  path: Assets/Sprites/zombie_run_anim_f3.png
+  artifactKey: Guid(3700263529823a1f098a8ce8c7605c26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/zombie_run_anim_f3.png using Guid(3700263529823a1f098a8ce8c7605c26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb634029d59262dce691747e196570b4') in 0,006172 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000188 seconds.
+  path: Assets/Sprites/zombie_run_anim_f2.png
+  artifactKey: Guid(4163f265cc12d6bccba61447b6602dc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/zombie_run_anim_f2.png using Guid(4163f265cc12d6bccba61447b6602dc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12b961d53453abfb7deaa00a737b8ae1') in 0,005383 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000136 seconds.
+  path: Assets/Sprites/wogol_run_anim_f2.png
+  artifactKey: Guid(82f08bf5a86ed7985aacd90b277c0638) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/wogol_run_anim_f2.png using Guid(82f08bf5a86ed7985aacd90b277c0638) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d27d0ef85249e5abf8b7aa92d153e1c') in 0,005689 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000146 seconds.
+  path: Assets/Sprites/zombie_run_anim_f1.png
+  artifactKey: Guid(1917d930fda3904dc912d9656a9c6deb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/zombie_run_anim_f1.png using Guid(1917d930fda3904dc912d9656a9c6deb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9686aadd2089d2b1f2dc1178383d9cf') in 0,005609 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000239 seconds.
+  path: Assets/Sprites/zombie_run_anim_f0.png
+  artifactKey: Guid(7b367a0b530a242c59fbae7d8e10ca88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/zombie_run_anim_f0.png using Guid(7b367a0b530a242c59fbae7d8e10ca88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45ff3a5ab1076dba5557956af22a2c3b') in 0,006259 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1,743427 seconds.
+  path: Assets/Sprites/tiny_zombie_run_anim_f0.png
+  artifactKey: Guid(18f812e0a6802b712af2ebd4dd2c4e12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/tiny_zombie_run_anim_f0.png using Guid(18f812e0a6802b712af2ebd4dd2c4e12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91fc639a4084eca28afcf69832029e96') in 0,005568 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000191 seconds.
+  path: Assets/Sprites/tiny_zombie_run_anim_f1.png
+  artifactKey: Guid(7ec1bb322a1bdc4a6a952b81742874f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/tiny_zombie_run_anim_f1.png using Guid(7ec1bb322a1bdc4a6a952b81742874f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7eac476d5cad23f4bcd92b63e002834e') in 0,005771 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000268 seconds.
+  path: Assets/Sprites/tiny_zombie_run_anim_f3.png
+  artifactKey: Guid(7fe42276c70990203bf2e65451db3369) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/tiny_zombie_run_anim_f3.png using Guid(7fe42276c70990203bf2e65451db3369) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16b4914d9e25ab320b15ba8388ae44d2') in 0,005779 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000155 seconds.
+  path: Assets/Sprites/tiny_zombie_run_anim_f2.png
+  artifactKey: Guid(c69f0e4e3f4096d21971c97af9ceae48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/tiny_zombie_run_anim_f2.png using Guid(c69f0e4e3f4096d21971c97af9ceae48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '874fef900f6515b6a2ef9bda29c60e0f') in 0,005611 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1,483593 seconds.
+  path: Assets/Animation/Imp.prefab
+  artifactKey: Guid(ee901ebc9e86045bfa84be422a7fc063) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Imp.prefab using Guid(ee901ebc9e86045bfa84be422a7fc063) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d798a0c2e3abaebd776242c907e3565') in 0,024041 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 53,701091 seconds.
+  path: Assets/Animation/Imp.prefab
+  artifactKey: Guid(ee901ebc9e86045bfa84be422a7fc063) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Imp.prefab using Guid(ee901ebc9e86045bfa84be422a7fc063) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The AnimationClip 'IceZombieRun' used by the Animation component 'Imp' must be marked as Legacy.
+
+The AnimationClip 'IceZombieRun' used by the Animation component 'Imp(Clone)' must be marked as Legacy.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:638)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:604)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+The AnimationClip 'IceZombieRun' used by the Animation component 'Imp(Clone)AnimatorPreview' must be marked as Legacy.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:InitInstantiatedPreviewRecursive (UnityEngine.GameObject) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:594)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:607)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+ -> (artifact id: '85a214a559104de9e2d13c33a08a8aae') in 0,009731 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15,389165 seconds.
+  path: Assets/Animation/Imp.prefab
+  artifactKey: Guid(ee901ebc9e86045bfa84be422a7fc063) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Imp.prefab using Guid(ee901ebc9e86045bfa84be422a7fc063) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The AnimationClip 'IceZombieRun' used by the Animation component 'Imp' must be marked as Legacy.
+
+The AnimationClip 'IceZombieRun' used by the Animation component 'Imp(Clone)' must be marked as Legacy.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:638)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:604)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+The AnimationClip 'IceZombieRun' used by the Animation component 'Imp(Clone)AnimatorPreview' must be marked as Legacy.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:InitInstantiatedPreviewRecursive (UnityEngine.GameObject) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:594)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:607)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+ -> (artifact id: '24e2c5496ef1adcc52f7583775f73b7e') in 0,008120 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21,651182 seconds.
+  path: Assets/Animation/Imp.prefab
+  artifactKey: Guid(ee901ebc9e86045bfa84be422a7fc063) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Imp.prefab using Guid(ee901ebc9e86045bfa84be422a7fc063) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The AnimationClip 'ImpRun' used by the Animation component 'Imp' must be marked as Legacy.
+
+The AnimationClip 'ImpRun' used by the Animation component 'Imp(Clone)' must be marked as Legacy.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:638)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:604)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+The AnimationClip 'ImpRun' used by the Animation component 'Imp(Clone)AnimatorPreview' must be marked as Legacy.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:InitInstantiatedPreviewRecursive (UnityEngine.GameObject) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:594)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:607)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+ -> (artifact id: '0a2f2c892d393e8ed0c8e8e91836b0f8') in 0,009532 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6,544719 seconds.
+  path: Assets/Animation/Imp.prefab
+  artifactKey: Guid(ee901ebc9e86045bfa84be422a7fc063) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Imp.prefab using Guid(ee901ebc9e86045bfa84be422a7fc063) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b75cff80b2339c6792f9f3f2a5cc054c') in 0,006973 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 211,636000 seconds.
+  path: Assets/Sprites/skelet_run_anim_f1.png
+  artifactKey: Guid(1e8ae51a49718250b8518a0ee1cb18fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/skelet_run_anim_f1.png using Guid(1e8ae51a49718250b8518a0ee1cb18fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2acd9e5468db088777dfafe88f84fd8') in 0,005958 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000204 seconds.
+  path: Assets/Sprites/swampy_run_anim_f1.png
+  artifactKey: Guid(3475b5324c9719892aba9d2c681d1c82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/swampy_run_anim_f1.png using Guid(3475b5324c9719892aba9d2c681d1c82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2802c8e2c237d1d527a77aeb53d9e39') in 0,004862 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000177 seconds.
+  path: Assets/Sprites/skelet_run_anim_f2.png
+  artifactKey: Guid(fac1ccb95fc2d1ed0be79be757c5a1cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/skelet_run_anim_f2.png using Guid(fac1ccb95fc2d1ed0be79be757c5a1cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9db16a64bcdbec596fc62646cc900a6') in 0,005232 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000227 seconds.
+  path: Assets/Sprites/swampy_run_anim_f2.png
+  artifactKey: Guid(29a79d1d4366592cfb34c1dcbf6f77be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/swampy_run_anim_f2.png using Guid(29a79d1d4366592cfb34c1dcbf6f77be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c12c690b1082e0632f786630d97191f') in 0,006488 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000089 seconds.
+  path: Assets/Sprites/skelet_run_anim_f3.png
+  artifactKey: Guid(d3608c745b0f5807bae4e75c58b59eba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/skelet_run_anim_f3.png using Guid(d3608c745b0f5807bae4e75c58b59eba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd4efc274ada32dad384dd1b14eecf47') in 0,005619 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000146 seconds.
+  path: Assets/Sprites/swampy_run_anim_f3.png
+  artifactKey: Guid(dec0061f3307da892add787b7852313e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/swampy_run_anim_f3.png using Guid(dec0061f3307da892add787b7852313e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd81c05ac2d959950e61457e160ed74c4') in 0,006121 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,000136 seconds.
+  path: Assets/Sprites/swampy_run_anim_f0.png
+  artifactKey: Guid(57781aa77b3ec6cd7abed453fa8e7b55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/swampy_run_anim_f0.png using Guid(57781aa77b3ec6cd7abed453fa8e7b55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae8a820b347e446cd2d7ce10f259dbb8') in 0,005698 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 355,623773 seconds.
+  path: Assets/Animation/LizardController.overrideController
+  artifactKey: Guid(330a9c410c90c37a89688c3b271cfb4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/LizardController.overrideController using Guid(330a9c410c90c37a89688c3b271cfb4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1456dd3ffb3be9b1905eb657ab352130') in 0,002347 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16,721250 seconds.
+  path: Assets/Animation/LizardRun.anim
+  artifactKey: Guid(e1ddf05992b3004b1b2a45b0861d5827) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/LizardRun.anim using Guid(e1ddf05992b3004b1b2a45b0861d5827) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c388ac64b6c261aa683e0ff098349b7d') in 0,001426 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 30,845950 seconds.
+  path: Assets/Animation/MaskedOrcRun.anim
+  artifactKey: Guid(4b7db3fbe50946145bb12b2dc2e42e8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/MaskedOrcRun.anim using Guid(4b7db3fbe50946145bb12b2dc2e42e8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80407900edd1e84785c758fc51e34718') in 0,001465 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,197294 seconds.
+  path: Assets/Animation/MuddyRun.anim
+  artifactKey: Guid(9f10a9a7c290e5da7b2309403484a174) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/MuddyRun.anim using Guid(9f10a9a7c290e5da7b2309403484a174) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecd5269474de07d0deb6c6d8294b225c') in 0,001531 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,142816 seconds.
+  path: Assets/Animation/OrcShamanRun.anim
+  artifactKey: Guid(5f63df6d16c9cfd32abb2b44663c6794) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/OrcShamanRun.anim using Guid(5f63df6d16c9cfd32abb2b44663c6794) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7836f95b2a0084423624fd5c763c5f40') in 0,001574 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,138927 seconds.
+  path: Assets/Animation/OrcWarriorRun.anim
+  artifactKey: Guid(7879e1949d014dfea9685c2fbf84a7fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/OrcWarriorRun.anim using Guid(7879e1949d014dfea9685c2fbf84a7fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c11fea0f0651a7d8eff56dffd1a55a0') in 0,003009 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,138892 seconds.
+  path: Assets/Animation/SkeletonRun.anim
+  artifactKey: Guid(18394a9acd14d9a6c80b37e13b9f59b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/SkeletonRun.anim using Guid(18394a9acd14d9a6c80b37e13b9f59b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c66b74b020a0516447b6eb62344d4630') in 0,001354 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,140614 seconds.
+  path: Assets/Animation/SwampyRun.anim
+  artifactKey: Guid(c1adbce97740c3b8f97e055ffa2213fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/SwampyRun.anim using Guid(c1adbce97740c3b8f97e055ffa2213fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0c368b74bd599e784da05dd56b14ddd') in 0,001563 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,144052 seconds.
+  path: Assets/Animation/TinyZombieRun.anim
+  artifactKey: Guid(65ac93985356ee786801a77a279add64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/TinyZombieRun.anim using Guid(65ac93985356ee786801a77a279add64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b55aae24958770ed99adc5f6e5736170') in 0,001615 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,138855 seconds.
+  path: Assets/Animation/WogolRun.anim
+  artifactKey: Guid(27c861a89ee255621b9b052c061ef357) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/WogolRun.anim using Guid(27c861a89ee255621b9b052c061ef357) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5952a37bc9b200a3139fa79b673672d') in 0,001826 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,152081 seconds.
+  path: Assets/Animation/ZombieRun.anim
+  artifactKey: Guid(fa30de23a71a2e27b9a356cd0844d23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/ZombieRun.anim using Guid(fa30de23a71a2e27b9a356cd0844d23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '688bf81bba6dc7edb6e20cdb20e95368') in 0,001316 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 38,051216 seconds.
+  path: Assets/Animation/IceZombieRun.anim
+  artifactKey: Guid(1dd1786997e596757a9ce0f8f1c339e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/IceZombieRun.anim using Guid(1dd1786997e596757a9ce0f8f1c339e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4c5d890fcf375ee4dcacadd8d3b92db') in 0,001546 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10,077974 seconds.
+  path: Assets/Animation/GreenLizardRun.anim
+  artifactKey: Guid(2ab711378b6a05ef6829ab0b8c26a076) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/GreenLizardRun.anim using Guid(2ab711378b6a05ef6829ab0b8c26a076) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11463f478dbb6a99ab57a21622a154cd') in 0,001926 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 84,807881 seconds.
+  path: Assets/Animation/Ice.anim
+  artifactKey: Guid(e1941e52b62b9d85f950331d19644b54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Ice.anim using Guid(e1941e52b62b9d85f950331d19644b54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbebb3974e47e53f84445838ac4ff7af') in 0,003063 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 78,332810 seconds.
+  path: Assets/Animation/Imp.prefab
+  artifactKey: Guid(ee901ebc9e86045bfa84be422a7fc063) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Imp.prefab using Guid(ee901ebc9e86045bfa84be422a7fc063) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a299eca21fad2466e648c4a38ed473d4') in 0,008936 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2,985093 seconds.
+  path: Assets/Animation/Imp.prefab
+  artifactKey: Guid(ee901ebc9e86045bfa84be422a7fc063) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Imp.prefab using Guid(ee901ebc9e86045bfa84be422a7fc063) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The AnimationClip 'Ice' used by the Animation component 'Imp' must be marked as Legacy.
+
+The AnimationClip 'Ice' used by the Animation component 'Imp(Clone)' must be marked as Legacy.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:638)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:604)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+The AnimationClip 'Ice' used by the Animation component 'Imp(Clone)AnimatorPreview' must be marked as Legacy.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:InitInstantiatedPreviewRecursive (UnityEngine.GameObject) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:594)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:607)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+ -> (artifact id: 'f602a15e7357e7df7ace3c94b61993c5') in 0,009277 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 31,155060 seconds.
+  path: Assets/Animation/IceZombieRun.anim
+  artifactKey: Guid(1dd1786997e596757a9ce0f8f1c339e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/IceZombieRun.anim using Guid(1dd1786997e596757a9ce0f8f1c339e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55c32a9862f88c6fc7cbc6c830f82237') in 0,002808 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 32,765098 seconds.
+  path: Assets/Animation/Imp.prefab
+  artifactKey: Guid(ee901ebc9e86045bfa84be422a7fc063) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Imp.prefab using Guid(ee901ebc9e86045bfa84be422a7fc063) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The AnimationClip 'IceZombieRun' used by the Animation component 'Imp' must be marked as Legacy.
+
+The AnimationClip 'IceZombieRun' used by the Animation component 'Imp(Clone)' must be marked as Legacy.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:638)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:604)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+The AnimationClip 'IceZombieRun' used by the Animation component 'Imp(Clone)AnimatorPreview' must be marked as Legacy.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:InitInstantiatedPreviewRecursive (UnityEngine.GameObject) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:594)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:607)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+ -> (artifact id: '2dc8a6b8b5e5cd3c6baff994900f880c') in 0,073095 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 37,501360 seconds.
+  path: Assets/Animation/BlueLizardRun.anim
+  artifactKey: Guid(3dc2d50f46e2450798af46faae3ee371) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/BlueLizardRun.anim using Guid(3dc2d50f46e2450798af46faae3ee371) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5094af29e0ea02a3f153427d96956776') in 0,002366 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 145,030448 seconds.
+  path: Assets/Animation/IceZombieRun.anim
+  artifactKey: Guid(1dd1786997e596757a9ce0f8f1c339e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/IceZombieRun.anim using Guid(1dd1786997e596757a9ce0f8f1c339e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f29a871880bef7382b1bc674ec227e7') in 0,001317 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,946517 seconds.
+  path: Assets/Animation/NecromancerRun.anim
+  artifactKey: Guid(f1cfdd23520be944590a7149a238a4b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/NecromancerRun.anim using Guid(f1cfdd23520be944590a7149a238a4b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0da7e8c07ea9e9e82f8a0240a3dde073') in 0,001342 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 335,541484 seconds.
+  path: Assets/Animation/ImpController.controller
+  artifactKey: Guid(94567fd097bd494e39aee1ef6b2e3817) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/ImpController.controller using Guid(94567fd097bd494e39aee1ef6b2e3817) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f140ccae7b42787f7a270d163d2c875') in 0,002292 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 68,190928 seconds.
+  path: Assets/Animation/MaskedZombieController.overrideController
+  artifactKey: Guid(e2fc1cbbdbc4706948879ded624c5331) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/MaskedZombieController.overrideController using Guid(e2fc1cbbdbc4706948879ded624c5331) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a68104b7cdbdeb8d50d567bbc2c0dbcb') in 0,003989 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 80,991221 seconds.
+  path: Assets/Animation/ImpRun.anim
+  artifactKey: Guid(fbe94ef279930172fb2503e28b6180bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/ImpRun.anim using Guid(fbe94ef279930172fb2503e28b6180bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '809d9aa35c84f4feea2c29851cc6f93e') in 0,002316 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12,818579 seconds.
+  path: Assets/Animation/Imp.prefab
+  artifactKey: Guid(ee901ebc9e86045bfa84be422a7fc063) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Imp.prefab using Guid(ee901ebc9e86045bfa84be422a7fc063) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '595115e7ebe4da16f4859ab2f252e201') in 0,075337 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4,841809 seconds.
+  path: Assets/Animation/Imp.prefab
+  artifactKey: Guid(ee901ebc9e86045bfa84be422a7fc063) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Imp.prefab using Guid(ee901ebc9e86045bfa84be422a7fc063) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The AnimationClip 'ImpRun' used by the Animation component 'Imp' must be marked as Legacy.
+
+The AnimationClip 'ImpRun' used by the Animation component 'Imp(Clone)' must be marked as Legacy.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:638)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:604)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+The AnimationClip 'ImpRun' used by the Animation component 'Imp(Clone)AnimatorPreview' must be marked as Legacy.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:InitInstantiatedPreviewRecursive (UnityEngine.GameObject) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:594)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:607)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+ -> (artifact id: '7bb9b1b395efd0974a766ff528fa23e3') in 0,008870 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 56,727113 seconds.
+  path: Assets/Animation/ImpController.controller
+  artifactKey: Guid(94567fd097bd494e39aee1ef6b2e3817) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/ImpController.controller using Guid(94567fd097bd494e39aee1ef6b2e3817) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f175faeac1aab3f8a900350d8710185') in 0,001592 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23,902694 seconds.
+  path: Assets/Animation/MaskedOrcController.overrideController
+  artifactKey: Guid(e2fc1cbbdbc4706948879ded624c5331) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/MaskedOrcController.overrideController using Guid(e2fc1cbbdbc4706948879ded624c5331) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7043227be5c9390e183dad4ec72afaf2') in 0,002815 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1,437554 seconds.
+  path: Assets/Animation/ImpRun.anim
+  artifactKey: Guid(fbe94ef279930172fb2503e28b6180bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/ImpRun.anim using Guid(fbe94ef279930172fb2503e28b6180bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e5e8dd0fe49713742573813c63dbce2') in 0,001300 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8,562933 seconds.
+  path: Assets/Animation/MaskedOrcRun.anim
+  artifactKey: Guid(4b7db3fbe50946145bb12b2dc2e42e8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/MaskedOrcRun.anim using Guid(4b7db3fbe50946145bb12b2dc2e42e8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14711e52511376c8f9335571f1ab2879') in 0,001452 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1,479809 seconds.
+  path: Assets/Animation/MuddyRun.anim
+  artifactKey: Guid(9f10a9a7c290e5da7b2309403484a174) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/MuddyRun.anim using Guid(9f10a9a7c290e5da7b2309403484a174) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b6ae78a006fff586521e8912b6e0de9') in 0,001209 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12,660977 seconds.
+  path: Assets/Animation/MuddyController.overrideController
+  artifactKey: Guid(3bd8f904dc05a53a8b5e6b9608914e44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/MuddyController.overrideController using Guid(3bd8f904dc05a53a8b5e6b9608914e44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6cab21dc484c0e79a4a81a82b119155') in 0,002788 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7,653269 seconds.
+  path: Assets/Animation/NecromancerRun.anim
+  artifactKey: Guid(f1cfdd23520be944590a7149a238a4b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/NecromancerRun.anim using Guid(f1cfdd23520be944590a7149a238a4b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8415774623dab96d1ab45e4a0c662b2f') in 0,001668 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8,030448 seconds.
+  path: Assets/Animation/NecromancerController.overrideController
+  artifactKey: Guid(31a9306659ac64236a324d443a745bfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/NecromancerController.overrideController using Guid(31a9306659ac64236a324d443a745bfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53412a486d53681fe488dceadf9f2e6b') in 0,002032 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7,684975 seconds.
+  path: Assets/Animation/OrcShamanRun.anim
+  artifactKey: Guid(5f63df6d16c9cfd32abb2b44663c6794) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/OrcShamanRun.anim using Guid(5f63df6d16c9cfd32abb2b44663c6794) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b939099662cb32349b1f48706d223bfb') in 0,001326 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4,795706 seconds.
+  path: Assets/Animation/New Animator Override Controller.overrideController
+  artifactKey: Guid(f404fbbdda0934339956656684de6791) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/New Animator Override Controller.overrideController using Guid(f404fbbdda0934339956656684de6791) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b331631a50d4db772bd05b0103bb86a9') in 0,002320 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11,383437 seconds.
+  path: Assets/Animation/OrcShamanController.overrideController
+  artifactKey: Guid(f404fbbdda0934339956656684de6791) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/OrcShamanController.overrideController using Guid(f404fbbdda0934339956656684de6791) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08caf145cd765fd9e379d5c7bcc17563') in 0,002735 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1,063883 seconds.
+  path: Assets/Animation/OrcWarriorRun.anim
+  artifactKey: Guid(7879e1949d014dfea9685c2fbf84a7fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/OrcWarriorRun.anim using Guid(7879e1949d014dfea9685c2fbf84a7fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4ae32246097371e05e775e008dbcd83') in 0,001584 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8,741671 seconds.
+  path: Assets/Animation/OrcWarrior.overrideController
+  artifactKey: Guid(c7f10cd1d347807928cd5a42ea354df4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/OrcWarrior.overrideController using Guid(c7f10cd1d347807928cd5a42ea354df4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '089c12f30716e24c88b427990259c980') in 0,002288 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3,724101 seconds.
+  path: Assets/Animation/OrcWarriorController.overrideController
+  artifactKey: Guid(c7f10cd1d347807928cd5a42ea354df4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/OrcWarriorController.overrideController using Guid(c7f10cd1d347807928cd5a42ea354df4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9787fa4a6d0006365ea5aff22f3d98d6') in 0,002070 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8,066717 seconds.
+  path: Assets/Animation/SkeletonRun.anim
+  artifactKey: Guid(18394a9acd14d9a6c80b37e13b9f59b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/SkeletonRun.anim using Guid(18394a9acd14d9a6c80b37e13b9f59b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6e1b65b37cb12bbfb2447e5687e32c8') in 0,001663 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3,452373 seconds.
+  path: Assets/Animation/New Animator Override Controller.overrideController
+  artifactKey: Guid(e69027178b465e4439b99ce944432298) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/New Animator Override Controller.overrideController using Guid(e69027178b465e4439b99ce944432298) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d0b92b0edbdf6e0ad9a931ab374b9cf') in 0,002182 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15,705098 seconds.
+  path: Assets/Animation/SkeletonController.overrideController
+  artifactKey: Guid(e69027178b465e4439b99ce944432298) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/SkeletonController.overrideController using Guid(e69027178b465e4439b99ce944432298) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc109868408d794ea5604698127d501d') in 0,002067 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14,886437 seconds.
+  path: Assets/Animation/SwampyRun.anim
+  artifactKey: Guid(c1adbce97740c3b8f97e055ffa2213fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/SwampyRun.anim using Guid(c1adbce97740c3b8f97e055ffa2213fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fba4acbdfc2f85b3c163d05aee1da480') in 0,001479 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9,336593 seconds.
+  path: Assets/Animation/SwampyController.overrideController
+  artifactKey: Guid(2812a3cc694a215aca753ff49a292b49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/SwampyController.overrideController using Guid(2812a3cc694a215aca753ff49a292b49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98db23e429b9639522e476d8260158a9') in 0,002428 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19,571957 seconds.
+  path: Assets/Animation/TinyZombieController.overrideController
+  artifactKey: Guid(2307cc3e38f44e8a4a5e2cf3d3b25212) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/TinyZombieController.overrideController using Guid(2307cc3e38f44e8a4a5e2cf3d3b25212) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88158e84a678874bc56826be9817db8f') in 0,001992 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19,752207 seconds.
+  path: Assets/Animation/WogolController.overrideController
+  artifactKey: Guid(9cd72261fc38fc951a004ac433b1231f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/WogolController.overrideController using Guid(9cd72261fc38fc951a004ac433b1231f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '553fd8ee7322ebbf28e81cb6224b61a0') in 0,002019 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14,351557 seconds.
+  path: Assets/Animation/New Animator Override Controller.overrideController
+  artifactKey: Guid(36b0715e3a7032ebe9a7f28d0009a2e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/New Animator Override Controller.overrideController using Guid(36b0715e3a7032ebe9a7f28d0009a2e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '475bec242eae3d700cd3567eeda83c15') in 0,003434 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7,476762 seconds.
+  path: Assets/Animation/ZombieRun.anim
+  artifactKey: Guid(fa30de23a71a2e27b9a356cd0844d23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/ZombieRun.anim using Guid(fa30de23a71a2e27b9a356cd0844d23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f4d3f8f6f1bfe6a46c4a1662487eeae') in 0,001260 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7,524833 seconds.
+  path: Assets/Animation/ZombieController.overrideController
+  artifactKey: Guid(36b0715e3a7032ebe9a7f28d0009a2e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/ZombieController.overrideController using Guid(36b0715e3a7032ebe9a7f28d0009a2e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97a50d558636e544e0bd89b3453dbd68') in 0,002364 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19,187809 seconds.
+  path: Assets/Animation/IceZombieController.overrideController
+  artifactKey: Guid(76a9d904ba016381da518222d79e0aef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/IceZombieController.overrideController using Guid(76a9d904ba016381da518222d79e0aef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f58886fd5c21af1c551d248f7fe1a9e6') in 0,002350 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 22,153580 seconds.
+  path: Assets/Animation/GreenLizardRun.anim
+  artifactKey: Guid(2ab711378b6a05ef6829ab0b8c26a076) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/GreenLizardRun.anim using Guid(2ab711378b6a05ef6829ab0b8c26a076) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2133a2849fe9f8186a133d509060d51') in 0,003691 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9,942815 seconds.
+  path: Assets/Animation/GreenLizardController.overrideController
+  artifactKey: Guid(eeac8217389aafb29a0b5227da95d325) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/GreenLizardController.overrideController using Guid(eeac8217389aafb29a0b5227da95d325) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0490c5addd1b3b5795bfad5575e55d99') in 0,002187 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17,696345 seconds.
+  path: Assets/Animation/BlueLizardController.overrideController
+  artifactKey: Guid(5f984b05626faaeae8fa1205693b9406) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/BlueLizardController.overrideController using Guid(5f984b05626faaeae8fa1205693b9406) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ff2716ea1a264b3386caf72334d4799') in 0,002557 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23,792518 seconds.
+  path: Assets/Animation/GobinRun.anim
+  artifactKey: Guid(63ddcf77d4eaa0ff4b8d5ca7b1cbbf07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/GobinRun.anim using Guid(63ddcf77d4eaa0ff4b8d5ca7b1cbbf07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d9e3a933ea5b13e11dfd43db0561578') in 0,002476 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4,036454 seconds.
+  path: Assets/Animation/GoblinRun.anim
+  artifactKey: Guid(63ddcf77d4eaa0ff4b8d5ca7b1cbbf07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/GoblinRun.anim using Guid(63ddcf77d4eaa0ff4b8d5ca7b1cbbf07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4225a479531e4e3daa7a4cd6b5dfa78') in 0,002920 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12,580727 seconds.
+  path: Assets/Animation/New Animator Override Controller.overrideController
+  artifactKey: Guid(f96515cd0f50d72f5b4340b1e4c88842) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/New Animator Override Controller.overrideController using Guid(f96515cd0f50d72f5b4340b1e4c88842) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80298bca79ceca6b294888ddf545575c') in 0,003989 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16,457792 seconds.
+  path: Assets/Animation/GoblinController.overrideController
+  artifactKey: Guid(f96515cd0f50d72f5b4340b1e4c88842) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/GoblinController.overrideController using Guid(f96515cd0f50d72f5b4340b1e4c88842) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e9332f8445642f9564a942db1e1e98d') in 0,002635 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 24,299228 seconds.
+  path: Assets/Animation/BlueLizard.prefab
+  artifactKey: Guid(25ffc1e4e1cf355369c5bee09c4f6e69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/BlueLizard.prefab using Guid(25ffc1e4e1cf355369c5bee09c4f6e69) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The AnimationClip '' used by the Animation component 'BlueLizard' must be marked as Legacy.
+
+The AnimationClip '' used by the Animation component 'Imp' must be marked as Legacy.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.SerializedObject:GetIterator () (at /home/bokken/buildslave/unity/build/Editor/Mono/SerializedObject.bindings.cs:59)
+UnityEditor.Editor:CreateSerializedObject () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/Editor.cs:611)
+UnityEditor.Editor:GetSerializedObjectInternal () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/Editor.cs:594)
+UnityEditor.Editor:get_serializedObject () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/Editor.cs:491)
+UnityEditor.GameObjectInspector:OnEnable () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:141)
+UnityEditor.Editor:CreateEditorWithContext (UnityEngine.Object[],UnityEngine.Object,System.Type) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/Editor.cs:515)
+UnityEditor.Editor:CreateEditor (UnityEngine.Object,System.Type) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/Editor.cs:559)
+UnityEditor.Editor:CreateEditor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/Editor.cs:554)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:33)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+The AnimationClip '' used by the Animation component 'BlueLizard(Clone)' must be marked as Legacy.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:638)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:604)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+The AnimationClip '' used by the Animation component 'BlueLizard(Clone)AnimatorPreview' must be marked as Legacy.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:InitInstantiatedPreviewRecursive (UnityEngine.GameObject) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:594)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:607)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+ -> (artifact id: '7dc1caabe9f2c1e4c40cede68ba0e80e') in 0,009574 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18,148384 seconds.
+  path: Assets/Animation/BlueLizard.prefab
+  artifactKey: Guid(25ffc1e4e1cf355369c5bee09c4f6e69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/BlueLizard.prefab using Guid(25ffc1e4e1cf355369c5bee09c4f6e69) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The AnimationClip '' used by the Animation component 'BlueLizard' must be marked as Legacy.
+
+The AnimationClip '' used by the Animation component 'Imp' must be marked as Legacy.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.SerializedObject:GetIterator () (at /home/bokken/buildslave/unity/build/Editor/Mono/SerializedObject.bindings.cs:59)
+UnityEditor.Editor:CreateSerializedObject () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/Editor.cs:611)
+UnityEditor.Editor:GetSerializedObjectInternal () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/Editor.cs:594)
+UnityEditor.Editor:get_serializedObject () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/Editor.cs:491)
+UnityEditor.GameObjectInspector:OnEnable () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:141)
+UnityEditor.Editor:CreateEditorWithContext (UnityEngine.Object[],UnityEngine.Object,System.Type) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/Editor.cs:515)
+UnityEditor.Editor:CreateEditor (UnityEngine.Object,System.Type) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/Editor.cs:559)
+UnityEditor.Editor:CreateEditor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/Editor.cs:554)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:33)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+The AnimationClip '' used by the Animation component 'BlueLizard(Clone)' must be marked as Legacy.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:638)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:604)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+The AnimationClip '' used by the Animation component 'BlueLizard(Clone)AnimatorPreview' must be marked as Legacy.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:InitInstantiatedPreviewRecursive (UnityEngine.GameObject) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:594)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:607)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+ -> (artifact id: 'd2fdadc25e5f51eaae421043235d8b89') in 0,009655 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18,132131 seconds.
+  path: Assets/Animation/BlueLizard.prefab
+  artifactKey: Guid(25ffc1e4e1cf355369c5bee09c4f6e69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/BlueLizard.prefab using Guid(25ffc1e4e1cf355369c5bee09c4f6e69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3336244ef448156ddbf054414b582ec5') in 0,008812 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11,098985 seconds.
+  path: Assets/Animation/BlueLizard.prefab
+  artifactKey: Guid(25ffc1e4e1cf355369c5bee09c4f6e69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/BlueLizard.prefab using Guid(25ffc1e4e1cf355369c5bee09c4f6e69) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The Animator Controller (BlueLizardController) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:638)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:604)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+The Animator Controller (BlueLizardController) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:InitInstantiatedPreviewRecursive (UnityEngine.GameObject) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:594)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:607)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+ -> (artifact id: '09513f03f364a34720838cf58cbe1af6') in 0,008500 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14,864245 seconds.
+  path: Assets/Animation/GreenLizard.prefab
+  artifactKey: Guid(d83f5fa3217fcf11db37faa6cebe05d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/GreenLizard.prefab using Guid(d83f5fa3217fcf11db37faa6cebe05d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75d6b3aa127d45544b04f4d5e292f164') in 0,009409 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8,326822 seconds.
+  path: Assets/Animation/GreenLizard.prefab
+  artifactKey: Guid(d83f5fa3217fcf11db37faa6cebe05d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/GreenLizard.prefab using Guid(d83f5fa3217fcf11db37faa6cebe05d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6d7f8fea76267825b5704f4d085e18c') in 0,008470 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10,297911 seconds.
+  path: Assets/Animation/GreenLizard.prefab
+  artifactKey: Guid(d83f5fa3217fcf11db37faa6cebe05d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/GreenLizard.prefab using Guid(d83f5fa3217fcf11db37faa6cebe05d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The Animator Controller (GreenLizardController) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:638)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:604)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+The Animator Controller (GreenLizardController) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:InitInstantiatedPreviewRecursive (UnityEngine.GameObject) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:594)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:607)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+ -> (artifact id: '52d041a377808fa66949a3f6e21f9beb') in 0,007373 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10,874012 seconds.
+  path: Assets/Animation/IceZombie.prefab
+  artifactKey: Guid(e88fa006cfb773fffa9e68d4c71e5d8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/IceZombie.prefab using Guid(e88fa006cfb773fffa9e68d4c71e5d8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6bd3c0bb144630b8c25f14f3ecffa2c') in 0,006831 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5,244431 seconds.
+  path: Assets/Animation/IceZombie.prefab
+  artifactKey: Guid(e88fa006cfb773fffa9e68d4c71e5d8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/IceZombie.prefab using Guid(e88fa006cfb773fffa9e68d4c71e5d8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94ea454c3ab553ce2134097512c0f111') in 0,008522 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5,423865 seconds.
+  path: Assets/Animation/IceZombie.prefab
+  artifactKey: Guid(e88fa006cfb773fffa9e68d4c71e5d8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/IceZombie.prefab using Guid(e88fa006cfb773fffa9e68d4c71e5d8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The Animator Controller (IceZombieController) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:638)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:604)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+The Animator Controller (IceZombieController) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:InitInstantiatedPreviewRecursive (UnityEngine.GameObject) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:594)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:607)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+ -> (artifact id: '2b4725bdd3024ac6692e803e590221eb') in 0,008286 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11,878178 seconds.
+  path: Assets/Animation/MaskedOrk.prefab
+  artifactKey: Guid(23b38bb835c58fc5885d13dd8b1e2f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/MaskedOrk.prefab using Guid(23b38bb835c58fc5885d13dd8b1e2f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bdd65d7108b05def706635ab10ab232b') in 0,009084 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6,196416 seconds.
+  path: Assets/Animation/MaskedOrk.prefab
+  artifactKey: Guid(23b38bb835c58fc5885d13dd8b1e2f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/MaskedOrk.prefab using Guid(23b38bb835c58fc5885d13dd8b1e2f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53a86afce5bf083d3ee41fabf3a1fcd6') in 0,009384 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5,714216 seconds.
+  path: Assets/Animation/MaskedOrk.prefab
+  artifactKey: Guid(23b38bb835c58fc5885d13dd8b1e2f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/MaskedOrk.prefab using Guid(23b38bb835c58fc5885d13dd8b1e2f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8349c7205894b5514cb3f47b6aa41a04') in 0,011925 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 25,883764 seconds.
+  path: Assets/Animation/MaskedOrc.prefab
+  artifactKey: Guid(23b38bb835c58fc5885d13dd8b1e2f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/MaskedOrc.prefab using Guid(23b38bb835c58fc5885d13dd8b1e2f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dcb402aa77cfdd5b0c1289711abe3eb2') in 0,008170 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12,836548 seconds.
+  path: Assets/Animation/Muddy.prefab
+  artifactKey: Guid(5ed3b95afaca4c6d99981e53936b8b20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Muddy.prefab using Guid(5ed3b95afaca4c6d99981e53936b8b20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d72f8cc7528e93edee78adf07069f1e') in 0,007155 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8,560059 seconds.
+  path: Assets/Animation/Muddy.prefab
+  artifactKey: Guid(5ed3b95afaca4c6d99981e53936b8b20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Muddy.prefab using Guid(5ed3b95afaca4c6d99981e53936b8b20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f65dc74ecb65afea9a506f0f758e4533') in 0,007714 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6,912018 seconds.
+  path: Assets/Animation/Muddy.prefab
+  artifactKey: Guid(5ed3b95afaca4c6d99981e53936b8b20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Muddy.prefab using Guid(5ed3b95afaca4c6d99981e53936b8b20) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The Animator Controller (MuddyController) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:638)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:604)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+The Animator Controller (MuddyController) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:InitInstantiatedPreviewRecursive (UnityEngine.GameObject) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:594)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:607)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+ -> (artifact id: '9cf4260d27a7b38addbfdfa705a20f96') in 0,008480 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10,890832 seconds.
+  path: Assets/Animation/Necromancer.prefab
+  artifactKey: Guid(2e3c743f987cb34abab5f706b156167f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Necromancer.prefab using Guid(2e3c743f987cb34abab5f706b156167f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b869a618f8f2c453c6e0e6af904daa9') in 0,006771 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7,543486 seconds.
+  path: Assets/Animation/Necromancer.prefab
+  artifactKey: Guid(2e3c743f987cb34abab5f706b156167f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Necromancer.prefab using Guid(2e3c743f987cb34abab5f706b156167f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '804e8b8bb49fb482d5a2e8db59f56e96') in 0,008429 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5,459489 seconds.
+  path: Assets/Animation/Necromancer.prefab
+  artifactKey: Guid(2e3c743f987cb34abab5f706b156167f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Necromancer.prefab using Guid(2e3c743f987cb34abab5f706b156167f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The Animator Controller (NecromancerController) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:638)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:604)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+The Animator Controller (NecromancerController) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:InitInstantiatedPreviewRecursive (UnityEngine.GameObject) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:594)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:607)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+ -> (artifact id: 'e7b714ab4c1dc531a44ad23dcbd76355') in 0,008141 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11,976041 seconds.
+  path: Assets/Animation/OrcShaman.prefab
+  artifactKey: Guid(be7c637f18ec20e92a33b202c696b435) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/OrcShaman.prefab using Guid(be7c637f18ec20e92a33b202c696b435) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6ab894285fc5c0a6f933dee30d99b97') in 0,006905 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7,275938 seconds.
+  path: Assets/Animation/OrcShaman.prefab
+  artifactKey: Guid(be7c637f18ec20e92a33b202c696b435) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/OrcShaman.prefab using Guid(be7c637f18ec20e92a33b202c696b435) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '419b0c8a19b469065a688f23070f7e3e') in 0,008337 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,794175 seconds.
+  path: Assets/Animation/OrcShaman.prefab
+  artifactKey: Guid(be7c637f18ec20e92a33b202c696b435) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/OrcShaman.prefab using Guid(be7c637f18ec20e92a33b202c696b435) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1dc31ed8aa641334594d4a8409375c7e') in 0,009321 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,649221 seconds.
+  path: Assets/Animation/OrcShaman.prefab
+  artifactKey: Guid(be7c637f18ec20e92a33b202c696b435) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/OrcShaman.prefab using Guid(be7c637f18ec20e92a33b202c696b435) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d2084914398ec1bd545b41eced43d47') in 0,010166 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6,738087 seconds.
+  path: Assets/Animation/OrcShaman.prefab
+  artifactKey: Guid(be7c637f18ec20e92a33b202c696b435) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/OrcShaman.prefab using Guid(be7c637f18ec20e92a33b202c696b435) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc418bd1ff26c0e5d976520c3c740e7c') in 0,010015 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9,733334 seconds.
+  path: Assets/Animation/OrcWarrior.prefab
+  artifactKey: Guid(945c27c19a2c14dfd99d2d5b87b0d2bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/OrcWarrior.prefab using Guid(945c27c19a2c14dfd99d2d5b87b0d2bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b13426014075f08dac487229d8828724') in 0,007877 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7,118942 seconds.
+  path: Assets/Animation/OrcWarrior.prefab
+  artifactKey: Guid(945c27c19a2c14dfd99d2d5b87b0d2bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/OrcWarrior.prefab using Guid(945c27c19a2c14dfd99d2d5b87b0d2bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7717410d26b0c78f493b30283c51807f') in 0,008274 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,975511 seconds.
+  path: Assets/Animation/OrcWarrior.prefab
+  artifactKey: Guid(945c27c19a2c14dfd99d2d5b87b0d2bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/OrcWarrior.prefab using Guid(945c27c19a2c14dfd99d2d5b87b0d2bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58b2de0825e795fef801924a90e02443') in 0,008677 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0,633043 seconds.
+  path: Assets/Animation/OrcWarrior.prefab
+  artifactKey: Guid(945c27c19a2c14dfd99d2d5b87b0d2bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/OrcWarrior.prefab using Guid(945c27c19a2c14dfd99d2d5b87b0d2bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd150262b17687603d8179e9341feda3e') in 0,007852 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4,911825 seconds.
+  path: Assets/Animation/OrcWarrior.prefab
+  artifactKey: Guid(945c27c19a2c14dfd99d2d5b87b0d2bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/OrcWarrior.prefab using Guid(945c27c19a2c14dfd99d2d5b87b0d2bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The Animator Controller (OrcWarriorController) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:638)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:604)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+The Animator Controller (OrcWarriorController) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:InitInstantiatedPreviewRecursive (UnityEngine.GameObject) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:594)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:607)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+ -> (artifact id: '8e23f28f303890473c6b13bc194dca58') in 0,007839 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9,003323 seconds.
+  path: Assets/Animation/Skeleton.prefab
+  artifactKey: Guid(dfaba05bd3182fe5eac095fb86642960) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Skeleton.prefab using Guid(dfaba05bd3182fe5eac095fb86642960) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6998fc2fb8fe1792380c7c2e5ddcb5f9') in 0,009296 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5,487517 seconds.
+  path: Assets/Animation/Skeleton.prefab
+  artifactKey: Guid(dfaba05bd3182fe5eac095fb86642960) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Skeleton.prefab using Guid(dfaba05bd3182fe5eac095fb86642960) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fdcf262b9ef0f9bbb9b83c34a63a1c8') in 0,007343 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4,630473 seconds.
+  path: Assets/Animation/Skeleton.prefab
+  artifactKey: Guid(dfaba05bd3182fe5eac095fb86642960) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Skeleton.prefab using Guid(dfaba05bd3182fe5eac095fb86642960) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '625e79ee06857aca25af2c074c36831f') in 0,009904 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11,899715 seconds.
+  path: Assets/Animation/Swampy.prefab
+  artifactKey: Guid(6aee170028c01a87c86ff79ee8eff2d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Swampy.prefab using Guid(6aee170028c01a87c86ff79ee8eff2d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e45b7fba6b58d68cf1cf1afdbb0f22b') in 0,007944 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7,526212 seconds.
+  path: Assets/Animation/Swampy.prefab
+  artifactKey: Guid(6aee170028c01a87c86ff79ee8eff2d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Swampy.prefab using Guid(6aee170028c01a87c86ff79ee8eff2d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1234e5e3bd60c2653325997449c06be4') in 0,008363 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3,498937 seconds.
+  path: Assets/Animation/Swampy.prefab
+  artifactKey: Guid(6aee170028c01a87c86ff79ee8eff2d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Swampy.prefab using Guid(6aee170028c01a87c86ff79ee8eff2d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The Animator Controller (SwampyController) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:638)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:604)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+The Animator Controller (SwampyController) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:InitInstantiatedPreviewRecursive (UnityEngine.GameObject) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:594)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:607)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+ -> (artifact id: '180253dd81de4d3f4841b4c176474da8') in 0,008157 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9,178649 seconds.
+  path: Assets/Animation/TinyZombie.prefab
+  artifactKey: Guid(c0deb82ebbfdeb0f7b563c3e72d1a97f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/TinyZombie.prefab using Guid(c0deb82ebbfdeb0f7b563c3e72d1a97f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29bae805fc6a8dd46fd491fe766280ff') in 0,012286 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4,781644 seconds.
+  path: Assets/Animation/TinyZombie.prefab
+  artifactKey: Guid(c0deb82ebbfdeb0f7b563c3e72d1a97f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/TinyZombie.prefab using Guid(c0deb82ebbfdeb0f7b563c3e72d1a97f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30fc7555f7764f09efcfe32d8dd1f2e9') in 0,007970 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10,472166 seconds.
+  path: Assets/Animation/TinyZombie.prefab
+  artifactKey: Guid(c0deb82ebbfdeb0f7b563c3e72d1a97f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/TinyZombie.prefab using Guid(c0deb82ebbfdeb0f7b563c3e72d1a97f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The Animator Controller (TinyZombieController) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:638)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:604)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+The Animator Controller (TinyZombieController) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:InitInstantiatedPreviewRecursive (UnityEngine.GameObject) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:594)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:607)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+ -> (artifact id: '12285ee54bdb1a83aa5cedfeec6e9fe5') in 0,007836 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1,989741 seconds.
+  path: Assets/Animation/WogolRun.anim
+  artifactKey: Guid(27c861a89ee255621b9b052c061ef357) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/WogolRun.anim using Guid(27c861a89ee255621b9b052c061ef357) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b29768b3d2d9b4854bf95f17b83b7d00') in 0,001355 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7,047100 seconds.
+  path: Assets/Animation/Wogol.prefab
+  artifactKey: Guid(cb2e3db8a0882a2b5bd486779a046773) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Wogol.prefab using Guid(cb2e3db8a0882a2b5bd486779a046773) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '418f66696e393c5bd5edf3e7a282da78') in 0,009102 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5,222840 seconds.
+  path: Assets/Animation/Wogol.prefab
+  artifactKey: Guid(cb2e3db8a0882a2b5bd486779a046773) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Wogol.prefab using Guid(cb2e3db8a0882a2b5bd486779a046773) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dee24c81ccc4bb8a6691581d93e10287') in 0,008050 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7,446956 seconds.
+  path: Assets/Animation/Wogol.prefab
+  artifactKey: Guid(cb2e3db8a0882a2b5bd486779a046773) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Wogol.prefab using Guid(cb2e3db8a0882a2b5bd486779a046773) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The Animator Controller (WogolController) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:638)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:604)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+The Animator Controller (WogolController) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEditor.EditorUtility:InitInstantiatedPreviewRecursive (UnityEngine.GameObject) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:594)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/EditorUtility.cs:607)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:100)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:94)
+UnityEditor.GameObjectInspector:GetPreviewData () (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:669)
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/Inspector/GameObjectInspector.cs:914)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/buildslave/unity/build/Editor/Mono/AssetPreviewUpdater.cs:9)
+
+[/home/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs line 37]
+
+ -> (artifact id: '27427952bad06f2f39f48618d0647333') in 0,008665 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10,227152 seconds.
+  path: Assets/Animation/Zombie.prefab
+  artifactKey: Guid(a83955a7aac6bad3793fbda0469d47bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Zombie.prefab using Guid(a83955a7aac6bad3793fbda0469d47bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f668b2752fd7455b9be6ee8e06508ca') in 0,007394 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5,065151 seconds.
+  path: Assets/Animation/Zombie.prefab
+  artifactKey: Guid(a83955a7aac6bad3793fbda0469d47bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Zombie.prefab using Guid(a83955a7aac6bad3793fbda0469d47bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '221863f3ea25f1a0ebfe84492d79e4e0') in 0,008918 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4,616597 seconds.
+  path: Assets/Animation/Zombie.prefab
+  artifactKey: Guid(a83955a7aac6bad3793fbda0469d47bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Zombie.prefab using Guid(a83955a7aac6bad3793fbda0469d47bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce857fd7ab50f8949c26c0470b28b60d') in 0,008170 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 39,129236 seconds.
+  path: Assets/Animation/Goblin.prefab
+  artifactKey: Guid(84ed6048a9dca4696a98e89ef7d4179d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Goblin.prefab using Guid(84ed6048a9dca4696a98e89ef7d4179d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a340acc22b16acfb64621b54c8c81d6') in 0,009416 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0,001801 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image /home/rei-arthur/projects/zombiecide-unity/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image /home/rei-arthur/projects/zombiecide-unity/Library/PackageCache/com.unity.visualscripting@1.6.1/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
+Native extension for LinuxStandalone target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0,63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0,947 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0,66 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Unloading 3247 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 166,8 MB.
+System memory in use after: 167,0 MB.
+
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 4593.
+Total: 4,901563 ms (FindLiveObjects: 0,366788 ms CreateObjectMapping: 0,088376 ms MarkObjects: 4,396015 ms  DeleteObjects: 0,048010 ms)
 

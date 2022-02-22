@@ -1,23 +1,22 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     public Rigidbody rb;
-    public float movementSpeed;
+    public float maxVelocity;
     public float health;
     public Camera cam;
     // public float hint;
     [HideInInspector] public float soundLevel = 0;
     [HideInInspector] public Vector2 position;
 
+    float velocity;
     Vector2 movement;
     Plane plane;
 
     void Awake()
     {
+        velocity = maxVelocity;
         position = new Vector2(rb.position.x, rb.position.y);
     }
 
@@ -30,6 +29,7 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         position.Set(rb.position.x, rb.position.z);
+        velocity = Mathf.Min(velocity + (maxVelocity * Time.fixedDeltaTime), maxVelocity);
         Move();
         Rotate();
         MakeSound();
@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
     {
         soundLevel = (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
             ? 50
-            : 0;
+            : 10;
     }
 
     void Rotate()
@@ -74,13 +74,13 @@ public class Player : MonoBehaviour
         forward *= movement.y;
         right *= movement.x;
 
-        rb.velocity = (forward + right).normalized * movementSpeed;
+        rb.velocity = (forward + right).normalized * velocity;
     }
 
     public void TakeDamage(float damage)
     {
-        print("damage taken");
         health -= damage;
+        velocity = 0;
         if (health <= 0)
         {
             Destroy(gameObject);
