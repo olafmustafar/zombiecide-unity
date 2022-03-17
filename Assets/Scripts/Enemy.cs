@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour, Agent
     Rigidbody rb;
     GameObject targetInstance;
     NavMeshPath path;
+    Camera camera;
 
     private float cooldown = 0;
 
@@ -33,6 +34,7 @@ public class Enemy : MonoBehaviour, Agent
 
     void Start()
     {
+        camera = GameObject.FindObjectOfType<Camera>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
@@ -42,19 +44,39 @@ public class Enemy : MonoBehaviour, Agent
         Move();
         Rotate();
         updateCooldown();
+        RotateSprite();
     }
 
     public float getFitness()
     {
         float distance = Vector2.Distance(player.position, currentPosition);
 
-        float soundScore = Mathf.Max(player.soundLevel - distance, 0);
-
-        RaycastHit hit;
         float visionScore = 0;
-        if (Physics.Raycast(rb.position, player.rb.position - rb.position, out hit) && hit.collider.CompareTag("Player"))
         {
-            visionScore = Mathf.Max(50 - distance, 0);
+            RaycastHit hit;
+            if (Physics.Raycast(rb.position, player.rb.position - rb.position, out hit) && hit.collider.CompareTag("Player"))
+            {
+                visionScore = Mathf.Max(50 - distance, 0);
+            }
+        }
+
+        float soundScore = 0;
+
+        {
+            Vector3 target = player.rb.position - rb.position;
+            RaycastHit[] raycastHits = Physics.RaycastAll(rb.position, target.normalized,target.magnitude );
+
+            int nonPlayerObjects = 0;
+            foreach (RaycastHit hit in raycastHits)
+            {
+                if (!hit.collider.CompareTag("Player"))
+                {
+                    print( $"{hit.transform.position}");
+                    nonPlayerObjects++;
+                }
+            }
+
+            soundScore = Mathf.Max(player.soundLevel - distance - (nonPlayerObjects * 10), 0);
         }
 
         return visionScore + soundScore;
@@ -73,6 +95,19 @@ public class Enemy : MonoBehaviour, Agent
         float angle = -Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
         rb.MoveRotation(Quaternion.Euler(new Vector3(0, angle, 0)));
     }
+
+    void RotateSprite()
+    {
+        SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
+        Vector3 rbAngle = rb.rotation.eulerAngles;
+        float rbAbsoluteAngle = (rbAngle.y + 360) % 360;
+
+        Vector3 camAngle = camera.transform.rotation.eulerAngles;
+        float camAbsoluteAngle = (camAngle.y + 360) % 360;
+
+        sr.flipX = ((rbAbsoluteAngle + camAbsoluteAngle) % 360) <= 180;
+    }
+
 
     void updateCooldown()
     {

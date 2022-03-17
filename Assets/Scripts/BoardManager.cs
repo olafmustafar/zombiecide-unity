@@ -121,7 +121,6 @@ public class BoardManager : MonoBehaviour
             enemyScript.velocity = 5f + (15f * (e.velocity / 100f));
             instance.transform.SetParent(enemiesHolder);
 
-
             GameObject sprite = Instantiate(
                 enemySprites[Random.Range(0, enemySprites.Length)],
                 instance.transform.position,

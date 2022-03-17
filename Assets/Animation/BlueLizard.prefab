@@ -29,15 +29,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5435217334261164364, guid: ee901ebc9e86045bfa84be422a7fc063, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5435217334261164364, guid: ee901ebc9e86045bfa84be422a7fc063, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5435217334261164364, guid: ee901ebc9e86045bfa84be422a7fc063, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5435217334261164364, guid: ee901ebc9e86045bfa84be422a7fc063, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -55,6 +55,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 22100000, guid: 5f984b05626faaeae8fa1205693b9406, type: 2}
+    - target: {fileID: 8518996966258361503, guid: ee901ebc9e86045bfa84be422a7fc063, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8518996966258361503, guid: ee901ebc9e86045bfa84be422a7fc063, type: 3}
       propertyPath: m_Sprite
       value: 
