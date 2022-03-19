@@ -14,7 +14,6 @@ public class Stretch2Target : MonoBehaviour
         float distance = Vector3.Distance(origin, target);
 
         transform.LookAt(target);
-        
 
         Vector3 newScale = transform.localScale;
         newScale.z = distance;

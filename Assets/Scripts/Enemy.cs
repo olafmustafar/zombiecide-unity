@@ -71,7 +71,6 @@ public class Enemy : MonoBehaviour, Agent
             {
                 if (!hit.collider.CompareTag("Player"))
                 {
-                    print( $"{hit.transform.position}");
                     nonPlayerObjects++;
                 }
             }

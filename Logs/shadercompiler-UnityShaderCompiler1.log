@@ -1,0 +1,6 @@
+Base path: '/home/rei-arthur/2021.1.7f1/Editor/Data', plugins path '/home/rei-arthur/2021.1.7f1/Editor/Data/PlaybackEngines'
+Cmd: initializeCompiler
+
+Cmd: disassembleShader
+ name=Unlit/Texture platform=vulkan type=25 mask=6 insize=1153 outsize=10419 ok=1
+

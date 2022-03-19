@@ -55,6 +55,8 @@ public class EnemyAIManager : MonoBehaviour
                            .Select(e => e.GetComponent<Enemy>())
                            .ToArray();
 
+        gBest = Mathf.Max(gBest - gFitnessDecay, 0);
+        //update pbest and gbest
         foreach (Agent e in agents)
         {
             float fitness = e.getFitness();
@@ -71,13 +73,17 @@ public class EnemyAIManager : MonoBehaviour
                 gBestPosition = e.currentPosition;
                 gBestPositionTargetInstance.transform.position = VectorConverter.Convert(gBestPosition, 5);
             }
-
+        }
+        
+        //update individual targetPosition
+        foreach (Agent e in agents)
+        {
             Vector2 inertia = e.inertia * inertiaW;
 
             NavMeshPath path = new NavMeshPath();
 
             Vector2 cognitiveComponent = Vector2.zero;
-            if (e.currentPosition != e.pBestPosition)
+            if (e.pBest > 0 && e.currentPosition != e.pBestPosition)
             {
                 VectorConverter.CalculateNavmeshPath(e.currentPosition, e.pBestPosition, path);
                 float pathSqrMagnitude = path.corners.Select(x => x.sqrMagnitude).Sum();
@@ -91,12 +97,12 @@ public class EnemyAIManager : MonoBehaviour
             }
 
             Vector2 socialComponent = Vector2.zero;
-            if (e.currentPosition != gBestPosition)
+            if (gBest > 0 && e.currentPosition != gBestPosition)
             {
                 VectorConverter.CalculateNavmeshPath(e.currentPosition, gBestPosition, path);
                 float pathSqrMagnitude = path.corners.Select(x => x.sqrMagnitude).Sum();
                 float distance = Mathf.Sqrt(pathSqrMagnitude);
-                if (path.corners.Length > 0)
+                if (path.corners.Length > 0 )
                 {
                     socialComponent = socialConst * Random.Range(0f, 1f) * distance * (VectorConverter.Convert(path.corners[1]) - e.currentPosition).normalized;
                 }
@@ -104,7 +110,6 @@ public class EnemyAIManager : MonoBehaviour
 
             e.inertia = inertia + cognitiveComponent + socialComponent;
 
-            // if (e.inertia == Vector2.zero)
             if (randomMovmentGeneration && e.inertia.magnitude <= 20)
             {
                 e.inertia = new Vector2(Random.Range(-100f, 100f), Random.Range(-100f, 100f));
@@ -116,6 +121,5 @@ public class EnemyAIManager : MonoBehaviour
         }
 
         inertiaW = Mathf.Max(inertiaW - (inertiaWeightDecay * Time.fixedDeltaTime), minimalInertiaWeight);
-        gBest = Mathf.Max(gBest - gFitnessDecay, 0);
     }
 }
