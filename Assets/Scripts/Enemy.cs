@@ -1,5 +1,5 @@
-using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine;
 
 public class Enemy : MonoBehaviour, Agent
 {
@@ -125,7 +125,6 @@ public class Enemy : MonoBehaviour, Agent
             {
                 Destroy(gameObject);
             }
-
         }
 
     }

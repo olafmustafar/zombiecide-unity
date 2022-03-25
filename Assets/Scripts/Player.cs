@@ -6,7 +6,9 @@ public class Player : MonoBehaviour
     public float maxVelocity;
     public float health;
     public Camera cam;
-    // public float hint;
+    public Animator animator;
+    public SpriteRenderer sprite;
+
     [HideInInspector] public float soundLevel = 0;
     [HideInInspector] public Vector2 position;
 
@@ -54,6 +56,12 @@ public class Player : MonoBehaviour
 
             float angle = -Mathf.Atan2(lookDir.z, lookDir.x) * Mathf.Rad2Deg;
             rb.MoveRotation(Quaternion.Euler(new Vector3(0, angle, 0)));
+
+            Vector3 cameraPos = cam.transform.forward;
+            float cameraAngle = -Mathf.Atan2(cameraPos.z, cameraPos.x) * Mathf.Rad2Deg;
+            print($"{angle} > {cameraAngle}");
+            double offsetAngle = (angle + cameraAngle);
+            sprite.flipX =(offsetAngle > -90) && (offsetAngle < 90);
         }
     }
 
@@ -75,6 +83,7 @@ public class Player : MonoBehaviour
         right *= movement.x;
 
         rb.velocity = (forward + right).normalized * velocity;
+        animator.SetFloat("Speed", rb.velocity.magnitude);
     }
 
     public void TakeDamage(float damage)

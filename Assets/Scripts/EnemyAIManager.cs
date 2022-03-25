@@ -56,6 +56,7 @@ public class EnemyAIManager : MonoBehaviour
                            .ToArray();
 
         gBest = Mathf.Max(gBest - gFitnessDecay, 0);
+        
         //update pbest and gbest
         foreach (Agent e in agents)
         {
@@ -71,7 +72,7 @@ public class EnemyAIManager : MonoBehaviour
             {
                 gBest = fitness;
                 gBestPosition = e.currentPosition;
-                gBestPositionTargetInstance.transform.position = VectorConverter.Convert(gBestPosition, 5);
+                gBestPositionTargetInstance.transform.position = VectorConverter.Convert(gBestPosition, 1.2f);
             }
         }
         

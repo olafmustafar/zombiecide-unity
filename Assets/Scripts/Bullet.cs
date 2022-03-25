@@ -8,6 +8,8 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
+        GameObject effect = Instantiate(hitEffect, gameObject.transform.position, Quaternion.identity);
+        Destroy(effect, 5.0f);
         Destroy(gameObject);
     }
 }
