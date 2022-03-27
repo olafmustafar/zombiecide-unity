@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 717991211031730137}
   - component: {fileID: 4292967582970849689}
   - component: {fileID: 4479054638235724542}
-  - component: {fileID: 5503665129034106018}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -150,21 +149,6 @@ MonoBehaviour:
   m_Area: 0
   m_IgnoreFromBuild: 1
   m_AffectedAgents: ffffffff
---- !u!114 &5503665129034106018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5869825199071399437}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8c7fc47e924fa3f2a8d5cda386bd259, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectList:
-  - {fileID: 4942317916179655801, guid: 84ed6048a9dca4696a98e89ef7d4179d, type: 3}
-  - {fileID: 8619716328770761205, guid: ee901ebc9e86045bfa84be422a7fc063, type: 3}
 --- !u!1 &6652477242273448159
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,7 +197,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6652477242273448159}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

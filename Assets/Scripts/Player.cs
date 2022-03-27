@@ -59,7 +59,6 @@ public class Player : MonoBehaviour
 
             Vector3 cameraPos = cam.transform.forward;
             float cameraAngle = -Mathf.Atan2(cameraPos.z, cameraPos.x) * Mathf.Rad2Deg;
-            print($"{angle} > {cameraAngle}");
             double offsetAngle = (angle + cameraAngle);
             sprite.flipX =(offsetAngle > -90) && (offsetAngle < 90);
         }
