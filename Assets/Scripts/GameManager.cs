@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -7,7 +8,10 @@ public class GameManager : MonoBehaviour
     public BoardManager boardScript;
     public EnemyAIManager enemyAIManager;
     public TextMeshProUGUI GUIText;
-    public Player player;
+    public GameObject player;
+    public GameObject defeatScreen;
+    public GameObject victoryScreen;
+    public GameObject canvas;
 
     private int level = 0;
 
@@ -28,20 +32,37 @@ public class GameManager : MonoBehaviour
     }
 
     private void InitGame()
-    { 
+    {
         boardScript.SetupScene(level);
     }
 
     void Start()
     {
         GUIText = GameObject.Find("GUIText").GetComponent<TextMeshProUGUI>();
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        player = GameObject.FindGameObjectWithTag("Player");
         enemyAIManager = GetComponentInChildren<EnemyAIManager>();
+        canvas = GameObject.Find("Canvas");
     }
 
     void Update()
     {
-        GUIText.SetText($"GBest: {enemyAIManager.gBest}\nLife : {player.health}");
+        float health = player.GetComponent<Player>().health;
+        if (player.activeInHierarchy && health < 0)
+        {
+            player.SetActive(false);
+            handleDefeat();
+        }
+        GUIText.SetText($"GBest: {enemyAIManager.gBest}\nLife : {health}");
+    }
+
+    void handleDefeat()
+    {
+        GameObject instance = Instantiate(defeatScreen, canvas.transform);
+    }
+
+    void handleVictory()
+    {
+        GameObject instance = Instantiate(victoryScreen, canvas.transform);
     }
 
 }

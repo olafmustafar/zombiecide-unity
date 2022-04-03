@@ -89,11 +89,6 @@ public class Player : MonoBehaviour
     {
         health -= damage;
         velocity = 0;
-        if (health <= 0)
-        {
-            Destroy(gameObject);
-            print("Player is dead");
-        }
     }
 
 }

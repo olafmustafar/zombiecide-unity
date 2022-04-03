@@ -50,6 +50,9 @@ MonoBehaviour:
   enemyAIManager: {fileID: 0}
   GUIText: {fileID: 0}
   player: {fileID: 0}
+  defeatScreen: {fileID: 8488203921549791685, guid: cb90b3c3854b2c8169062696b3e9c29c, type: 3}
+  victoryScreen: {fileID: 6835029169754140935, guid: 45f69d8fc21372149b0d77dec5914307, type: 3}
+  canvas: {fileID: 0}
 --- !u!114 &-7683462538181014499
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -26,7 +26,6 @@ public class BoardManager : MonoBehaviour
 
     public void SetupScene(int level)
     {
-
         Transform floorTransform = floorList[0].GetComponent<Transform>();
         scale = new Vector3(floorTransform.localScale.x, 1.0f, floorTransform.localScale.y);
         boardHolder = new GameObject("Board").transform;
@@ -34,32 +33,14 @@ public class BoardManager : MonoBehaviour
         ZombieTiles zt = new ZombieTiles();
         zt.GenerateDugeon(width, height);
 
-        PlaceTiles2(zt.Rooms);
+        PlaceTiles(zt.Rooms);
         PlaceWalls(zt.GetWalls());
         PlacePlayer(zt.Player);
         PlaceEnemies(zt.Enemies);
         print(zt.GetDescription());
     }
 
-    void PlaceTiles(int[][] matrix)
-    {
-        for (int y = 0; y < height; ++y)
-        {
-            for (int x = 0; x < width; ++x)
-            {
-                int tile = matrix[x][y];
-                if (tile != ZombieTiles.EMPTY_TILE)
-                {
-                    Vector3 pos = new Vector3(x, 0f, y);
-                    pos.Scale(scale);
-                    GameObject tileObject = Instantiate(floorList[Random.Range(0, floorList.Length)], pos, Quaternion.Euler(90, 0, 0));
-                    tileObject.transform.SetParent(boardHolder);
-                }
-            }
-        }
-    }
-
-    void PlaceTiles2(ZtRoom[] rooms)
+    void PlaceTiles(ZtRoom[] rooms)
     {
         Vector3 offset = scale * 0.5f;
 
@@ -131,7 +112,7 @@ public class BoardManager : MonoBehaviour
         }
     }
 
-    void PlacePlayer(ZtEntity p)
+    void PlacePlayer(ZtEntity p) 
     {
         Vector3 pos = new Vector3(p.position.x, 1f, p.position.y);
         pos.Scale(scale);

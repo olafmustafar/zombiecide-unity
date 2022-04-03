@@ -54,7 +54,8 @@ public interface ZtEntity
 }
 
 [StructLayout(LayoutKind.Sequential)]
-public struct ZtPlayer : ZtEntity{
+public struct ZtPlayer : ZtEntity
+{
     public EntityType type { get; set; }
     public Point position { get; set; }
 }
@@ -85,7 +86,7 @@ public class ZombieTiles
     private static extern void free_dungeon(IntPtr dungeon);
 
     [DllImport(zombietilesdll, CallingConvention = CallingConvention.Cdecl)]
-    private static extern void generate_dungeon_enemies(  IntPtr dungeon, out int size, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] out ZtEnemy[] array);
+    private static extern void generate_dungeon_enemies(IntPtr dungeon, out int size, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] out ZtEnemy[] array);
 
     [DllImport(zombietilesdll, CallingConvention = CallingConvention.Cdecl)]
     private static extern void generate_dungeon_player(IntPtr dungeon, out IntPtr player);
@@ -112,10 +113,12 @@ public class ZombieTiles
     private ZtRoom[] rooms;
     private ZtEnemy[] enemies;
     private ZtEntity player;
+    private int[][] matrix;
 
     public ZtRoom[] Rooms { get => rooms; set => rooms = value; }
     public ZtEntity Player { get => player; set => player = value; }
     public ZtEnemy[] Enemies { get => enemies; set => enemies = value; }
+    public int[][] Matrix { get => matrix; set => matrix = value; }
 
     ~ZombieTiles()
     {
@@ -125,24 +128,49 @@ public class ZombieTiles
     public void GenerateDugeon(Int32 width, Int32 height)
     {
         dungeon = generate_dungeon(width, height);
+        {
+            int size;
+            generate_dungeon_walls(dungeon, out size, out walls);
+        }
 
-        int size;
-        generate_dungeon_walls(dungeon, out size, out walls);
+        {
+            int size;
+            generate_dungeon_enemies(dungeon, out size, out enemies);
+        }
 
-        int size2;
-        generate_dungeon_enemies(dungeon, out size2, out enemies);
+        {
+            IntPtr playerPtr;
+            generate_dungeon_player(dungeon, out playerPtr);
+            player = Marshal.PtrToStructure<ZtPlayer>(playerPtr);
+        }
 
-        IntPtr playerPtr;
-        generate_dungeon_player(dungeon, out playerPtr);
-        player = Marshal.PtrToStructure<ZtPlayer>(playerPtr);
+        {
+            int size;
+            IntPtr str;
+            generate_dungeon_description(dungeon, out size, out str);
+            description = Marshal.PtrToStringAnsi(str, size);
+        }
         
-        int size3;
-        IntPtr str;
-        generate_dungeon_description(dungeon, out size3, out str);
-        description = Marshal.PtrToStringAnsi(str, size3);
+        {
+            int size;
+            generate_dungeon_rooms(dungeon, out size, out rooms);
+        }
 
-        int size4;
-        generate_dungeon_rooms(dungeon, out size4, out rooms);
+        {
+            int w;
+            int h;
+            IntPtr[] matrix_ptr;
+
+            get_dungeon_matrix(dungeon, out w, out h, out matrix_ptr);
+
+            matrix = new int[w][];
+
+            for (int i = 0; i < w; ++i)
+            {
+                matrix[i] = new int[w];
+                Marshal.Copy(matrix_ptr[i], matrix[i], 0, h);
+            }
+        }
     }
 
     public Wall[] GetWalls()

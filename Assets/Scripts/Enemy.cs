@@ -49,6 +49,10 @@ public class Enemy : MonoBehaviour, Agent
 
     public float getFitness()
     {
+        if( !player.isActiveAndEnabled ){
+            return 0.0f;
+        }
+
         float distance = Vector2.Distance(player.position, currentPosition);
 
         float visionScore = 0;
