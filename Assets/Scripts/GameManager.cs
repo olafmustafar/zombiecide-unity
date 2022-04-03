@@ -13,7 +13,12 @@ public class GameManager : MonoBehaviour
     public GameObject victoryScreen;
     public GameObject canvas;
 
+    public void Restart(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     private int level = 0;
+    private bool gameIsOver = false;
 
     void Awake()
     {
@@ -26,7 +31,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        DontDestroyOnLoad(gameObject);
+        // DontDestroyOnLoad(gameObject);
         boardScript = GetComponent<BoardManager>();
         InitGame();
     }
@@ -46,23 +51,35 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if( gameIsOver ){
+            return;
+        }
+
+        if( GameObject.FindGameObjectsWithTag("Enemy").Length == 0 ){
+            handleVictory();
+            return;
+        }
+
         float health = player.GetComponent<Player>().health;
-        if (player.activeInHierarchy && health < 0)
+        if (health < 0)
         {
             player.SetActive(false);
             handleDefeat();
+            return;
         }
+
         GUIText.SetText($"GBest: {enemyAIManager.gBest}\nLife : {health}");
     }
 
     void handleDefeat()
     {
         GameObject instance = Instantiate(defeatScreen, canvas.transform);
+        gameIsOver = true;
     }
 
     void handleVictory()
     {
         GameObject instance = Instantiate(victoryScreen, canvas.transform);
+        gameIsOver = true;
     }
-
 }

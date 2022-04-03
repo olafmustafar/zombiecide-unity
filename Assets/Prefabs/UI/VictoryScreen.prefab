@@ -257,6 +257,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4047896405909188552}
     m_Modifications:
+    - target: {fileID: 3112044136316584963, guid: b8f61a2d8303d5e7eaaab32c3b455266, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5407507045174469733, guid: e1711a886be46bf27ba71a0fe1508e4a, type: 3}
+    - target: {fileID: 3112044136316584963, guid: b8f61a2d8303d5e7eaaab32c3b455266, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 3112044136316584963, guid: b8f61a2d8303d5e7eaaab32c3b455266, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3604797361643857800, guid: b8f61a2d8303d5e7eaaab32c3b455266, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

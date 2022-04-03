@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class LookAtPlayer : MonoBehaviour
 {
-    public Transform playerTransform;
+    public GameObject player;
     [Range(0.01f, 1.0f)]
     public float smoothFactor = 0.5f;
 
@@ -10,13 +10,16 @@ public class LookAtPlayer : MonoBehaviour
 
     void Start()
     {
-        playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        player = GameObject.FindGameObjectWithTag("Player");
         cameraOffset = new Vector3(-18, 20, -18);
     }
 
     void LateUpdate()
     {
-        Vector3 newPos = playerTransform.position + cameraOffset;
+        if( !player ){
+            return;
+        }
+        Vector3 newPos = player.transform.position + cameraOffset;
         transform.position = Vector3.Slerp(transform.position, newPos, smoothFactor);
     }
 }
