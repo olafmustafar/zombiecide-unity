@@ -39,6 +39,7 @@ public class EnemyAIManager : MonoBehaviour
     GameObject gBestPositionTargetInstance;
     GameObject pBestPositionTargetInstance;
     GameObject[] enemies;
+    SectorManager sectorManager;
 
     void Start()
     {
@@ -46,6 +47,7 @@ public class EnemyAIManager : MonoBehaviour
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         gBestPositionTargetInstance = Instantiate(gBestPositionTarget);
         pBestPositionTargetInstance = Instantiate(pBestPositionTarget);
+        sectorManager = GetComponentInParent<SectorManager>();
     }
 
     void FixedUpdate()
@@ -99,7 +101,9 @@ public class EnemyAIManager : MonoBehaviour
             }
 
             Vector2 socialComponent = Vector2.zero;
-            if (gBest > 0 && e.currentPosition != gBestPosition)
+            if (gBest > 0
+                && e.currentPosition != gBestPosition
+                && sectorManager.SectorOf(VectorConverter.Convert(e.currentPosition)) == sectorManager.SectorOf(VectorConverter.Convert(gBestPosition)))
             {
                 VectorConverter.CalculateNavmeshPath(e.currentPosition, gBestPosition, path);
                 float pathSqrMagnitude = path.corners.Select(x => x.sqrMagnitude).Sum();

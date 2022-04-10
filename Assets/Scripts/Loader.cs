@@ -9,7 +9,8 @@ public class Loader : MonoBehaviour
 
     void Awake(){
         if( GameManager.instance == null ){
-            Instantiate( gameManager );
+            GameObject instance = Instantiate( gameManager );
+            instance.name = "GameManager";
         }
     }
 

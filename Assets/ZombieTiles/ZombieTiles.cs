@@ -165,12 +165,12 @@ public class ZombieTiles
 
             matrix = new int[w][];
 
-            for (int i = 0; i < w; ++i)
+            for (int x = 0; x < w; ++x)
             {
-                matrix[i] = new int[w];
-                Marshal.Copy(matrix_ptr[i], matrix[i], 0, h);
+                matrix[x] = new int[h];
+                Marshal.Copy(matrix_ptr[x], matrix[x], 0, h-1);
             }
-        }
+        } 
     }
 
     public Wall[] GetWalls()
@@ -185,21 +185,6 @@ public class ZombieTiles
 
     public int[][] GetDungeonMatrix()
     {
-        int w;
-        int h;
-        IntPtr[] matrix_ptr;
-
-        get_dungeon_matrix(dungeon, out w, out h, out matrix_ptr);
-
-        int[][] matrix = new int[w][];
-
-        for (int i = 0; i < w; ++i)
-        {
-            matrix[i] = new int[w];
-            Marshal.Copy(matrix_ptr[i], matrix[i], 0, h);
-        }
-
         return matrix;
     }
-
 }

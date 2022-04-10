@@ -31,7 +31,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        // DontDestroyOnLoad(gameObject);
         boardScript = GetComponent<BoardManager>();
         InitGame();
     }
@@ -51,6 +50,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+
         if( gameIsOver ){
             return;
         }

@@ -8,15 +8,17 @@ public class BoardManager : MonoBehaviour
     public int height = 10;
     public GameObject[] floorList;
     public GameObject[] enemySprites;
-
     public GameObject wall;
     public GameObject enemy;
     public GameObject player;
+    public GameObject fogVolume;
     public NavMeshSurface surface;
+    public int[][] matrix;
+    public Vector3 scale;
 
     Transform boardHolder;
     Transform enemiesHolder;
-    Vector3 scale;
+
 
     void Start()
     {
@@ -32,7 +34,7 @@ public class BoardManager : MonoBehaviour
 
         ZombieTiles zt = new ZombieTiles();
         zt.GenerateDugeon(width, height);
-
+        matrix = zt.GetDungeonMatrix();
         PlaceTiles(zt.Rooms);
         PlaceWalls(zt.GetWalls());
         PlacePlayer(zt.Player);
@@ -59,6 +61,22 @@ public class BoardManager : MonoBehaviour
             tileObject.transform.SetParent(boardHolder);
             i++;
         }
+
+        for (int x = 0; x < matrix.Length; x++)
+        {
+            for (int y = 0; y < matrix[x].Length; y++)
+            {
+                if (matrix[x][y] == -1)
+                {
+                    continue;
+                }
+                Vector3 pos = VectorConverter.Convert(new Vector2(x,y));
+                pos.Scale(scale);
+                GameObject instance = Instantiate(fogVolume, pos, Quaternion.identity );
+                instance.transform.SetParent(boardHolder);
+            }
+        }
+
     }
 
     void PlaceWalls(Wall[] walls)
@@ -112,7 +130,7 @@ public class BoardManager : MonoBehaviour
         }
     }
 
-    void PlacePlayer(ZtEntity p) 
+    void PlacePlayer(ZtEntity p)
     {
         Vector3 pos = new Vector3(p.position.x, 1f, p.position.y);
         pos.Scale(scale);
