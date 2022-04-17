@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject defeatScreen;
     public GameObject victoryScreen;
     public GameObject canvas;
+    public SectorManager sm;
 
     public void Restart(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -46,6 +47,7 @@ public class GameManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         enemyAIManager = GetComponentInChildren<EnemyAIManager>();
         canvas = GameObject.Find("Canvas");
+        sm = GetComponentInParent<SectorManager>();
     }
 
     void Update()
@@ -68,7 +70,7 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        GUIText.SetText($"GBest: {enemyAIManager.gBest}\nLife : {health}");
+        GUIText.SetText($"GBest: {enemyAIManager.gBest}\nLife : {health}\nRoom: {sm.SectorOf( player.transform.position)}");
     }
 
     void handleDefeat()

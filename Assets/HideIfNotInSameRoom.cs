@@ -7,12 +7,12 @@ public class HideIfNotInSameRoom : MonoBehaviour
 
     void Start()
     {
-        sm = GameObject.Find( "GameManager" ).GetComponent<SectorManager>();
-        player = GameObject.FindGameObjectWithTag( "Player");
+        sm = GameObject.Find("GameManager").GetComponent<SectorManager>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()
     {
-        gameObject.SetActive( sm.SectorOf( player.transform.position ) != sm.SectorOf( gameObject.transform.position ));
+        gameObject.SetActive(sm.SectorDistanceOf(player.transform.position, gameObject.transform.position) > 1);
     }
 }

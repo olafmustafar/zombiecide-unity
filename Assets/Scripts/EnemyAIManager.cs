@@ -37,6 +37,8 @@ public class EnemyAIManager : MonoBehaviour
     [HideInInspector] public float gBest = -1;
     Vector2 gBestPosition = new Vector2(0, 0);
     GameObject gBestPositionTargetInstance;
+    // int gBestRoom;
+
     GameObject pBestPositionTargetInstance;
     GameObject[] enemies;
     SectorManager sectorManager;

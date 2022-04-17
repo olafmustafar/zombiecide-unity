@@ -14,6 +14,7 @@ public class BoardManager : MonoBehaviour
     public GameObject fogVolume;
     public NavMeshSurface surface;
     public int[][] matrix;
+    public int[][] distances;
     public Vector3 scale;
 
     Transform boardHolder;
@@ -35,6 +36,7 @@ public class BoardManager : MonoBehaviour
         ZombieTiles zt = new ZombieTiles();
         zt.GenerateDugeon(width, height);
         matrix = zt.GetDungeonMatrix();
+        distances = zt.DistanceGraph;
         PlaceTiles(zt.Rooms);
         PlaceWalls(zt.GetWalls());
         PlacePlayer(zt.Player);
