@@ -117,6 +117,7 @@ MonoBehaviour:
   damage: 100
   attackCooldown: 1
   velocity: 30
+  deathEffect: {fileID: 5341110922925678701, guid: 16c5bce9a4d9bc27d9d781cf0914d107, type: 3}
 --- !u!54 &4292967582970849689
 Rigidbody:
   m_ObjectHideFlags: 0

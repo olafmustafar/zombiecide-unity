@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour, Agent
     public float damage;
     public float attackCooldown;
     public float velocity;
+    public GameObject deathEffect;
 
     //Agent interface
     [HideInInspector] public Vector2 targetPosition { get; set; }
@@ -49,7 +50,8 @@ public class Enemy : MonoBehaviour, Agent
 
     public float getFitness()
     {
-        if( !player.isActiveAndEnabled ){
+        if (!player.isActiveAndEnabled)
+        {
             return 0.0f;
         }
 
@@ -68,7 +70,7 @@ public class Enemy : MonoBehaviour, Agent
 
         {
             Vector3 target = player.rb.position - rb.position;
-            RaycastHit[] raycastHits = Physics.RaycastAll(rb.position, target.normalized,target.magnitude );
+            RaycastHit[] raycastHits = Physics.RaycastAll(rb.position, target.normalized, target.magnitude);
 
             int nonPlayerObjects = 0;
             foreach (RaycastHit hit in raycastHits)
@@ -127,7 +129,7 @@ public class Enemy : MonoBehaviour, Agent
             health -= 10;
             if (health <= 0)
             {
-                Destroy(gameObject);
+                HandleDeath();
             }
         }
 
@@ -144,5 +146,13 @@ public class Enemy : MonoBehaviour, Agent
                 cooldown += attackCooldown;
             }
         }
+    }
+
+    void HandleDeath()
+    {
+        GameObject effect = Instantiate(deathEffect, gameObject.transform.position, Quaternion.identity);
+        GameObject.Find("GameManager").GetComponent<GameManager>().IncreaseScore(10);
+        Destroy(effect, 5.0f);
+        Destroy(gameObject);
     }
 }

@@ -13,8 +13,10 @@ public class GameManager : MonoBehaviour
     public GameObject victoryScreen;
     public GameObject canvas;
     public SectorManager sm;
+    public int score;
 
-    public void Restart(){
+    public void Restart()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
@@ -53,11 +55,13 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        if( gameIsOver ){
+        if (gameIsOver)
+        {
             return;
         }
 
-        if( GameObject.FindGameObjectsWithTag("Enemy").Length == 0 ){
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+        {
             handleVictory();
             return;
         }
@@ -70,7 +74,7 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        GUIText.SetText($"GBest: {enemyAIManager.gBest}\nLife : {health}\nRoom: {sm.SectorOf( player.transform.position)}");
+        GUIText.SetText($"GBest: {enemyAIManager.gBest}\nLife: {health}\nCoins: {score}\nRoom: {sm.SectorOf(player.transform.position)}");
     }
 
     void handleDefeat()
@@ -83,5 +87,10 @@ public class GameManager : MonoBehaviour
     {
         GameObject instance = Instantiate(victoryScreen, canvas.transform);
         gameIsOver = true;
+    }
+
+    public void IncreaseScore(int score)
+    {
+        this.score += score;
     }
 }
