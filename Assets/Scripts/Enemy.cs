@@ -152,6 +152,7 @@ public class Enemy : MonoBehaviour, Agent
     {
         GameObject effect = Instantiate(deathEffect, gameObject.transform.position, Quaternion.identity);
         GameObject.Find("GameManager").GetComponent<GameManager>().IncreaseScore(10);
+        FindObjectOfType<AudioManager>().Play("EnemyDeath");
         Destroy(effect, 5.0f);
         Destroy(gameObject);
     }

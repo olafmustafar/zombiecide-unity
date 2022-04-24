@@ -6,6 +6,10 @@ public class Bullet : MonoBehaviour
 {
     public GameObject hitEffect;
 
+    void Start() {
+        FindObjectOfType<AudioManager>().Play("SingleShot");
+    }
+
     void OnTriggerEnter(Collider collider)
     {
         GameObject effect = Instantiate(hitEffect, gameObject.transform.position, Quaternion.identity);
