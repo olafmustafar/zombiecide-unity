@@ -27,8 +27,7 @@ public struct Point
 public struct Line
 {
     public Point a;
-    public Point b;
-}
+    public Point b; }
 
 [StructLayout(LayoutKind.Sequential)]
 public struct ZtRoom
@@ -83,6 +82,9 @@ public class ZombieTiles
     private static extern IntPtr generate_dungeon(Int32 width, Int32 height);
 
     [DllImport(zombietilesdll, CallingConvention = CallingConvention.Cdecl)]
+    private static extern IntPtr load_dungeon(string path);
+
+    [DllImport(zombietilesdll, CallingConvention = CallingConvention.Cdecl)]
     private static extern void free_dungeon(IntPtr dungeon);
 
     [DllImport(zombietilesdll, CallingConvention = CallingConvention.Cdecl)]
@@ -91,8 +93,7 @@ public class ZombieTiles
     [DllImport(zombietilesdll, CallingConvention = CallingConvention.Cdecl)]
     private static extern void generate_dungeon_player(IntPtr dungeon, out IntPtr player);
 
-    [DllImport(zombietilesdll, CallingConvention = CallingConvention.Cdecl)]
-    private static extern void generate_dungeon_walls(IntPtr dungeon, out int size, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] out Wall[] array);
+    [DllImport(zombietilesdll, CallingConvention = CallingConvention.Cdecl)] private static extern void generate_dungeon_walls(IntPtr dungeon, out int size, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] out Wall[] array);
 
     [DllImport(zombietilesdll, CallingConvention = CallingConvention.Cdecl)]
     private static extern void free_wall_array(Wall[] array);
@@ -129,9 +130,9 @@ public class ZombieTiles
         free_dungeon(dungeon);
     }
 
-    public void GenerateDugeon(Int32 width, Int32 height)
+    public void GenerateDugeon( string level, Int32 width, Int32 height)
     {
-        dungeon = generate_dungeon(width, height);
+        dungeon = load_dungeon(level);
         {
             int size;
             generate_dungeon_walls(dungeon, out size, out walls);

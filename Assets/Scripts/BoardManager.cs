@@ -27,14 +27,14 @@ public class BoardManager : MonoBehaviour
         surface.BuildNavMesh();
     }
 
-    public void SetupScene(int level)
+    public void SetupScene(string level)
     {
         Transform floorTransform = floorList[0].GetComponent<Transform>();
         scale = new Vector3(floorTransform.localScale.x, 1.0f, floorTransform.localScale.y);
         boardHolder = new GameObject("Board").transform;
 
         ZombieTiles zt = new ZombieTiles();
-        zt.GenerateDugeon(width, height);
+        zt.GenerateDugeon( level, width, height);
         matrix = zt.GetDungeonMatrix();
         distances = zt.DistanceGraph;
         PlaceTiles(zt.Rooms);

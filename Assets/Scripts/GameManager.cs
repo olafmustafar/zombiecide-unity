@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    private int level = 0;
+    private string level;
     private bool gameIsOver = false;
 
     void Awake()
@@ -40,7 +40,8 @@ public class GameManager : MonoBehaviour
 
     private void InitGame()
     {
-        boardScript.SetupScene(level);
+        print( $"carregando o seguinte ${level}");
+        boardScript.SetupScene(ScenesState.level);
     }
 
     void Start()

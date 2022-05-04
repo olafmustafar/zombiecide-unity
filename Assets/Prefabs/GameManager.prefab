@@ -306,7 +306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4315039370603485863, guid: 84785c6484ac8987fa91eaeaab40a459, type: 3}
       propertyPath: pFitnessDecay
-      value: 400
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6887352948160861314, guid: 84785c6484ac8987fa91eaeaab40a459, type: 3}
       propertyPath: m_RootOrder
