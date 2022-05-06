@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    private string level;
+    private string level = "";
     private bool gameIsOver = false;
 
     void Awake()

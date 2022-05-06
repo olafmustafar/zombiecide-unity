@@ -18,7 +18,6 @@ public class Enemy : MonoBehaviour, Agent
 
     Player player;
     Rigidbody rb;
-    GameObject targetInstance;
     NavMeshPath path;
     Camera camera;
 

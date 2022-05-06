@@ -13,12 +13,13 @@ public class MainMenu : MonoBehaviour
     public bool IsGeneratedLevel { get => isGeneratedLevel; set => isGeneratedLevel = value; }
     private bool isGeneratedLevel;
 
-    void Awake(){
-        manualLevels = Directory.GetFiles( manualLevelsPath, "*.json" );
-        generatedLevels = Directory.GetFiles( generatedLevelsPath, "*.json" );
+    void Awake()
+    {
+        manualLevels = Directory.GetFiles(manualLevelsPath, "*.json");
+        generatedLevels = Directory.GetFiles(generatedLevelsPath, "*.json");
     }
 
-    public void StartGame( int level)
+    public void StartGame(int level)
     {
         ScenesState.level = IsGeneratedLevel ? generatedLevels[level] : manualLevels[level];
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

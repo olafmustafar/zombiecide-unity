@@ -5,7 +5,6 @@ public class SectorManager : MonoBehaviour
     int[][] sectors;
     int[][] distances;
     Vector3 origin;
-    Vector3 boardSize;
     Vector3 scale;
 
     int width;
