@@ -4,8 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public string manualLevelsPath;
-    public string generatedLevelsPath;
 
     string[] manualLevels;
     string[] generatedLevels;
@@ -15,7 +13,10 @@ public class MainMenu : MonoBehaviour
 
     void Awake()
     {
+        string manualLevelsPath = Path.GetFullPath("./levels/manual");
         manualLevels = Directory.GetFiles(manualLevelsPath, "*.json");
+
+        string generatedLevelsPath = Path.GetFullPath("./levels/generated");
         generatedLevels = Directory.GetFiles(generatedLevelsPath, "*.json");
     }
 

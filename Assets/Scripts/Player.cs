@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
         position.Set(rb.position.x, rb.position.z);
         velocity = Mathf.Min(velocity + (maxVelocity * Time.fixedDeltaTime), maxVelocity);
         Move();
-        Rotate();
+        LookAtMouse();
         MakeSound();
     }
 
@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
             : 20;
     }
 
-    void Rotate()
+    void LookAtMouse()
     {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         float distanceToPlane;

@@ -40,7 +40,6 @@ public class GameManager : MonoBehaviour
 
     private void InitGame()
     {
-        print( $"carregando o seguinte ${level}");
         boardScript.SetupScene(ScenesState.level);
     }
 

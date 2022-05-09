@@ -75,8 +75,7 @@ public struct ZtEnemy : ZtEntity
 public class ZombieTiles
 {
 
-    // private const string zombietilesdll = @"/home/rei-arthur/.config/unity3d/DefaultCompany/zombiecide/libzombietiles.so";
-    private const string zombietilesdll = @"/home/rei-arthur/.config/unity3d/ArthurTcc/zombiecide/libzombietiles.so";
+    private const string zombietilesdll = @"libzombietiles.so";
 
     [DllImport(zombietilesdll, CallingConvention = CallingConvention.Cdecl)]
     private static extern IntPtr generate_dungeon(Int32 width, Int32 height);
