@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -20,7 +21,6 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    private string level = "";
     private bool gameIsOver = false;
 
     void Awake()
@@ -35,12 +35,13 @@ public class GameManager : MonoBehaviour
         }
 
         boardScript = GetComponent<BoardManager>();
+
         InitGame();
     }
 
     private void InitGame()
     {
-        boardScript.SetupScene(ScenesState.level);
+        boardScript.SetupScene();
     }
 
     void Start()
@@ -80,6 +81,7 @@ public class GameManager : MonoBehaviour
     void handleDefeat()
     {
         GameObject instance = Instantiate(defeatScreen, canvas.transform);
+        FindObjectOfType<AudioManager>().Play("PlayerDeath");
         gameIsOver = true;
     }
 

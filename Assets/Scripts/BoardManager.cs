@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
+using System.Linq;
 
 public class BoardManager : MonoBehaviour
 {
@@ -17,9 +19,10 @@ public class BoardManager : MonoBehaviour
     public int[][] distances;
     public Vector3 scale;
 
+    public SectorManager sectorManager{get;set;}
+
     Transform boardHolder;
     Transform enemiesHolder;
-
 
     void Start()
     {
@@ -27,21 +30,19 @@ public class BoardManager : MonoBehaviour
         surface.BuildNavMesh();
     }
 
-    public void SetupScene(string level)
+    public void SetupScene()
     {
         Transform floorTransform = floorList[0].GetComponent<Transform>();
         scale = new Vector3(floorTransform.localScale.x, 1.0f, floorTransform.localScale.y);
         boardHolder = new GameObject("Board").transform;
 
-        ZombieTiles zt = new ZombieTiles();
-        zt.GenerateDugeon( level, width, height);
-        matrix = zt.GetDungeonMatrix();
-        distances = zt.DistanceGraph;
-        PlaceTiles(zt.Rooms);
-        PlaceWalls(zt.GetWalls());
-        PlacePlayer(zt.Player);
-        PlaceEnemies(zt.Enemies);
-        print(zt.GetDescription());
+        Dungeon dungeon = ScenesState.dungeon;
+        matrix = dungeon.matrix.Select(Enumerable.ToArray).ToArray();
+        distances = dungeon.distances.Select(Enumerable.ToArray).ToArray();
+        PlaceTiles(dungeon.rooms.ToArray());
+        PlaceWalls(dungeon.walls.ToArray());
+        PlacePlayer(dungeon.player);
+        PlaceEnemies(dungeon.enemies.ToArray());
     }
 
     void PlaceTiles(ZtRoom[] rooms)
@@ -72,9 +73,9 @@ public class BoardManager : MonoBehaviour
                 {
                     continue;
                 }
-                Vector3 pos = VectorConverter.Convert(new Vector2(x,y));
+                Vector3 pos = VectorConverter.Convert(new Vector2(x, y));
                 pos.Scale(scale);
-                GameObject instance = Instantiate(fogVolume, pos, Quaternion.identity );
+                GameObject instance = Instantiate(fogVolume, pos, Quaternion.identity);
                 instance.transform.SetParent(boardHolder);
             }
         }
@@ -119,7 +120,8 @@ public class BoardManager : MonoBehaviour
             enemyScript.health = e.health;
             enemyScript.damage = e.damage;
             enemyScript.attackCooldown = 6f - (5f * (e.attackCooldown / 100f));
-            enemyScript.velocity = 5f + (15f * (e.velocity / 100f));
+            //enemyScript.velocity = 5f + (15f * (e.velocity / 100f));
+            enemyScript.velocity = 5f + (10f * (e.velocity / 100f));
             instance.transform.SetParent(enemiesHolder);
 
             GameObject sprite = Instantiate(

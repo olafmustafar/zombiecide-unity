@@ -50,3 +50,21 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: SingleShot
+    clip: {fileID: 8300000, guid: 000d92b68a6500da5a4239f06408cf28, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: EnemyDeath
+    clip: {fileID: 8300000, guid: 7337e855786f541c09189ecb0ab7e762, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: PlayerDeath
+    clip: {fileID: 8300000, guid: 580ae6cd7e8d9bb889c1b631e75176ce, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}

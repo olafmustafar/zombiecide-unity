@@ -2,5 +2,6 @@ using UnityEngine;
 
 public class ScenesState : MonoBehaviour
 {
-    public static string level;
+ //   public static LevelDescriptor level;
+    public static Dungeon dungeon;
 }

@@ -129,48 +129,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 376703035920519992}
     m_Modifications:
     - target: {fileID: 573334070414790549, guid: 147781b79b48e9a718409a843fa9bb5f, type: 3}
-      propertyPath: sounds.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 573334070414790549, guid: 147781b79b48e9a718409a843fa9bb5f, type: 3}
-      propertyPath: sounds.Array.data[1].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 000d92b68a6500da5a4239f06408cf28, type: 3}
-    - target: {fileID: 573334070414790549, guid: 147781b79b48e9a718409a843fa9bb5f, type: 3}
       propertyPath: sounds.Array.data[1].loop
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 573334070414790549, guid: 147781b79b48e9a718409a843fa9bb5f, type: 3}
-      propertyPath: sounds.Array.data[1].name
-      value: SingleShot
-      objectReference: {fileID: 0}
-    - target: {fileID: 573334070414790549, guid: 147781b79b48e9a718409a843fa9bb5f, type: 3}
-      propertyPath: sounds.Array.data[2].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 7337e855786f541c09189ecb0ab7e762, type: 3}
     - target: {fileID: 573334070414790549, guid: 147781b79b48e9a718409a843fa9bb5f, type: 3}
       propertyPath: sounds.Array.data[2].loop
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 573334070414790549, guid: 147781b79b48e9a718409a843fa9bb5f, type: 3}
-      propertyPath: sounds.Array.data[2].name
-      value: EnemyDeath
+      propertyPath: sounds.Array.data[3].loop
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 573334070414790549, guid: 147781b79b48e9a718409a843fa9bb5f, type: 3}
       propertyPath: sounds.Array.data[1].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 573334070414790549, guid: 147781b79b48e9a718409a843fa9bb5f, type: 3}
-      propertyPath: sounds.Array.data[2].pitch
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 573334070414790549, guid: 147781b79b48e9a718409a843fa9bb5f, type: 3}
       propertyPath: sounds.Array.data[1].volume
-      value: 0.36
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 573334070414790549, guid: 147781b79b48e9a718409a843fa9bb5f, type: 3}
       propertyPath: sounds.Array.data[2].volume
-      value: 0.36
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6597667841410894411, guid: 147781b79b48e9a718409a843fa9bb5f, type: 3}
       propertyPath: m_RootOrder

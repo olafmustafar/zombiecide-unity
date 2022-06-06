@@ -20,11 +20,6 @@ public class EnemyAIManager : MonoBehaviour
     public float cognitiveConst = 2f;
     public float socialConst = 2f;
 
-    ///<summary>  FitnessDecay (decaimento do fitness)
-    ///Utilizado para fazer os agentes "esquecerem" de maximos locais
-    ///Valores muito baixos fazem os agentes se apegarem a maximos locais
-    ///Valores muito altos fazem os agentes a esquecerem muito rapido da posicao do player.
-    ///</summary>
     public float pFitnessDecay = 0.01f;
     public float gFitnessDecay = 0.01f;
 
@@ -37,7 +32,6 @@ public class EnemyAIManager : MonoBehaviour
     [HideInInspector] public float gBest = -1;
     Vector2 gBestPosition = new Vector2(0, 0);
     GameObject gBestPositionTargetInstance;
-    // int gBestRoom;
 
     GameObject pBestPositionTargetInstance;
     GameObject[] enemies;

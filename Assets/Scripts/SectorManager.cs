@@ -12,23 +12,12 @@ public class SectorManager : MonoBehaviour
 
     void Start()
     {
+        origin = GameObject.Find("Board").transform.position;
         sectors = GetComponentInParent<BoardManager>().matrix;
         distances = GetComponentInParent<BoardManager>().distances;
-        origin = GameObject.Find("Board").transform.position;
         scale = GetComponentInParent<BoardManager>().scale;
         width = sectors.Length;
         height = sectors[0].Length;
-
-        string str = "";
-        foreach (int[] l in distances)
-        {
-            foreach (int i in l)
-            {
-                str += $"[{i}]";
-            }
-            str += "\n";
-        }
-        print(str);
     }
 
     public int SectorOf(Vector3 position)
