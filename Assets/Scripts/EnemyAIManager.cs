@@ -17,6 +17,7 @@ public class EnemyAIManager : MonoBehaviour
     [Range(0.0f, 1.0f)] public float inertiaW = 1f;
     public float inertiaWeightDecay = 0.00f;
     [Range(0.01f, 1.0f)] public float minimalInertiaWeight = 0.4f;
+    [Range(0, 20)] public int detectionDistance = 13;
     public float cognitiveConst = 2f;
     public float socialConst = 2f;
 
@@ -99,7 +100,8 @@ public class EnemyAIManager : MonoBehaviour
             Vector2 socialComponent = Vector2.zero;
             if (gBest > 0
                 && e.currentPosition != gBestPosition
-                && sectorManager.SectorOf(VectorConverter.Convert(e.currentPosition)) == sectorManager.SectorOf(VectorConverter.Convert(gBestPosition)))
+                && Vector2.Distance(e.currentPosition, player.position) <= detectionDistance 
+                )
             {
                 VectorConverter.CalculateNavmeshPath(e.currentPosition, gBestPosition, path);
                 float pathSqrMagnitude = path.corners.Select(x => x.sqrMagnitude).Sum();

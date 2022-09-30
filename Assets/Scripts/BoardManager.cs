@@ -52,8 +52,15 @@ public class BoardManager : MonoBehaviour
         int i = 0;
         foreach (ZtRoom room in rooms)
         {
-            float renderOffset = 0.001f * i * (room.placement_type == ZtPlacementType.T ? 1 : -1);
-            Vector3 pos = new Vector3(room.x + (room.width * 0.5f), 0.5f + renderOffset, room.y + (room.height * 0.5f));
+            if( !room.is_placed ){
+                continue;
+            }
+
+            float renderOffset = 0.01f * i * (room.placement_type == ZtPlacementType.T ? 1 : -1);
+            Vector3 pos = new Vector3(
+                    room.x + (room.width * 0.5f),
+                    0.5f + renderOffset,
+                    room.y + (room.height * 0.5f));
             pos.Scale(scale);
             pos -= offset;
 
@@ -120,7 +127,6 @@ public class BoardManager : MonoBehaviour
             enemyScript.health = e.health;
             enemyScript.damage = e.damage;
             enemyScript.attackCooldown = 6f - (5f * (e.attackCooldown / 100f));
-            //enemyScript.velocity = 5f + (15f * (e.velocity / 100f));
             enemyScript.velocity = 5f + (10f * (e.velocity / 100f));
             instance.transform.SetParent(enemiesHolder);
 

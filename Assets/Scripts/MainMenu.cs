@@ -9,14 +9,14 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame(int level)
     {
-        StartCoroutine( LoadLevel(IsGeneratedLevel, level));
+        LoadLevel(IsGeneratedLevel, level);
     }
 
-    IEnumerator LoadLevel( bool isGenerated, int level ){
+    void LoadLevel(bool isGenerated, int level)
+    {
         ZombieTilesApi ztapi = new ZombieTilesApi();
-        yield return ztapi.LoadDungeon(isGenerated, level);
+        ztapi.LoadDungeon(isGenerated, level);
         ScenesState.dungeon = ztapi.dungeon;
-
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

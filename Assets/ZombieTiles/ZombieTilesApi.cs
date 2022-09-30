@@ -3,33 +3,32 @@ using UnityEngine;
 using Newtonsoft.Json;
 using System.Collections;
 
-public class ZombieTilesApi 
+public class ZombieTilesApi
 {
-    private const string API_ADDRESS = @"http://127.0.0.1:3000";
-
     public Dungeon dungeon { get; set; }
     string result;
-    
-    public IEnumerator LoadDungeon(bool isGenerated, int levelId)
-    {
-        yield return Request( isGenerated ?  "generated": "manual", $"level{levelId + 1}" );
 
-        if (result.Length > 0)
-        {
-            Debug.Log("done");
-            dungeon = ParseResponse(result);
-        }
-        else
-        {
-            dungeon = null;
-        }
+    public void LoadDungeon(bool isGenerated, int levelId)
+    {
+        TextAsset textFile= Resources.Load("Levels/" +(isGenerated ? "generated" : "manual") + $"/level{levelId + 1}") as TextAsset;
+        dungeon = ParseResponse(textFile.ToString());
+    }
+
+    static string ReadFromFile(string path)
+    {
+        System.IO.StreamReader reader = new System.IO.StreamReader(path);
+        string result = reader.ReadToEnd();
+        Debug.Log(result);
+        reader.Close();
+        return result;
     }
 
     IEnumerator Request(string type, string level)
     {
         Debug.Log("one");
-        MonoBehaviour.print($"{API_ADDRESS}?type={type}&id={level}");
-        UnityWebRequest www = UnityWebRequest.Get($"{API_ADDRESS}?type={type}&id={level}");
+        string address = GetApiAddress();
+        MonoBehaviour.print($"{address}?type={type}&id={level}");
+        UnityWebRequest www = UnityWebRequest.Get($"{address}?type={type}&id={level}");
         yield return www.SendWebRequest();
 
 
@@ -49,4 +48,18 @@ public class ZombieTilesApi
     {
         return JsonConvert.DeserializeObject<Dungeon>(json);
     }
+
+    string GetApiAddress()
+    {
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            string address = Application.absoluteURL;
+            address = address.Remove(address.LastIndexOf(':'));
+            return $"{address}:3000";
+        }
+        else
+        {
+            return "http://127.0.0.1:3000";
+        }
     }
+}

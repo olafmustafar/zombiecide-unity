@@ -46,6 +46,7 @@ MonoBehaviour:
   inertiaW: 0.8
   inertiaWeightDecay: 0
   minimalInertiaWeight: 0.4
+  detectionDistance: 20
   cognitiveConst: 2
   socialConst: 1
   pFitnessDecay: 400

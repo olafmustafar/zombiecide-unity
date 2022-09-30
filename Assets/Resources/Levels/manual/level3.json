@@ -1,0 +1,1309 @@
+{
+  "rooms": [
+    {
+      "x": 4,
+      "y": 0,
+      "width": 9,
+      "height": 4,
+      "placement_type": "T",
+      "is_placed": true
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "width": 6,
+      "height": 4,
+      "placement_type": "T",
+      "is_placed": true
+    },
+    {
+      "x": 10,
+      "y": 4,
+      "width": 6,
+      "height": 4,
+      "placement_type": "T",
+      "is_placed": true
+    },
+    {
+      "x": 4,
+      "y": 8,
+      "width": 6,
+      "height": 4,
+      "placement_type": "T",
+      "is_placed": true
+    },
+    {
+      "x": 10,
+      "y": 8,
+      "width": 3,
+      "height": 8,
+      "placement_type": "T",
+      "is_placed": true
+    },
+    {
+      "x": 1,
+      "y": 12,
+      "width": 6,
+      "height": 4,
+      "placement_type": "T",
+      "is_placed": true
+    },
+    {
+      "x": 1,
+      "y": 16,
+      "width": 6,
+      "height": 4,
+      "placement_type": "T",
+      "is_placed": true
+    },
+    {
+      "x": 7,
+      "y": 12,
+      "width": 3,
+      "height": 8,
+      "placement_type": "T",
+      "is_placed": true
+    },
+    {
+      "x": 13,
+      "y": 12,
+      "width": 3,
+      "height": 8,
+      "placement_type": "T",
+      "is_placed": true
+    },
+    {
+      "x": 16,
+      "y": 4,
+      "width": 3,
+      "height": 16,
+      "placement_type": "T",
+      "is_placed": true
+    }
+  ],
+  "enemies": [
+    {
+      "type": "ENEMY",
+      "position": {
+        "x": 5,
+        "y": 2
+      },
+      "health": 50,
+      "damage": 25,
+      "attackCooldown": 75,
+      "velocity": 25
+    },
+    {
+      "type": "ENEMY",
+      "position": {
+        "x": 7,
+        "y": 2
+      },
+      "health": 50,
+      "damage": 25,
+      "attackCooldown": 75,
+      "velocity": 25
+    },
+    {
+      "type": "ENEMY",
+      "position": {
+        "x": 2,
+        "y": 6
+      },
+      "health": 100,
+      "damage": 100,
+      "attackCooldown": 25,
+      "velocity": 25
+    },
+    {
+      "type": "ENEMY",
+      "position": {
+        "x": 4,
+        "y": 6
+      },
+      "health": 25,
+      "damage": 25,
+      "attackCooldown": 75,
+      "velocity": 75
+    },
+    {
+      "type": "ENEMY",
+      "position": {
+        "x": 11,
+        "y": 5
+      },
+      "health": 100,
+      "damage": 100,
+      "attackCooldown": 25,
+      "velocity": 25
+    },
+    {
+      "type": "ENEMY",
+      "position": {
+        "x": 14,
+        "y": 6
+      },
+      "health": 25,
+      "damage": 25,
+      "attackCooldown": 75,
+      "velocity": 75
+    },
+    {
+      "type": "ENEMY",
+      "position": {
+        "x": 5,
+        "y": 9
+      },
+      "health": 75,
+      "damage": 75,
+      "attackCooldown": 25,
+      "velocity": 25
+    },
+    {
+      "type": "ENEMY",
+      "position": {
+        "x": 8,
+        "y": 10
+      },
+      "health": 75,
+      "damage": 75,
+      "attackCooldown": 25,
+      "velocity": 25
+    },
+    {
+      "type": "ENEMY",
+      "position": {
+        "x": 11,
+        "y": 9
+      },
+      "health": 25,
+      "damage": 50,
+      "attackCooldown": 100,
+      "velocity": 75
+    },
+    {
+      "type": "ENEMY",
+      "position": {
+        "x": 11,
+        "y": 13
+      },
+      "health": 75,
+      "damage": 75,
+      "attackCooldown": 25,
+      "velocity": 25
+    },
+    {
+      "type": "ENEMY",
+      "position": {
+        "x": 8,
+        "y": 16
+      },
+      "health": 100,
+      "damage": 75,
+      "attackCooldown": 25,
+      "velocity": 50
+    },
+    {
+      "type": "ENEMY",
+      "position": {
+        "x": 3,
+        "y": 17
+      },
+      "health": 100,
+      "damage": 100,
+      "attackCooldown": 25,
+      "velocity": 25
+    },
+    {
+      "type": "ENEMY",
+      "position": {
+        "x": 5,
+        "y": 17
+      },
+      "health": 50,
+      "damage": 25,
+      "attackCooldown": 75,
+      "velocity": 25
+    },
+    {
+      "type": "ENEMY",
+      "position": {
+        "x": 5,
+        "y": 18
+      },
+      "health": 50,
+      "damage": 25,
+      "attackCooldown": 75,
+      "velocity": 25
+    },
+    {
+      "type": "ENEMY",
+      "position": {
+        "x": 8,
+        "y": 16
+      },
+      "health": 100,
+      "damage": 75,
+      "attackCooldown": 25,
+      "velocity": 50
+    },
+    {
+      "type": "ENEMY",
+      "position": {
+        "x": 14,
+        "y": 14
+      },
+      "health": 100,
+      "damage": 100,
+      "attackCooldown": 25,
+      "velocity": 25
+    },
+    {
+      "type": "ENEMY",
+      "position": {
+        "x": 16,
+        "y": 10
+      },
+      "health": 50,
+      "damage": 25,
+      "attackCooldown": 50,
+      "velocity": 75
+    },
+    {
+      "type": "ENEMY",
+      "position": {
+        "x": 18,
+        "y": 10
+      },
+      "health": 50,
+      "damage": 25,
+      "attackCooldown": 50,
+      "velocity": 75
+    },
+    {
+      "type": "ENEMY",
+      "position": {
+        "x": 17,
+        "y": 18
+      },
+      "health": 100,
+      "damage": 75,
+      "attackCooldown": 25,
+      "velocity": 50
+    }
+  ],
+  "player": {
+    "type": "PLAYER",
+    "position": {
+      "x": 5,
+      "y": 10
+    }
+  },
+  "walls": [
+    {
+      "a": {
+        "x": 4,
+        "y": 0
+      },
+      "b": {
+        "x": 13,
+        "y": 0
+      }
+    },
+    {
+      "a": {
+        "x": 1,
+        "y": 4
+      },
+      "b": {
+        "x": 5,
+        "y": 4
+      }
+    },
+    {
+      "a": {
+        "x": 6,
+        "y": 4
+      },
+      "b": {
+        "x": 11,
+        "y": 4
+      }
+    },
+    {
+      "a": {
+        "x": 12,
+        "y": 4
+      },
+      "b": {
+        "x": 19,
+        "y": 4
+      }
+    },
+    {
+      "a": {
+        "x": 1,
+        "y": 8
+      },
+      "b": {
+        "x": 5,
+        "y": 8
+      }
+    },
+    {
+      "a": {
+        "x": 6,
+        "y": 8
+      },
+      "b": {
+        "x": 11,
+        "y": 8
+      }
+    },
+    {
+      "a": {
+        "x": 12,
+        "y": 8
+      },
+      "b": {
+        "x": 16,
+        "y": 8
+      }
+    },
+    {
+      "a": {
+        "x": 1,
+        "y": 12
+      },
+      "b": {
+        "x": 5,
+        "y": 12
+      }
+    },
+    {
+      "a": {
+        "x": 6,
+        "y": 12
+      },
+      "b": {
+        "x": 8,
+        "y": 12
+      }
+    },
+    {
+      "a": {
+        "x": 9,
+        "y": 12
+      },
+      "b": {
+        "x": 10,
+        "y": 12
+      }
+    },
+    {
+      "a": {
+        "x": 13,
+        "y": 12
+      },
+      "b": {
+        "x": 16,
+        "y": 12
+      }
+    },
+    {
+      "a": {
+        "x": 1,
+        "y": 16
+      },
+      "b": {
+        "x": 3,
+        "y": 16
+      }
+    },
+    {
+      "a": {
+        "x": 4,
+        "y": 16
+      },
+      "b": {
+        "x": 7,
+        "y": 16
+      }
+    },
+    {
+      "a": {
+        "x": 10,
+        "y": 16
+      },
+      "b": {
+        "x": 13,
+        "y": 16
+      }
+    },
+    {
+      "a": {
+        "x": 1,
+        "y": 20
+      },
+      "b": {
+        "x": 10,
+        "y": 20
+      }
+    },
+    {
+      "a": {
+        "x": 13,
+        "y": 20
+      },
+      "b": {
+        "x": 19,
+        "y": 20
+      }
+    },
+    {
+      "a": {
+        "x": 1,
+        "y": 4
+      },
+      "b": {
+        "x": 1,
+        "y": 8
+      }
+    },
+    {
+      "a": {
+        "x": 1,
+        "y": 12
+      },
+      "b": {
+        "x": 1,
+        "y": 20
+      }
+    },
+    {
+      "a": {
+        "x": 4,
+        "y": 0
+      },
+      "b": {
+        "x": 4,
+        "y": 4
+      }
+    },
+    {
+      "a": {
+        "x": 4,
+        "y": 8
+      },
+      "b": {
+        "x": 4,
+        "y": 12
+      }
+    },
+    {
+      "a": {
+        "x": 7,
+        "y": 4
+      },
+      "b": {
+        "x": 7,
+        "y": 8
+      }
+    },
+    {
+      "a": {
+        "x": 7,
+        "y": 12
+      },
+      "b": {
+        "x": 7,
+        "y": 14
+      }
+    },
+    {
+      "a": {
+        "x": 7,
+        "y": 15
+      },
+      "b": {
+        "x": 7,
+        "y": 17
+      }
+    },
+    {
+      "a": {
+        "x": 7,
+        "y": 18
+      },
+      "b": {
+        "x": 7,
+        "y": 20
+      }
+    },
+    {
+      "a": {
+        "x": 10,
+        "y": 4
+      },
+      "b": {
+        "x": 10,
+        "y": 10
+      }
+    },
+    {
+      "a": {
+        "x": 10,
+        "y": 11
+      },
+      "b": {
+        "x": 10,
+        "y": 13
+      }
+    },
+    {
+      "a": {
+        "x": 10,
+        "y": 14
+      },
+      "b": {
+        "x": 10,
+        "y": 20
+      }
+    },
+    {
+      "a": {
+        "x": 13,
+        "y": 0
+      },
+      "b": {
+        "x": 13,
+        "y": 4
+      }
+    },
+    {
+      "a": {
+        "x": 13,
+        "y": 8
+      },
+      "b": {
+        "x": 13,
+        "y": 14
+      }
+    },
+    {
+      "a": {
+        "x": 13,
+        "y": 15
+      },
+      "b": {
+        "x": 13,
+        "y": 20
+      }
+    },
+    {
+      "a": {
+        "x": 16,
+        "y": 4
+      },
+      "b": {
+        "x": 16,
+        "y": 6
+      }
+    },
+    {
+      "a": {
+        "x": 16,
+        "y": 7
+      },
+      "b": {
+        "x": 16,
+        "y": 15
+      }
+    },
+    {
+      "a": {
+        "x": 16,
+        "y": 16
+      },
+      "b": {
+        "x": 16,
+        "y": 20
+      }
+    },
+    {
+      "a": {
+        "x": 19,
+        "y": 4
+      },
+      "b": {
+        "x": 19,
+        "y": 20
+      }
+    }
+  ],
+  "doors": [
+    {
+      "location": {
+        "x": 5,
+        "y": 4
+      },
+      "orientation": "horizontal"
+    },
+    {
+      "location": {
+        "x": 11,
+        "y": 4
+      },
+      "orientation": "horizontal"
+    },
+    {
+      "location": {
+        "x": 5,
+        "y": 8
+      },
+      "orientation": "horizontal"
+    },
+    {
+      "location": {
+        "x": 11,
+        "y": 8
+      },
+      "orientation": "horizontal"
+    },
+    {
+      "location": {
+        "x": 16,
+        "y": 6
+      },
+      "orientation": "vertical"
+    },
+    {
+      "location": {
+        "x": 10,
+        "y": 10
+      },
+      "orientation": "vertical"
+    },
+    {
+      "location": {
+        "x": 5,
+        "y": 12
+      },
+      "orientation": "horizontal"
+    },
+    {
+      "location": {
+        "x": 8,
+        "y": 12
+      },
+      "orientation": "horizontal"
+    },
+    {
+      "location": {
+        "x": 10,
+        "y": 13
+      },
+      "orientation": "vertical"
+    },
+    {
+      "location": {
+        "x": 13,
+        "y": 14
+      },
+      "orientation": "vertical"
+    },
+    {
+      "location": {
+        "x": 3,
+        "y": 16
+      },
+      "orientation": "horizontal"
+    },
+    {
+      "location": {
+        "x": 7,
+        "y": 14
+      },
+      "orientation": "vertical"
+    },
+    {
+      "location": {
+        "x": 7,
+        "y": 17
+      },
+      "orientation": "vertical"
+    },
+    {
+      "location": {
+        "x": 16,
+        "y": 15
+      },
+      "orientation": "vertical"
+    }
+  ],
+  "matrix": [
+    [
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    [
+      -1,
+      -1,
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      5,
+      5,
+      5,
+      5,
+      6,
+      6,
+      6,
+      6
+    ],
+    [
+      -1,
+      -1,
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      5,
+      5,
+      5,
+      5,
+      6,
+      6,
+      6,
+      6
+    ],
+    [
+      -1,
+      -1,
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      5,
+      5,
+      5,
+      5,
+      6,
+      6,
+      6,
+      6
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      3,
+      3,
+      3,
+      3,
+      5,
+      5,
+      5,
+      5,
+      6,
+      6,
+      6,
+      6
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      3,
+      3,
+      3,
+      3,
+      5,
+      5,
+      5,
+      5,
+      6,
+      6,
+      6,
+      6
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      3,
+      3,
+      3,
+      3,
+      5,
+      5,
+      5,
+      5,
+      6,
+      6,
+      6,
+      6
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      3,
+      3,
+      3,
+      3,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      3,
+      3,
+      3,
+      3,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      3,
+      3,
+      3,
+      3,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      2,
+      2,
+      2,
+      2,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      2,
+      2,
+      2,
+      2,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      2,
+      2,
+      2,
+      2,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    [
+      -1,
+      -1,
+      -1,
+      -1,
+      2,
+      2,
+      2,
+      2,
+      -1,
+      -1,
+      -1,
+      -1,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    [
+      -1,
+      -1,
+      -1,
+      -1,
+      2,
+      2,
+      2,
+      2,
+      -1,
+      -1,
+      -1,
+      -1,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    [
+      -1,
+      -1,
+      -1,
+      -1,
+      2,
+      2,
+      2,
+      2,
+      -1,
+      -1,
+      -1,
+      -1,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    [
+      -1,
+      -1,
+      -1,
+      -1,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9
+    ],
+    [
+      -1,
+      -1,
+      -1,
+      -1,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9
+    ],
+    [
+      -1,
+      -1,
+      -1,
+      -1,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9
+    ],
+    [
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ]
+  ],
+  "distances": [
+    [
+      1,
+      1,
+      1,
+      2,
+      2,
+      3,
+      4,
+      3,
+      3,
+      2
+    ],
+    [
+      1,
+      1,
+      2,
+      1,
+      2,
+      2,
+      3,
+      2,
+      3,
+      3
+    ],
+    [
+      1,
+      2,
+      1,
+      2,
+      1,
+      3,
+      3,
+      2,
+      2,
+      1
+    ],
+    [
+      2,
+      1,
+      2,
+      1,
+      1,
+      1,
+      2,
+      1,
+      2,
+      3
+    ],
+    [
+      2,
+      2,
+      1,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      2
+    ],
+    [
+      3,
+      2,
+      3,
+      1,
+      2,
+      1,
+      1,
+      1,
+      3,
+      4
+    ],
+    [
+      4,
+      3,
+      3,
+      2,
+      2,
+      1,
+      1,
+      1,
+      3,
+      4
+    ],
+    [
+      3,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      3
+    ],
+    [
+      3,
+      3,
+      2,
+      2,
+      1,
+      3,
+      3,
+      2,
+      1,
+      1
+    ],
+    [
+      2,
+      3,
+      1,
+      3,
+      2,
+      4,
+      4,
+      3,
+      1,
+      1
+    ]
+  ],
+  "description": "map( \nroom ( x:4 y:0 width:9 height:4 placement:0 )\nroom ( x:1 y:4 width:6 height:4 placement:0 )\nroom ( x:10 y:4 width:6 height:4 placement:0 )\nroom ( x:4 y:8 width:6 height:4 placement:0 )\nroom ( x:10 y:8 width:3 height:8 placement:0 )\nroom ( x:1 y:12 width:6 height:4 placement:0 )\nroom ( x:1 y:16 width:6 height:4 placement:0 )\nroom ( x:7 y:12 width:3 height:8 placement:0 )\nroom ( x:13 y:12 width:3 height:8 placement:0 )\nroom ( x:16 y:4 width:3 height:16 placement:0 )\n)"
+}

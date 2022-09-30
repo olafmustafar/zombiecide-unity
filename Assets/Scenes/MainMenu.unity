@@ -1159,8 +1159,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a050a7636405b2e27b98b8ae23c3777b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manualLevelsPath: /home/rei-arthur/projects/zombie-tiles-levels/
-  generatedLevelsPath: /home/rei-arthur/projects/zombie-tiles-levels/generated/
 --- !u!1001 &914164289
 PrefabInstance:
   m_ObjectHideFlags: 0

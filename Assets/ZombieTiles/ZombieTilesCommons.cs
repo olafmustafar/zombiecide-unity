@@ -57,6 +57,7 @@ public struct ZtRoom
     public uint width;
     public uint height;
     public ZtPlacementType placement_type;
+    public bool is_placed;
 }
 
 [StructLayout(LayoutKind.Sequential)]
