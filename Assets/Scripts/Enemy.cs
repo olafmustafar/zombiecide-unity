@@ -151,7 +151,7 @@ public class Enemy : MonoBehaviour, Agent
     {
         GameObject effect = Instantiate(deathEffect, gameObject.transform.position, Quaternion.identity);
 
-        if( powerUp && Random.Range(0f,1f) < 0.20){
+        if( powerUp && Random.Range(0f,1f) < 0.10){
             DropPowerUp();
         }
 
