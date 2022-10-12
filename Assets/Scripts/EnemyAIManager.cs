@@ -90,7 +90,7 @@ public class EnemyAIManager : MonoBehaviour
                 float pathSqrMagnitude = path.corners.Select(x => x.sqrMagnitude).Sum();
                 float distance = Mathf.Sqrt(pathSqrMagnitude);
 
-                if (path.corners.Length > 0)
+                if (path.corners.Length > 1)
                 {
                     cognitiveComponent = cognitiveConst * Random.Range(0f, 1f) * distance * (VectorConverter.Convert(path.corners[1]) - e.currentPosition).normalized;
                 }
@@ -100,19 +100,24 @@ public class EnemyAIManager : MonoBehaviour
             Vector2 socialComponent = Vector2.zero;
             if (gBest > 0
                 && e.currentPosition != gBestPosition
-                && Vector2.Distance(e.currentPosition, player.position) <= detectionDistance 
+                && Vector2.Distance(e.currentPosition, player.position) <= detectionDistance
                 )
             {
                 VectorConverter.CalculateNavmeshPath(e.currentPosition, gBestPosition, path);
                 float pathSqrMagnitude = path.corners.Select(x => x.sqrMagnitude).Sum();
                 float distance = Mathf.Sqrt(pathSqrMagnitude);
-                if (path.corners.Length > 0)
+                if (path.corners.Length > 1)
                 {
                     socialComponent = socialConst * Random.Range(0f, 1f) * distance * (VectorConverter.Convert(path.corners[1]) - e.currentPosition).normalized;
                 }
             }
 
             e.inertia = inertia + cognitiveComponent + socialComponent;
+
+            Debug.DrawLine(VectorConverter.Convert(e.currentPosition, 1)+ ( Vector3.forward * 0.0f ), VectorConverter.Convert(e.currentPosition + cognitiveComponent * 0.1f , 1) + ( Vector3.forward * 0.0f ), Color.red);
+            Debug.DrawLine(VectorConverter.Convert(e.currentPosition, 1)+ ( Vector3.forward * 0.1f ), VectorConverter.Convert(e.currentPosition + socialComponent    * 0.1f , 1) + ( Vector3.forward * 0.1f ), Color.blue);
+            Debug.DrawLine(VectorConverter.Convert(e.currentPosition, 1)+ ( Vector3.forward * 0.2f ), VectorConverter.Convert(e.currentPosition + inertia            * 0.1f , 1) + ( Vector3.forward * 0.2f ), Color.yellow);
+            Debug.DrawLine(VectorConverter.Convert(e.currentPosition, 1)+ ( Vector3.forward * 0.3f ), VectorConverter.Convert(e.currentPosition + e.inertia          * 0.1f , 1) + ( Vector3.forward * 0.3f ), Color.green);
 
             if (randomMovmentGeneration && e.inertia.magnitude <= 20)
             {

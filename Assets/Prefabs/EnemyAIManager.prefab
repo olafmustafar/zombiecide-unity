@@ -47,10 +47,10 @@ MonoBehaviour:
   inertiaWeightDecay: 0
   minimalInertiaWeight: 0.4
   detectionDistance: 20
-  cognitiveConst: 2
+  cognitiveConst: 1
   socialConst: 1
-  pFitnessDecay: 400
-  gFitnessDecay: 400
+  pFitnessDecay: 1
+  gFitnessDecay: 1
   randomMovmentGeneration: 1
   gBestPositionTarget: {fileID: 2228813071947597715, guid: 4c68b4bb624a238fa94d77eb9d849681, type: 3}
   pBestPositionTarget: {fileID: 2872567311602255507, guid: 0ceb873f6d00da1e1b442f1baf7c2235, type: 3}

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bullet
   - Enemy
+  - PowerUp
   layers:
   - Default
   - TransparentFX
@@ -14,8 +15,8 @@ TagManager:
   - Water
   - UI
   - Bullets
-  - 
-  - 
+  - Enemy
+  - Collectibles
   - 
   - 
   - 

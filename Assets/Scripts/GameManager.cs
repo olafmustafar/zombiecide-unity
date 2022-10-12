@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        GUIText.SetText($"GBest: {enemyAIManager.gBest}\nLife: {health}\nCoins: {score}\nRoom: {sm.SectorOf(player.transform.position)}");
+        GUIText.SetText($"Life: {health}\nCoins: {score}");
     }
 
     void handleDefeat()

@@ -124,10 +124,10 @@ public class BoardManager : MonoBehaviour
             GameObject instance = Instantiate(enemy, pos, Quaternion.identity);
 
             Enemy enemyScript = instance.GetComponent<Enemy>();
-            enemyScript.health = e.health;
+            enemyScript.health = e.health * 0.75f;
             enemyScript.damage = e.damage;
             enemyScript.attackCooldown = 6f - (5f * (e.attackCooldown / 100f));
-            enemyScript.velocity = 5f + (10f * (e.velocity / 100f));
+            enemyScript.velocity = e.velocity * 0.10f;
             instance.transform.SetParent(enemiesHolder);
 
             GameObject sprite = Instantiate(

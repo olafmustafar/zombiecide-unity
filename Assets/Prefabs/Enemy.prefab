@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 717991211031730137}
   - component: {fileID: 4292967582970849689}
   - component: {fileID: 4479054638235724542}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -118,6 +118,7 @@ MonoBehaviour:
   attackCooldown: 1
   velocity: 30
   deathEffect: {fileID: 5341110922925678701, guid: 16c5bce9a4d9bc27d9d781cf0914d107, type: 3}
+  powerUp: {fileID: 1598227796310530289, guid: d0238da96afa65692ac8e7aee2b6f302, type: 3}
 --- !u!54 &4292967582970849689
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -162,7 +163,7 @@ GameObject:
   - component: {fileID: 5503810444523455899}
   - component: {fileID: 581755177080680785}
   - component: {fileID: 1384398749670546355}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

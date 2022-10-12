@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour, Agent
     public float attackCooldown;
     public float velocity;
     public GameObject deathEffect;
+    public GameObject powerUp;
 
     //Agent interface
     [HideInInspector] public Vector2 targetPosition { get; set; }
@@ -131,7 +132,6 @@ public class Enemy : MonoBehaviour, Agent
                 HandleDeath();
             }
         }
-
     }
 
     void OnCollisionStay(Collision collider)
@@ -150,9 +150,21 @@ public class Enemy : MonoBehaviour, Agent
     void HandleDeath()
     {
         GameObject effect = Instantiate(deathEffect, gameObject.transform.position, Quaternion.identity);
+
+        if( powerUp && Random.Range(0f,1f) < 0.20){
+            DropPowerUp();
+        }
+
         GameObject.Find("GameManager").GetComponent<GameManager>().IncreaseScore(10);
         FindObjectOfType<AudioManager>().Play("EnemyDeath");
+
         Destroy(effect, 5.0f);
         Destroy(gameObject);
+    }
+
+    void DropPowerUp(){
+        if ( powerUp ){
+            GameObject effect = Instantiate(powerUp, gameObject.transform.position, Quaternion.identity);
+        }
     }
 }

@@ -90,5 +90,4 @@ public class Player : MonoBehaviour
         health -= damage;
         velocity = 0;
     }
-
 }

@@ -68,3 +68,9 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: PowerUpCollect
+    clip: {fileID: 8300000, guid: 7ced67f7381a8a7feb1cb01eeb164abe, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
