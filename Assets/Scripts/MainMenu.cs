@@ -17,6 +17,7 @@ public class MainMenu : MonoBehaviour
         ZombieTilesApi ztapi = new ZombieTilesApi();
         ztapi.LoadDungeon(isGenerated, level);
         ScenesState.dungeon = ztapi.dungeon;
+        ScenesState.usePSOAI = isGenerated;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

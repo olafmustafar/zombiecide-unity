@@ -4,12 +4,17 @@ using UnityEngine.AI;
 
 public interface Agent
 {
+    //PSO AI
     Vector2 targetPosition { get; set; }
     Vector2 currentPosition { get; set; }
     float pBest { get; set; }
     Vector2 pBestPosition { get; set; }
     Vector2 inertia { get; set; }
     float getFitness();
+
+    //common AI
+    bool triggered { get; set; }
+    float randomMovmentCooldown { get; set; }
 };
 
 public class EnemyAIManager : MonoBehaviour
@@ -25,6 +30,7 @@ public class EnemyAIManager : MonoBehaviour
     public float gFitnessDecay = 0.01f;
 
     public bool randomMovmentGeneration = true;
+    public bool resetFitness = false;
 
     public GameObject gBestPositionTarget;
     public GameObject pBestPositionTarget;
@@ -48,6 +54,18 @@ public class EnemyAIManager : MonoBehaviour
     }
 
     void FixedUpdate()
+    {
+        if (ScenesState.usePSOAI)
+        {
+            PSOAI();
+        }
+        else
+        {
+            CommonAI();
+        }
+    }
+
+    void PSOAI()
     {
         Agent[] agents = enemies
                            .Where(e => e != null)
@@ -114,10 +132,10 @@ public class EnemyAIManager : MonoBehaviour
 
             e.inertia = inertia + cognitiveComponent + socialComponent;
 
-            Debug.DrawLine(VectorConverter.Convert(e.currentPosition, 1)+ ( Vector3.forward * 0.0f ), VectorConverter.Convert(e.currentPosition + cognitiveComponent * 0.1f , 1) + ( Vector3.forward * 0.0f ), Color.red);
-            Debug.DrawLine(VectorConverter.Convert(e.currentPosition, 1)+ ( Vector3.forward * 0.1f ), VectorConverter.Convert(e.currentPosition + socialComponent    * 0.1f , 1) + ( Vector3.forward * 0.1f ), Color.blue);
-            Debug.DrawLine(VectorConverter.Convert(e.currentPosition, 1)+ ( Vector3.forward * 0.2f ), VectorConverter.Convert(e.currentPosition + inertia            * 0.1f , 1) + ( Vector3.forward * 0.2f ), Color.yellow);
-            Debug.DrawLine(VectorConverter.Convert(e.currentPosition, 1)+ ( Vector3.forward * 0.3f ), VectorConverter.Convert(e.currentPosition + e.inertia          * 0.1f , 1) + ( Vector3.forward * 0.3f ), Color.green);
+            Debug.DrawLine(VectorConverter.Convert(e.currentPosition, 1) + (Vector3.forward * 0.0f), VectorConverter.Convert(e.currentPosition + cognitiveComponent * 0.1f, 1) + (Vector3.forward * 0.0f), Color.red);
+            Debug.DrawLine(VectorConverter.Convert(e.currentPosition, 1) + (Vector3.forward * 0.1f), VectorConverter.Convert(e.currentPosition + socialComponent * 0.1f, 1) + (Vector3.forward * 0.1f), Color.blue);
+            Debug.DrawLine(VectorConverter.Convert(e.currentPosition, 1) + (Vector3.forward * 0.2f), VectorConverter.Convert(e.currentPosition + inertia * 0.1f, 1) + (Vector3.forward * 0.2f), Color.yellow);
+            Debug.DrawLine(VectorConverter.Convert(e.currentPosition, 1) + (Vector3.forward * 0.3f), VectorConverter.Convert(e.currentPosition + e.inertia * 0.1f, 1) + (Vector3.forward * 0.3f), Color.green);
 
             if (randomMovmentGeneration && e.inertia.magnitude <= 20)
             {
@@ -127,8 +145,50 @@ public class EnemyAIManager : MonoBehaviour
             e.targetPosition = e.currentPosition + e.inertia;
 
             e.pBest = Mathf.Max(e.pBest - pFitnessDecay, 0);
+
+            if(resetFitness){
+                e.pBest = 0;
+                gBest = 0;
+            }
         }
 
+        resetFitness = false;
         inertiaW = Mathf.Max(inertiaW - (inertiaWeightDecay * Time.fixedDeltaTime), minimalInertiaWeight);
+    }
+
+    void CommonAI()
+    {
+
+        Agent[] agents = enemies
+                           .Where(e => e != null)
+                           .Select(e => e.GetComponent<Enemy>())
+                           .ToArray();
+
+        foreach (Agent e in agents)
+        {
+            NavMeshPath path = new NavMeshPath();
+            VectorConverter.CalculateNavmeshPath(e.currentPosition, player.position, path);
+
+            if (path.corners.Length == 2 && (player.position - e.currentPosition).magnitude < 50)
+            {
+                e.triggered = true;
+            }
+
+            if (!e.triggered)
+            {
+                if (randomMovmentGeneration && e.randomMovmentCooldown <= 0)
+                {
+                    e.targetPosition = e.currentPosition + new Vector2(Random.Range(-5f, 5f), Random.Range(-5f, 5f));
+                    e.randomMovmentCooldown = Random.Range(0f, 0.5f);
+                }
+                e.randomMovmentCooldown -= Time.fixedDeltaTime;
+                continue;
+            }
+
+            if (path.corners.Length >= 2)
+            {
+                e.targetPosition = VectorConverter.Convert(path.corners[1]);
+            }
+        }
     }
 }

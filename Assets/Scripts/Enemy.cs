@@ -16,6 +16,8 @@ public class Enemy : MonoBehaviour, Agent
     [HideInInspector] public float pBest { get; set; }
     [HideInInspector] public Vector2 pBestPosition { get; set; }
     [HideInInspector] public Vector2 inertia { get; set; }
+    [HideInInspector] public bool triggered { get; set; }
+    [HideInInspector] public float randomMovmentCooldown { get; set; }
 
     Player player;
     Rigidbody rb;
@@ -84,6 +86,8 @@ public class Enemy : MonoBehaviour, Agent
             soundScore = Mathf.Max(player.soundLevel - distance - (nonPlayerObjects * 10), 0);
         }
 
+        Debug.Log( $"sound:{soundScore} vision:{visionScore}");
+
         return visionScore + soundScore;
     }
 
@@ -91,7 +95,7 @@ public class Enemy : MonoBehaviour, Agent
     {
         Vector2 targetVector;
         targetVector = (targetPosition - currentPosition);
-        rb.velocity = VectorConverter.Convert(targetVector.normalized * Mathf.Min(velocity, targetVector.magnitude));
+        rb.velocity = VectorConverter.Convert(targetVector.normalized * velocity ); 
     }
 
     void Rotate()
