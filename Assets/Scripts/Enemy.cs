@@ -86,8 +86,6 @@ public class Enemy : MonoBehaviour, Agent
             soundScore = Mathf.Max(player.soundLevel - distance - (nonPlayerObjects * 10), 0);
         }
 
-        Debug.Log( $"sound:{soundScore} vision:{visionScore}");
-
         return visionScore + soundScore;
     }
 
