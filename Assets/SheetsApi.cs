@@ -27,8 +27,6 @@ public class SheetsApi
     {
         TextAsset sheetInfoFile = Resources.Load("GoogleApi/SheetInfo") as TextAsset;
         sheetInfo = JsonConvert.DeserializeObject<SheetInfo>(sheetInfoFile.ToString());
-        Debug.Log(sheetInfo.client_email);
-        Debug.Log(sheetInfo.sheet_id);
     }
 
     public static IEnumerator SendDataSheet(String[] dataSheet)

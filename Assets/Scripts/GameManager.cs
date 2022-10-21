@@ -16,6 +16,11 @@ public class GameManager : MonoBehaviour
     public SectorManager sm;
     public int score;
 
+    public void Next()
+    {
+        ScenesState.steps.Next();
+    }
+
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
