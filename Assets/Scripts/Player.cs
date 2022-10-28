@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public Camera cam;
     public Animator animator;
     public SpriteRenderer sprite;
-
+    
     [HideInInspector] public float soundLevel = 0;
     [HideInInspector] public Vector2 position;
 
@@ -55,7 +55,8 @@ public class Player : MonoBehaviour
             lookDir -= rb.position;
 
             float angle = -Mathf.Atan2(lookDir.z, lookDir.x) * Mathf.Rad2Deg;
-            rb.MoveRotation(Quaternion.Euler(new Vector3(0, angle, 0)));
+            // GetComponent<Transform>().rotation =Quaternion.Euler(new Vector3(0, angle, 0)); 
+            // rb.MoveRotation(Quaternion.Euler(new Vector3(0, angle, 0)));
 
             Vector3 cameraPos = cam.transform.forward;
             float cameraAngle = -Mathf.Atan2(cameraPos.z, cameraPos.x) * Mathf.Rad2Deg;

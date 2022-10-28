@@ -42,13 +42,8 @@ public class Steps
     {
         if (steps.Count <= 0)
         {
-            foreach (var ans in ScenesState.formAnswers)
-            {
-                Debug.Log($"{ans.Key}: ");
-                foreach( string answer in ans.Value){
-                    Debug.Log($"    {answer}: ");
-                }
-            }
+            ScenesState.nextQuestionType = QuestionsType.END_MESSAGE;
+            SceneManager.LoadScene("FormScene");
             return;
         }
 

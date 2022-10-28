@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -29,7 +30,9 @@ public class QuestionsManager : MonoBehaviour
 {
     public GameObject buttonPrefab;
     public GameObject canvas;
-    public TextMeshProUGUI tmPro;
+    public TextMeshProUGUI uiDescription;
+    public TextMeshProUGUI uiTitle;
+    bool loadingActive;
 
     QuestionsType questionsType;
     int index;
@@ -68,8 +71,9 @@ public class QuestionsManager : MonoBehaviour
         questions.Add(QuestionsType.IMMERSION_GENERATED, immersionQuestions);
         questions.Add(QuestionsType.SIMILARITY, similarityQuestions);
         questions.Add(QuestionsType.TURING_TEST, turingTest);
-        
-        if( ScenesState.formAnswers == null){
+
+        if (ScenesState.formAnswers == null)
+        {
             ScenesState.formAnswers = new Dictionary<QuestionsType, List<string>>();
             ScenesState.formAnswers.Add(QuestionsType.PROFILE, new List<string>());
             ScenesState.formAnswers.Add(QuestionsType.IMMERSION_MANUAL, new List<string>());
@@ -79,9 +83,30 @@ public class QuestionsManager : MonoBehaviour
         }
     }
 
+    IEnumerator SendAnswers()
+    {
+        InstantiateButtons(new string[] { });
+        List<string> data = new List<string>();
+        data.AddRange(ScenesState.formAnswers[QuestionsType.PROFILE]);
+        data.AddRange(ScenesState.formAnswers[QuestionsType.IMMERSION_MANUAL]);
+        data.AddRange(ScenesState.formAnswers[QuestionsType.IMMERSION_GENERATED]);
+        data.AddRange(ScenesState.formAnswers[QuestionsType.TURING_TEST]);
+        data.AddRange(ScenesState.formAnswers[QuestionsType.SIMILARITY]);
+        startLoading();
+        yield return SheetsApi.SendDataSheet(data.ToArray());
+        stopLoading();
+        uiDescription.text = "Obrigado por jogar, por hoje é só!";
+        uiTitle.text = "Obrigado!";
+
+    }
+
     void Start()
     {
-        Debug.Log(ScenesState.nextQuestionType);
+        if (ScenesState.nextQuestionType == QuestionsType.END_MESSAGE)
+        {
+            StartCoroutine(SendAnswers());
+            return;
+        }
         SetQuestions(ScenesState.nextQuestionType);
         Next();
     }
@@ -106,7 +131,9 @@ public class QuestionsManager : MonoBehaviour
                 {
                     ScenesState.formAnswers[questionsType].Add("Errou");
                 }
-            } else {
+            }
+            else
+            {
                 ScenesState.formAnswers[questionsType].Add(currentAnswer);
             }
         }
@@ -119,7 +146,7 @@ public class QuestionsManager : MonoBehaviour
             return;
         }
 
-        tmPro.text = questions[questionsType][index].description;
+        uiDescription.text = questions[questionsType][index].description;
         InstantiateButtons(questions[questionsType][index].options);
     }
 
@@ -131,10 +158,18 @@ public class QuestionsManager : MonoBehaviour
         }
         buttonList.Clear();
 
-        float buttonLength = 100;
-        float buttonSpacing = 10;
-        float increment = buttonLength + buttonSpacing;
-        float originPos = ((options.Length * increment) - (buttonSpacing + increment)) * -0.5f;
+        float buttonLength = 200;
+        float buttonHeight = 100;
+        float spacing = 10;
+        Vector2 originPos = new Vector2(0, 0);
+        Vector2 increment = new Vector2(buttonLength + spacing, buttonHeight + spacing);
+
+        originPos.x = ((Mathf.Min(options.Length, 3) * increment.x) - (spacing + increment.x)) * -0.5f;
+        if (options.Length > 3)
+        {
+            originPos.y = (increment.y - spacing) * 0.5f;
+        }
+        int i = 0;
 
         foreach (string option in options)
         {
@@ -144,8 +179,8 @@ public class QuestionsManager : MonoBehaviour
             btnTransform.anchorMax = new Vector2(0.5f, 0.5f);
             btnTransform.anchorMin = new Vector2(0.5f, 0.5f);
             btnTransform.pivot = new Vector2(0.5f, 0.5f);
-            btnTransform.sizeDelta = new Vector2(buttonLength, 100);
-            btnTransform.anchoredPosition = new Vector2(originPos, 0);
+            btnTransform.sizeDelta = new Vector2(buttonLength, buttonHeight);
+            btnTransform.anchoredPosition = originPos;
 
             TextMeshProUGUI textMesh = button.GetComponentInChildren<TextMeshProUGUI>();
             textMesh.text = option;
@@ -153,8 +188,42 @@ public class QuestionsManager : MonoBehaviour
             Button btnComponent = button.GetComponent<Button>();
             btnComponent.onClick.AddListener(() => this.Next(option));
 
-            originPos += increment;
+            originPos.x += increment.x;
+            if (i > 0 && (((i + 1) % 3) == 0))
+            {
+                originPos.x = ((Mathf.Min(options.Length - 1 - i, 3) * increment.x) - (spacing + increment.x)) * -0.5f;
+                originPos.y -= increment.y;
+            }
+            i++;
             buttonList.Add(button);
         }
+    }
+
+    void startLoading()
+    {
+        loadingActive = true;
+        StartCoroutine(RenderLoadingText());
+    }
+
+    void stopLoading()
+    {
+        loadingActive = false;
+    }
+
+    IEnumerator RenderLoadingText()
+    {
+        string loading = "Aguarde";
+        string[] dots = { ".", "..", "..." };
+
+        int i = 0;
+        while (loadingActive)
+        {
+            uiTitle.text = loading + dots[i % dots.Length];
+            uiDescription.text = "";
+            i++;
+            yield return new WaitForSeconds(1f);
+        }
+
+        yield return null;
     }
 }

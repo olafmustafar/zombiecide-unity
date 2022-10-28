@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
 
 public class MainMenu : MonoBehaviour
 {
@@ -9,7 +8,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        bool playGeneratedLevelFirst = Random.Range(0, 1) > 0.5f;
+        bool playGeneratedLevelFirst = Random.Range(0f, 1f) < 0.5f;
         ScenesState.playGeneratedLevelFirst = playGeneratedLevelFirst;
 
         Steps steps = new Steps();
@@ -17,6 +16,7 @@ public class MainMenu : MonoBehaviour
 
         if (playGeneratedLevelFirst)
         {
+            Debug.Log("generated first");
             steps.Add(StepType.GENERATED_LEVEL);
             steps.Add(StepType.GENERATED_LEVEL_FORM);
             steps.Add(StepType.MANUAL_LEVEL);
@@ -24,6 +24,7 @@ public class MainMenu : MonoBehaviour
         }
         else
         {
+            Debug.Log("manual first");
             steps.Add(StepType.MANUAL_LEVEL);
             steps.Add(StepType.MANUAL_LEVEL_FORM);
             steps.Add(StepType.GENERATED_LEVEL);
