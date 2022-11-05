@@ -788,6 +788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonPrefab: {fileID: 7843532430654788738, guid: b8f61a2d8303d5e7eaaab32c3b455266, type: 3}
   canvas: {fileID: 1343817727}
+  inputfieldPrefab: {fileID: 6391260410255669688, guid: ab6e8a654e692f4af874ff7095214599, type: 3}
   uiDescription: {fileID: 52713580}
   uiTitle: {fileID: 204693419}
 --- !u!224 &1784213436 stripped

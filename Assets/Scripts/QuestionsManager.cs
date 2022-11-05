@@ -18,11 +18,21 @@ public struct Question
 {
     public string description { get; set; }
     public string[] options { get; set; }
+    public bool isOptions { get; set; }
+
+    public Question(string description)
+    {
+        this.description = description;
+        this.options = new string[] { };
+        this.isOptions = false;
+
+    }
 
     public Question(string description, string[] options)
     {
         this.description = description;
         this.options = options;
+        this.isOptions = true;
     }
 }
 
@@ -30,6 +40,7 @@ public class QuestionsManager : MonoBehaviour
 {
     public GameObject buttonPrefab;
     public GameObject canvas;
+    public GameObject inputfieldPrefab;
     public TextMeshProUGUI uiDescription;
     public TextMeshProUGUI uiTitle;
     bool loadingActive;
@@ -39,19 +50,22 @@ public class QuestionsManager : MonoBehaviour
 
     Dictionary<QuestionsType, Question[]> questions;
 
-    List<GameObject> buttonList;
+    List<GameObject> instantiatedObjects;
 
     public QuestionsManager()
     {
         Question[] profileQuestions = new Question[]{
             new Question("Qual a sua idade?", new string[]{"9 ou menos", "10 a 20", "21 a 30", "31 a 40", "41 a 50", "51 a 60", "60 ou mais"}),
-            new Question("Você já jogou ou joga videogame?", new string[]{"Sim", "Não"}),
+            new Question("Quantos anos de experiência você têm como gamer?", new string[]{"1", "2", "3", "4", "5"}),
+            new Question("Em qual estado você mora?"),
         };
 
         Question[] immersionQuestions = new Question[]{
             new Question("Na sua opinião, qual foi o nível de difículdade do nível jogado? (número maior significa mais difícil).", new string[]{"1", "2", "3", "4", "5"}),
             new Question("Na sua opinião, qual foi o nível de imersão do nível jogado? (número maior significa mais imersivo).", new string[]{"1", "2", "3", "4", "5"}),
-            new Question("Na sua opinião, qual foi o nível de diversão do nível jogado? (número maior significa mais divertido).", new string[]{"1", "2", "3", "4", "5"}),
+            new Question("O quanto você gostou de jogar o nível apresentado? (número maior significa mais divertido).", new string[]{"1", "2", "3", "4", "5"}),
+            new Question("Qual nota você daria para o comportamento dos inimigos dentro do jogo?", new string[]{"1", "2", "3", "4", "5"}),
+            new Question("Qual nota você daria para o layout do nível jogado?", new string[]{"1", "2", "3", "4", "5"}),
         };
 
         Question[] similarityQuestions = new Question[] {
@@ -64,7 +78,7 @@ public class QuestionsManager : MonoBehaviour
             new Question("Qual nível você acredita que foi gerado por computador?", new string[] { "1ᵒ nível jogado" , "2ᵒ nível jogado"})
         };
 
-        buttonList = new List<GameObject>();
+        instantiatedObjects = new List<GameObject>();
         questions = new Dictionary<QuestionsType, Question[]>();
         questions.Add(QuestionsType.PROFILE, profileQuestions);
         questions.Add(QuestionsType.IMMERSION_MANUAL, immersionQuestions);
@@ -87,6 +101,7 @@ public class QuestionsManager : MonoBehaviour
     {
         InstantiateButtons(new string[] { });
         List<string> data = new List<string>();
+        data.Add(System.DateTime.Now.ToString());
         data.AddRange(ScenesState.formAnswers[QuestionsType.PROFILE]);
         data.AddRange(ScenesState.formAnswers[QuestionsType.IMMERSION_MANUAL]);
         data.AddRange(ScenesState.formAnswers[QuestionsType.IMMERSION_GENERATED]);
@@ -119,6 +134,7 @@ public class QuestionsManager : MonoBehaviour
 
     void Next(string currentAnswer = "")
     {
+        Debug.Log(currentAnswer);
         if (currentAnswer.Length > 0)
         {
             if (questionsType == QuestionsType.TURING_TEST)
@@ -147,16 +163,60 @@ public class QuestionsManager : MonoBehaviour
         }
 
         uiDescription.text = questions[questionsType][index].description;
-        InstantiateButtons(questions[questionsType][index].options);
+        if (questions[questionsType][index].isOptions)
+        {
+            InstantiateButtons(questions[questionsType][index].options);
+        }
+        else
+        {
+            InstantiateTextfield();
+        }
+    }
+
+    void InstantiateTextfield()
+    {
+        foreach (GameObject objects in instantiatedObjects)
+        {
+            Destroy(objects);
+        }
+        instantiatedObjects.Clear();
+
+        GameObject inputfield = Instantiate(inputfieldPrefab);
+        inputfield.transform.SetParent(canvas.transform);
+        RectTransform ifTransform = inputfield.transform as RectTransform;
+        ifTransform.anchorMax = new Vector2(0.5f, 0.5f);
+        ifTransform.anchorMin = new Vector2(0.5f, 0.5f);
+        ifTransform.pivot = new Vector2(0.5f, 0.5f);
+        ifTransform.anchoredPosition = new Vector2(0f, 0f);
+        instantiatedObjects.Add(inputfield);
+
+        TMP_InputField tmpInputField = inputfield.GetComponent<TMP_InputField>();
+        tmpInputField.contentType = TMP_InputField.ContentType.Name;
+        tmpInputField.onSubmit.AddListener((string text) => {
+            this.Next(text);
+        });
+
+        GameObject button = Instantiate(buttonPrefab);
+        button.transform.SetParent(canvas.transform);
+        RectTransform btnTransform = button.transform as RectTransform;
+        btnTransform.anchorMax = new Vector2(0.5f, 0.5f);
+        btnTransform.anchorMin = new Vector2(0.5f, 0.5f);
+        btnTransform.pivot = new Vector2(0.5f, 0.5f);
+        btnTransform.sizeDelta = ifTransform.sizeDelta;
+        btnTransform.anchoredPosition  = new Vector2(0f, -ifTransform.sizeDelta.y);
+        instantiatedObjects.Add(button);
+
+        Button btnComponent = button.GetComponent<Button>();
+        btnComponent.onClick.AddListener( () => tmpInputField.onSubmit.Invoke(tmpInputField.text) );
     }
 
     void InstantiateButtons(string[] options)
     {
-        foreach (GameObject button in buttonList)
+        foreach (GameObject button in instantiatedObjects)
         {
             Destroy(button);
         }
-        buttonList.Clear();
+        instantiatedObjects.Clear();
 
         float buttonLength = 200;
         float buttonHeight = 100;
@@ -195,7 +255,7 @@ public class QuestionsManager : MonoBehaviour
                 originPos.y -= increment.y;
             }
             i++;
-            buttonList.Add(button);
+            instantiatedObjects.Add(button);
         }
     }
 
