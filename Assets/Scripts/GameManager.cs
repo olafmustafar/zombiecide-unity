@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
+    static int defeatedTimes = 0;
     public BoardManager boardScript;
     public EnemyAIManager enemyAIManager;
     public TextMeshProUGUI GUIText;
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
+        defeatedTimes ++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
@@ -86,6 +88,10 @@ public class GameManager : MonoBehaviour
     void handleDefeat()
     {
         GameObject instance = Instantiate(defeatScreen, canvas.transform);
+        if( defeatedTimes >= 1){
+            Transform btnSkipTransform = instance.transform.Find("BtnSkip");
+            btnSkipTransform.gameObject.SetActive(true);
+        }
         FindObjectOfType<AudioManager>().Play("PlayerDeath");
         gameIsOver = true;
     }

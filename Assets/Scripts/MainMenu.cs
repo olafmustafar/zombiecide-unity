@@ -32,6 +32,7 @@ public class MainMenu : MonoBehaviour
         }
 
         steps.Add(StepType.TURING_TEST);
+        steps.Add(StepType.SHOW_GENERATED_LEVEL);
         steps.Add(StepType.SIMILARITY_FORM);
         ScenesState.steps = steps;
 

@@ -56,12 +56,12 @@ public class QuestionsManager : MonoBehaviour
     {
         Question[] profileQuestions = new Question[]{
             new Question("Qual a sua idade?", new string[]{"9 ou menos", "10 a 20", "21 a 30", "31 a 40", "41 a 50", "51 a 60", "60 ou mais"}),
-            new Question("Quantos anos de experiência você têm como gamer?", new string[]{"1", "2", "3", "4", "5"}),
+            new Question("Quantos anos de experiência você tem como gamer?", new string[]{"1", "2", "3", "4", "5"}),
             new Question("Em qual estado você mora?"),
         };
 
         Question[] immersionQuestions = new Question[]{
-            new Question("Na sua opinião, qual foi o nível de difículdade do nível jogado? (número maior significa mais difícil).", new string[]{"1", "2", "3", "4", "5"}),
+            new Question("Na sua opinião, qual foi o nível de dificuldade do nível jogado? (número maior significa mais difícil).", new string[]{"1", "2", "3", "4", "5"}),
             new Question("Na sua opinião, qual foi o nível de imersão do nível jogado? (número maior significa mais imersivo).", new string[]{"1", "2", "3", "4", "5"}),
             new Question("O quanto você gostou de jogar o nível apresentado? (número maior significa mais divertido).", new string[]{"1", "2", "3", "4", "5"}),
             new Question("Qual nota você daria para o comportamento dos inimigos dentro do jogo?", new string[]{"1", "2", "3", "4", "5"}),
@@ -69,8 +69,8 @@ public class QuestionsManager : MonoBehaviour
         };
 
         Question[] similarityQuestions = new Question[] {
-            new Question("Até que ponto o nível gerado se assemelha ao nível manual? (quanto maior, mais difícil de notar a difença).", new string[]{"1", "2", "3", "4", "5"}),
-            new Question("Até que ponto você acha que os nível gerado foi gerado por computador? (1 para poucas partes geradas e 5 para totalmente gerado).", new string[]{"1", "2", "3", "4", "5"}),
+            new Question("Até que ponto o nível gerado se assemelha ao nível manual? (quanto maior, mais difícil de notar a diferença).", new string[]{"1", "2", "3", "4", "5"}),
+            new Question("Até que ponto você pensa que o nível gerado foi gerado por computador? (1 para poucas partes geradas e 5 para totalmente gerado).", new string[]{"1", "2", "3", "4", "5"}),
             new Question("Até que ponto você notou que o nível gerado foi gerado por computador? (5 para caso tenha notado que os níveis foram gerados).", new string[]{"1", "2", "3", "4", "5"}),
         };
 
@@ -134,7 +134,6 @@ public class QuestionsManager : MonoBehaviour
 
     void Next(string currentAnswer = "")
     {
-        Debug.Log(currentAnswer);
         if (currentAnswer.Length > 0)
         {
             if (questionsType == QuestionsType.TURING_TEST)
@@ -192,8 +191,16 @@ public class QuestionsManager : MonoBehaviour
 
         TMP_InputField tmpInputField = inputfield.GetComponent<TMP_InputField>();
         tmpInputField.contentType = TMP_InputField.ContentType.Name;
-        tmpInputField.onSubmit.AddListener((string text) => {
-            this.Next(text);
+        tmpInputField.onSubmit.AddListener((string text) =>
+        {
+            if (text.Length > 3)
+            {
+                this.Next(text);
+            }
+            else
+            {
+                uiDescription.text = questions[questionsType][index].description + "\nO nome do estado deve conter mais de 3 letras!";
+            }
         });
 
         GameObject button = Instantiate(buttonPrefab);
@@ -203,11 +210,11 @@ public class QuestionsManager : MonoBehaviour
         btnTransform.anchorMin = new Vector2(0.5f, 0.5f);
         btnTransform.pivot = new Vector2(0.5f, 0.5f);
         btnTransform.sizeDelta = ifTransform.sizeDelta;
-        btnTransform.anchoredPosition  = new Vector2(0f, -ifTransform.sizeDelta.y);
+        btnTransform.anchoredPosition = new Vector2(0f, -ifTransform.sizeDelta.y);
         instantiatedObjects.Add(button);
 
         Button btnComponent = button.GetComponent<Button>();
-        btnComponent.onClick.AddListener( () => tmpInputField.onSubmit.Invoke(tmpInputField.text) );
+        btnComponent.onClick.AddListener(() => tmpInputField.onSubmit.Invoke(tmpInputField.text));
     }
 
     void InstantiateButtons(string[] options)

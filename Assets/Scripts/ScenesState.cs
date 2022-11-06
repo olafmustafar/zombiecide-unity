@@ -10,6 +10,11 @@ public class ScenesState : MonoBehaviour
     public static Dictionary<QuestionsType, List<string>> formAnswers;
     public static Steps steps;
     public static bool playGeneratedLevelFirst;
+    public static int generatedIndex = -1;
+
+    public void Next(){
+        steps.Next();
+    }
 }
 
 public enum StepType
@@ -21,6 +26,7 @@ public enum StepType
     MANUAL_LEVEL_FORM,
     GENERATED_LEVEL_FORM,
     TURING_TEST,
+    SHOW_GENERATED_LEVEL,
     SIMILARITY_FORM,
 }
 
@@ -58,7 +64,8 @@ public class Steps
                 LoadLevel(false, Random.Range(0, 5));
                 break;
             case StepType.GENERATED_LEVEL:
-                LoadLevel(true, Random.Range(0, 5));
+                ScenesState.generatedIndex = Random.Range(0,5);
+                LoadLevel(true, ScenesState.generatedIndex);
                 break;
             case StepType.MANUAL_LEVEL_FORM:
                 ScenesState.nextQuestionType = QuestionsType.IMMERSION_MANUAL;
@@ -71,6 +78,9 @@ public class Steps
             case StepType.TURING_TEST:
                 ScenesState.nextQuestionType = QuestionsType.TURING_TEST;
                 SceneManager.LoadScene("FormScene");
+                break;
+            case StepType.SHOW_GENERATED_LEVEL:
+                SceneManager.LoadScene("ShowGenerated");
                 break;
             case StepType.SIMILARITY_FORM:
                 ScenesState.nextQuestionType = QuestionsType.SIMILARITY;

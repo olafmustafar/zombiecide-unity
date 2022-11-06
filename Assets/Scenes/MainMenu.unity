@@ -725,10 +725,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3301206601658433445, guid: cf019efb8156a4cc4ad6469aebc11d60, type: 3}
       propertyPath: m_text
-      value: "A seguir ser\xE3o apresentados uma s\xE9rie de questionarios relacionados
-        a seu perfil e sua experiencia com o jogo apresentado. Para responder, n\xE3o
-        deixe de prestar aten\xE7\xE3o no layout e n\xEDvelamento dos inimigos. Boa
-        sorte!"
+      value: "A seguir ser\xE3o apresentados uma s\xE9rie de question\xE1rios relacionados
+        a seu perfil e sua experi\xEAncia com o jogo apresentado. Para responder,
+        n\xE3o deixe de prestar aten\xE7\xE3o no layout e nivelamento dos inimigos.
+        Boa sorte!"
       objectReference: {fileID: 0}
     - target: {fileID: 3301206601658433451, guid: cf019efb8156a4cc4ad6469aebc11d60, type: 3}
       propertyPath: m_Name
@@ -1061,7 +1061,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3301206601658433445, guid: cf019efb8156a4cc4ad6469aebc11d60, type: 3}
       propertyPath: m_text
-      value: Segure o botao esquerdo do mouse para atirar
+      value: "Segure o bot\xE3o esquerdo do mouse para atirar"
       objectReference: {fileID: 0}
     - target: {fileID: 3301206601658433445, guid: cf019efb8156a4cc4ad6469aebc11d60, type: 3}
       propertyPath: m_margin.z
@@ -1636,7 +1636,7 @@ PrefabInstance:
     - target: {fileID: 3301206601658433445, guid: cf019efb8156a4cc4ad6469aebc11d60, type: 3}
       propertyPath: m_text
       value: "Her\xF3i! Sobreviva a esta dungeon cheia de salas interligadas e infestadas
-        de inimigos preparados para atacar o primeiro invasor de seu territorio!\n\n"
+        de inimigos preparados para atacar o primeiro invasor de seu territ\xF3rio!\n\n"
       objectReference: {fileID: 0}
     - target: {fileID: 3301206601658433451, guid: cf019efb8156a4cc4ad6469aebc11d60, type: 3}
       propertyPath: m_Name
