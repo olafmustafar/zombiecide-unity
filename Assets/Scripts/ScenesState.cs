@@ -11,6 +11,7 @@ public class ScenesState : MonoBehaviour
     public static Steps steps;
     public static bool playGeneratedLevelFirst;
     public static int generatedIndex = -1;
+    public static int manualIndex = -1;
 
     public void Next(){
         steps.Next();
@@ -61,7 +62,8 @@ public class Steps
                 SceneManager.LoadScene("FormScene");
                 break;
             case StepType.MANUAL_LEVEL:
-                LoadLevel(false, Random.Range(0, 5));
+                ScenesState.manualIndex = Random.Range(0,5);
+                LoadLevel(false, ScenesState.manualIndex);
                 break;
             case StepType.GENERATED_LEVEL:
                 ScenesState.generatedIndex = Random.Range(0,5);

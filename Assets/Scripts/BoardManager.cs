@@ -127,7 +127,7 @@ public class BoardManager : MonoBehaviour
             enemyScript.health = e.health * 0.75f;
             enemyScript.damage = e.damage;
             enemyScript.attackCooldown = 6f - (5f * (e.attackCooldown / 100f));
-            enemyScript.velocity = e.velocity * 0.10f;
+            enemyScript.velocity = Mathf.Max(2, e.velocity * 0.10f);
             instance.transform.SetParent(enemiesHolder);
 
             GameObject sprite = Instantiate(

@@ -48,8 +48,11 @@ public class EnemyAIManager : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        gBestPositionTargetInstance = Instantiate(gBestPositionTarget);
-        pBestPositionTargetInstance = Instantiate(pBestPositionTarget);
+        if (ScenesState.usePSOAI)
+        {
+            gBestPositionTargetInstance = Instantiate(gBestPositionTarget);
+            pBestPositionTargetInstance = Instantiate(pBestPositionTarget);
+        }
         sectorManager = GetComponentInParent<SectorManager>();
     }
 
@@ -82,7 +85,7 @@ public class EnemyAIManager : MonoBehaviour
             {
                 e.pBest = fitness;
                 e.pBestPosition = e.currentPosition;
-                pBestPositionTargetInstance.transform.position = VectorConverter.Convert(e.pBestPosition, 5);
+                // pBestPositionTargetInstance.transform.position = VectorConverter.Convert(e.pBestPosition, 5);
             }
 
             if (fitness >= gBest)
@@ -146,7 +149,8 @@ public class EnemyAIManager : MonoBehaviour
 
             e.pBest = Mathf.Max(e.pBest - pFitnessDecay, 0);
 
-            if(resetFitness){
+            if (resetFitness)
+            {
                 e.pBest = 0;
                 gBest = 0;
             }
@@ -158,7 +162,6 @@ public class EnemyAIManager : MonoBehaviour
 
     void CommonAI()
     {
-
         Agent[] agents = enemies
                            .Where(e => e != null)
                            .Select(e => e.GetComponent<Enemy>())

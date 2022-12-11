@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        GUIText.SetText($"Life: {health}\nCoins: {score}");
+        GUIText.SetText($"Vida: {health}\nPontuação: {score}");
     }
 
     void handleDefeat()

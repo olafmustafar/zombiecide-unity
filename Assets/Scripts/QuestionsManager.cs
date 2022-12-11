@@ -56,7 +56,7 @@ public class QuestionsManager : MonoBehaviour
     {
         Question[] profileQuestions = new Question[]{
             new Question("Qual a sua idade?", new string[]{"9 ou menos", "10 a 20", "21 a 30", "31 a 40", "41 a 50", "51 a 60", "60 ou mais"}),
-            new Question("Quantos anos de experiência você tem como gamer?", new string[]{"1", "2", "3", "4", "5"}),
+            new Question("Quantos anos de experiência você tem como gamer?", new string[]{"0", "1", "2", "3", "4 ou mais"}),
             new Question("Em qual estado você mora?"),
         };
 
@@ -64,14 +64,15 @@ public class QuestionsManager : MonoBehaviour
             new Question("Na sua opinião, qual foi o nível de dificuldade do nível jogado? (número maior significa mais difícil).", new string[]{"1", "2", "3", "4", "5"}),
             new Question("Na sua opinião, qual foi o nível de imersão do nível jogado? (número maior significa mais imersivo).", new string[]{"1", "2", "3", "4", "5"}),
             new Question("O quanto você gostou de jogar o nível apresentado? (número maior significa mais divertido).", new string[]{"1", "2", "3", "4", "5"}),
+            new Question("Qual nota você daria para o balanceamento e distribuição dos inimigos?", new string[]{"1", "2", "3", "4", "5"}),
             new Question("Qual nota você daria para o comportamento dos inimigos dentro do jogo?", new string[]{"1", "2", "3", "4", "5"}),
             new Question("Qual nota você daria para o layout do nível jogado?", new string[]{"1", "2", "3", "4", "5"}),
         };
 
         Question[] similarityQuestions = new Question[] {
             new Question("Até que ponto o nível gerado se assemelha ao nível manual? (quanto maior, mais difícil de notar a diferença).", new string[]{"1", "2", "3", "4", "5"}),
-            new Question("Até que ponto você pensa que o nível gerado foi gerado por computador? (1 para poucas partes geradas e 5 para totalmente gerado).", new string[]{"1", "2", "3", "4", "5"}),
-            new Question("Até que ponto você notou que o nível gerado foi gerado por computador? (5 para caso tenha notado que os níveis foram gerados).", new string[]{"1", "2", "3", "4", "5"}),
+            new Question("Até que ponto você pensa que o nível gerado foi construído por computador? (1 para pouco e 5 para totalmente).", new string[]{"1", "2", "3", "4", "5"}),
+            new Question("O quanto você notou que o nível gerado foi construído por computador? (1 caso não tenha notado, 5 para notou totalmente).", new string[]{"1", "2", "3", "4", "5"}),
         };
 
         Question[] turingTest = new Question[] {

@@ -279,8 +279,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4082968351674351885}
-  maxVelocity: 15
-  health: 1000
+  maxVelocity: 10
+  health: 500
   cam: {fileID: 0}
   animator: {fileID: 8078219649025225233}
   sprite: {fileID: 2272309545349730936}
