@@ -8,7 +8,7 @@ public class Shooting : MonoBehaviour
 
     public float shotCooldown = 0.20f;
     public float reducedShotCooldown = 0.10f;
-    public float bulletForce = 20f;
+    public float bulletForce = 1000f;
 
     private float cooldown = 0.0f;
 
@@ -40,32 +40,28 @@ public class Shooting : MonoBehaviour
     {
         if (powerUp == PowerUpType.DOUBLE_BULLETS)
         {
-            GameObject bullet = Instantiate(bulletPrefab, firePoint.position + (firePoint.right * 0.2f), firePoint.rotation * Quaternion.Euler(0, 90, 0) );
-            Rigidbody rb = bullet.GetComponent<Rigidbody>();
-            rb.AddForce(firePoint.forward * bulletForce, ForceMode.Impulse);
-
-            GameObject bullet2 = Instantiate(bulletPrefab, firePoint.position + (firePoint.right * -0.2f), firePoint.rotation * Quaternion.Euler(0, 90, 0));
-            Rigidbody rb2 = bullet2.GetComponent<Rigidbody>();
-            rb2.AddForce(firePoint.forward * bulletForce, ForceMode.Impulse);
+            InstantiateBullet(0, firePoint.right * 0.2f);
+            InstantiateBullet(0, firePoint.right * -0.2f);
         }
         else
         {
-            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation * Quaternion.Euler(0, 90, 0));
-            Rigidbody rb = bullet.GetComponent<Rigidbody>();
-            rb.AddForce(firePoint.forward * bulletForce, ForceMode.Impulse);
+            InstantiateBullet(0, Vector3.zero);
         }
-
 
         if (powerUp == PowerUpType.SPREAD_BULLETS)
         {
-            GameObject bullet2 = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation * Quaternion.Euler(0, 90 - 40, 0));
-            Rigidbody rb2 = bullet2.GetComponent<Rigidbody>();
-            rb2.AddForce(Quaternion.Euler(0, -40, 0) * firePoint.forward * bulletForce, ForceMode.Impulse);
-
-            GameObject bullet3 = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation * Quaternion.Euler(0, 90 + 40, 0));
-            Rigidbody rb3 = bullet3.GetComponent<Rigidbody>();
-            rb3.AddForce(Quaternion.Euler(0, 40, 0) * firePoint.forward * bulletForce, ForceMode.Impulse);
+            InstantiateBullet(40, Vector3.zero);
+            InstantiateBullet(-40, Vector3.zero);
         }
+    }
+
+    void InstantiateBullet(int angle, Vector3 positionShift)
+    {
+
+        GameObject bullet2 = Instantiate(bulletPrefab, firePoint.position + positionShift, firePoint.rotation * Quaternion.Euler(0, 90 + angle, 0));
+        Rigidbody rb2 = bullet2.GetComponent<Rigidbody>();
+        rb2.AddForce(Quaternion.Euler(0, angle, 0) * firePoint.forward * bulletForce, ForceMode.Impulse);
+        Destroy(bullet2, 0.2f);
     }
 
     void OnTriggerEnter(Collider collider)

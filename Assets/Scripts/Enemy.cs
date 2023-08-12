@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour, Agent
 
     //Agent interface
     [HideInInspector] public Vector2 targetPosition { get; set; }
-    [HideInInspector] public Vector2 currentPosition { get; set; }
+    [HideInInspector] public Vector2 position { get; set; }
     [HideInInspector] public float pBest { get; set; }
     [HideInInspector] public Vector2 pBestPosition { get; set; }
     [HideInInspector] public Vector2 inertia { get; set; }
@@ -22,16 +22,16 @@ public class Enemy : MonoBehaviour, Agent
     Player player;
     Rigidbody rb;
     NavMeshPath path;
-    Camera camera;
+    new Camera camera;
 
     private float cooldown = 0;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        currentPosition = VectorConverter.Convert(rb.position);
+        position = VectorConverter.Convert(rb.position);
         targetPosition = VectorConverter.Convert(rb.position);
-        pBest = -1;
+        pBest = float.MaxValue;
         path = new NavMeshPath();
     }
 
@@ -43,10 +43,10 @@ public class Enemy : MonoBehaviour, Agent
 
     void FixedUpdate()
     {
-        currentPosition = VectorConverter.Convert(rb.position);
+        position = VectorConverter.Convert(rb.position);
         Move();
         Rotate();
-        updateCooldown();
+        UpdateCooldown();
         RotateSprite();
     }
 
@@ -57,12 +57,11 @@ public class Enemy : MonoBehaviour, Agent
             return 0.0f;
         }
 
-        float distance = Vector2.Distance(player.position, currentPosition);
+        float distance = Vector2.Distance(player.position, position);
 
         float visionScore = 0;
         {
-            RaycastHit hit;
-            if (Physics.Raycast(rb.position, player.rb.position - rb.position, out hit) && hit.collider.CompareTag("Player"))
+            if (Physics.Raycast(rb.position, player.rb.position - rb.position, out RaycastHit hit) && hit.collider.CompareTag("Player"))
             {
                 visionScore = Mathf.Max(50 - distance, 0);
             }
@@ -91,14 +90,13 @@ public class Enemy : MonoBehaviour, Agent
 
     void Move()
     {
-        Vector2 targetVector;
-        targetVector = (targetPosition - currentPosition);
-        rb.velocity = VectorConverter.Convert(targetVector.normalized * velocity ); 
+        Vector2 targetVector = (targetPosition - position) * Time.deltaTime;
+        rb.AddForce(VectorConverter.Convert(targetVector));
     }
 
     void Rotate()
     {
-        Vector2 lookDir = targetPosition - currentPosition;
+        Vector2 lookDir = targetPosition - position;
         float angle = -Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
         rb.MoveRotation(Quaternion.Euler(new Vector3(0, angle, 0)));
     }
@@ -116,7 +114,7 @@ public class Enemy : MonoBehaviour, Agent
     }
 
 
-    void updateCooldown()
+    void UpdateCooldown()
     {
         if (cooldown > 0)
         {
@@ -129,6 +127,8 @@ public class Enemy : MonoBehaviour, Agent
         if (collider.gameObject.tag == "Bullet")
         {
             health -= 10;
+            var direction = -collider.gameObject.GetComponent<Transform>().right;
+            rb.AddForce(direction * 500);
             if (health <= 0)
             {
                 HandleDeath();

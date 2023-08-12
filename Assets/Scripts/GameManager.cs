@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        GUIText.SetText($"Vida: {health}\nPontuação: {score}");
+        GUIText.SetText($"Vida: {health}\nPontuação: {score}\nGBest: {enemyAIManager.gBest}");
     }
 
     void handleDefeat()

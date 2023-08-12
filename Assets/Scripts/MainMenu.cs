@@ -12,6 +12,12 @@ public class MainMenu : MonoBehaviour
         ScenesState.playGeneratedLevelFirst = playGeneratedLevelFirst;
 
         Steps steps = new Steps();
+        steps.Add(StepType.GENERATED_LEVEL);
+        ScenesState.steps = steps;
+        ScenesState.steps.Next();
+        return;
+
+        //Steps steps = new Steps();
         steps.Add(StepType.PROFILE_FORM);
 
         if (playGeneratedLevelFirst)
