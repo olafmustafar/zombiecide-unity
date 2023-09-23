@@ -22,6 +22,12 @@ public class GameManager : MonoBehaviour
         ScenesState.steps.Next();
     }
 
+    public void LoadSceneAgain()
+    {
+        ScenesState.steps.Add(ScenesState.steps.currentStep);
+        ScenesState.steps.Next();
+    }
+
     public void Restart()
     {
         defeatedTimes ++;
@@ -82,7 +88,7 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        GUIText.SetText($"Vida: {health}\nPontuação: {score}\nGBest: {enemyAIManager.gBest}");
+        GUIText.SetText($"Vida: {health}\nPontuação: {score}");
     }
 
     void handleDefeat()

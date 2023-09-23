@@ -114,6 +114,7 @@ public class BoardManager : MonoBehaviour
 
     void PlaceEnemies(ZtEnemy[] enemies)
     {
+        Debug.Log(enemies.Count());
         enemiesHolder = new GameObject("Enemies").transform;
 
         foreach (ZtEnemy e in enemies)

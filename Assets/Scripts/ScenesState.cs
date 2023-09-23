@@ -33,6 +33,7 @@ public enum StepType
 
 public class Steps
 {
+    public StepType currentStep;
     Queue<StepType> steps;
 
     public Steps()
@@ -55,6 +56,7 @@ public class Steps
         }
 
         StepType nextStep = steps.Dequeue();
+        currentStep = nextStep;
         switch (nextStep)
         {
             case StepType.PROFILE_FORM:

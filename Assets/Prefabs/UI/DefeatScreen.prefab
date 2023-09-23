@@ -292,7 +292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3112044136316584963, guid: b8f61a2d8303d5e7eaaab32c3b455266, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Next
+      value: LoadSceneAgain
       objectReference: {fileID: 0}
     - target: {fileID: 3112044136316584963, guid: b8f61a2d8303d5e7eaaab32c3b455266, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -388,7 +388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7343506933232146272, guid: b8f61a2d8303d5e7eaaab32c3b455266, type: 3}
       propertyPath: m_text
-      value: "Pular n\xEDvel"
+      value: "Jogar outro n\xEDvel"
       objectReference: {fileID: 0}
     - target: {fileID: 7843532430654788738, guid: b8f61a2d8303d5e7eaaab32c3b455266, type: 3}
       propertyPath: m_Name

@@ -6,11 +6,18 @@ using System.Collections;
 public class ZombieTilesApi
 {
     public Dungeon dungeon { get; set; }
+    public bool useDoubledEnemies = true;
     string result;
 
     public void LoadDungeon(bool isGenerated, int levelId)
     {
-        TextAsset textFile= Resources.Load("Levels/" +(isGenerated ? "generated" : "manual") + $"/level{levelId + 1}") as TextAsset;
+        string generatedLevels = "generated";
+        if (useDoubledEnemies)
+        {
+            generatedLevels = "generated-doubled-enemies";
+        }
+
+        TextAsset textFile = Resources.Load("Levels/" + (isGenerated ? generatedLevels : "manual") + $"/level{levelId + 1}") as TextAsset;
         dungeon = ParseResponse(textFile.ToString());
     }
 
